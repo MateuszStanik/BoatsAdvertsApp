@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatsAdvertsApp", "Durandal451v2\BoatsAdvertsApp.csproj", "{BBB43743-5B7C-49D6-8F47-D2ED92C2820F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{0B8247BD-0937-4EBC-8765-1D3A4F8AA97C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork", "UnitOfWork\UnitOfWork.csproj", "{B877EE1B-C529-425B-9666-02933F1C5667}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBB43743-5B7C-49D6-8F47-D2ED92C2820F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB43743-5B7C-49D6-8F47-D2ED92C2820F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB43743-5B7C-49D6-8F47-D2ED92C2820F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB43743-5B7C-49D6-8F47-D2ED92C2820F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8247BD-0937-4EBC-8765-1D3A4F8AA97C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8247BD-0937-4EBC-8765-1D3A4F8AA97C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8247BD-0937-4EBC-8765-1D3A4F8AA97C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8247BD-0937-4EBC-8765-1D3A4F8AA97C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B877EE1B-C529-425B-9666-02933F1C5667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B877EE1B-C529-425B-9666-02933F1C5667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B877EE1B-C529-425B-9666-02933F1C5667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B877EE1B-C529-425B-9666-02933F1C5667}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
