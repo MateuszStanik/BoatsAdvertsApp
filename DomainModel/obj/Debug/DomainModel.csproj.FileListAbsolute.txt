@@ -2,3 +2,7 @@ C:\Users\Mateusz\Desktop\Odchudzanie Loggera\DomainModel\bin\Debug\DomainModel.d
 C:\Users\Mateusz\Desktop\Odchudzanie Loggera\DomainModel\bin\Debug\DomainModel.pdb
 C:\Users\Mateusz\Desktop\Odchudzanie Loggera\DomainModel\obj\Debug\DomainModel.dll
 C:\Users\Mateusz\Desktop\Odchudzanie Loggera\DomainModel\obj\Debug\DomainModel.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\bin\Debug\DomainModel.dll
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\bin\Debug\DomainModel.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Debug\DomainModel.dll
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Debug\DomainModel.pdb

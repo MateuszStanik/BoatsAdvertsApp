@@ -13,6 +13,7 @@
     <div>
         <div id="step-1" class="">
             <h3 class="text-center">Wybierz kategorie wystawianego przedmiotu </h3></br>
+            <input class="form-control" data-bind="value: testValue"/>
             <div class="row">
                 <div class="col-lg-4">
 
@@ -21,17 +22,15 @@
                     Kategoria 
                 </div>
                 <div class="col-lg-2 form-group">
-                    <select id="value" name="state" class="center-block">
-                        <option value="sailboat">Łódź żaglowa</option>
-
-                        <option value="motorboat">Łódź motorowa</option>
+                    <select id="value" name="state" class="center-block" data-bind="value: testValue">
+                       
                     </select>
                 </div>
                 <div class="col-lg-4">
 
                 </div>
             </div>
-           
+            <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
         </div>
         <div id="step-2" class="">
             Ustawienie parametrów przedmiotu

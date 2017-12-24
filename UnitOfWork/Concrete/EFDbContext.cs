@@ -15,18 +15,19 @@ namespace UnitOfWork
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
-
+        //---Entities
         public DbSet<Advert> adverts { get; set; }
         public DbSet<Subject> subjects { get; set; }
         public DbSet<Engine> engines { get; set; }
         public DbSet<Sail> sails { get; set; }
         public DbSet<Boat> boats { get; set; }
-        //-----
+        //---Login entities
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-
+        //---Dictionaries
+        public DbSet<DicCategories> dicCategories { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Properties<string>().Configure(x => x.IsUnicode(false));

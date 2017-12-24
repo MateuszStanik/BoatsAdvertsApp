@@ -47,6 +47,7 @@
     <Compile Include="AspNetUserLogins.cs" />
     <Compile Include="AspNetUsers.cs" />
     <Compile Include="Boat.cs" />
+    <Compile Include="Dictionaries\DicCategories.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="MotorBoat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
