@@ -3,7 +3,7 @@
     var vm = {
         attached: function () {
 
-            $('#test').select2();
+            //$('#test').select2();
             
         },
     };
