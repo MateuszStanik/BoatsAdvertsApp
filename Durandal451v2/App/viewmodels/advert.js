@@ -31,21 +31,15 @@
                     selected: 0,
                     theme: 'dots',
                     transitionEffect: 'fade',
-                    showStepURLhash: true,
-           
+                    showStepURLhash: true,           
                     lang: { 
                         next: 'Dalej',
                         previous: 'Wstecz'
                        
                     },
 
-                });
-               
+                });               
             },
-          
-          
-
-           
         };
         return vm;
         function setSelect2Values() {

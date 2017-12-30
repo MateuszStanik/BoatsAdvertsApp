@@ -27,7 +27,8 @@ textarea {
   /*padding-top:30px;*/
 }
 .footer {
-  background-color: #e9f0ff;
+  background-color: #07324f;
+  color: #fff;
   padding: 3rem 1.5rem;
   -webkit-background-size: cover;
   -moz-background-size: cover;
