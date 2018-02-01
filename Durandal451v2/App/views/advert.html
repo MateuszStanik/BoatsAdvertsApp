@@ -8,20 +8,18 @@
         <li><a href="#step-2">Opis przedmiotu<br /><!--<small>Step description</small>--></a></li>
         <li><a href="#step-3">Dane kotaktowe<br /><!--<small>Step description</small>--></a></li>
         <li><a href="#step-4">Podsumowanie<br /><!--<small>Step description</small>--></a></li>
-        <li><a href="#step-5">Wybór kategorii<br /><!--<small>Step description</small>--></a></li>
-        <li><a href="#step-6">Opis przedmiotu<br /><!--<small>Step description</small>--></a></li>
-        <li><a href="#step-7">Dane kotaktowe<br /><!--<small>Step description</small>--></a></li>
-        <li><a href="#step-8">Podsumowanie<br /><!--<small>Step description</small>--></a></li>
-        <li><a href="#step-9">Dane kotaktowe<br /><!--<small>Step description</small>--></a></li>
-        <li><a href="#step-10">Podsumowanie<br /><!--<small>Step description</small>--></a></li>
     </ul>
 
     <div>
         <div id="step-1" class="">
-            <h3 class="text-center">Wybierz kategorie wystawianego przedmiotu </h3></br>
+            <h3 class="text-center">Wybierz kategorie wystawianego przedmiotu </h3>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6"><hr></div>
+            <div class="col-lg-3"></div>
             <div class="row">
-          <div class="col-lg-4"></div>
+                <div class="col-lg-4"></div>
                 <div class="col-lg-4">
+                    
                     <div class="form-group">
 
                         <select id="value" name="state" class="form-control select2-single" data-bind="value: selectedCategory"></select>
@@ -29,21 +27,61 @@
                     </div>
                 </div>
                 <div class="col-lg-4"></div>
-                   
-                    
-              
             </div>
          
             
                     
             
-            <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
+            <!--<pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->
         </div>
         <div id="step-2" class="">
-            Ustawienie parametrów przedmiotu
+
+            <h3 class="text-center">Ustawienie parametrów przedmiotu</h3>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 form-group">
+                <hr>
+                <p>Nazwa ogłoszenia *</p>
+                <input class="form-control" />
+                <p>Nazwa modelu *</p>
+                <input class="form-control" />
+                <p>Typ jachtu *</p>
+                <input class="form-control" />
+                <p>Nazwa producenta</p>
+                <input class="form-control" />
+                <p>Rocznik</p>
+                <input class="form-control" />
+                <p>Rodzaj steru</p>
+                <input class="form-control" />
+                <p>Długość</p>
+                <input class="form-control" />
+                <p>Szerokość</p>
+                <input class="form-control" />
+                <p>Waga</p>
+                <input class="form-control" />
+                <p>Cena</p>
+                <input class="form-control" />
+                <p>Opis ogłoszenia *</p>
+                <textarea class="form-control" rows="6"></textarea>
+            </div>
+            <div class="col-lg-3"></div>
         </div>
         <div id="step-3" class="">
-            Step Content
+            <h3 class="text-center">Dane kontaktowe</h3>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 form-group">
+                <hr>
+                <p>Imie</p>
+                <input class="form-control" />
+                <p>Nazwisko</p>
+                <input class="form-control" />
+                <p>Email *</p>
+                <input class="form-control" />
+                <p>Miasto odbioru</p>
+                <input class="form-control" />               
+                <p>Dodatkowe informacje</p>
+                <textarea class="form-control" rows="6"></textarea>
+            </div>
+            <div class="col-lg-3"></div>
         </div>
         <div id="step-4" class="">
             Step Content

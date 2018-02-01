@@ -1,5 +1,5 @@
-﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'smartWizard', 'select2'],
-    function (router, app, $, ko, advert) {
+﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', 'smartWizard', 'select2'],
+    function (router, app, $, ko, advert, logger) {
 
         var vm = {
             dicCategories: ko.observable(),

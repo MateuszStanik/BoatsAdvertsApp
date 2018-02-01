@@ -16,7 +16,9 @@
 
     function setupRouter() {
         router.map([
-                { route: '', title: 'BoatsAd', moduleId: 'viewmodels/welcome', nav: true},
+                { route: '', title: 'Boats Ad', moduleId: 'viewmodels/welcome', nav: true },
+                { route: 'items', title: 'Przedmioty', moduleId: 'viewmodels/login', nav: true },
+                { route: 'services', title: 'Usługi', moduleId: 'viewmodels/advert', nav: true },
                 { route: 'register', moduleId: 'viewmodels/register', nav: false},
                 { route: 'login', moduleId: 'viewmodels/login', nav: false},
                 { route: 'advert', moduleId: 'viewmodels/advert', nav: false },

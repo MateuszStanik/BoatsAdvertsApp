@@ -262,6 +262,7 @@
     <Content Include="Content\ie10mobile.css" />
     <Content Include="Content\images\5803826_20160510075930176_1_XLARGE.jpg" />
     <Content Include="Content\images\6034941_20161201023704697_1_XLARGE.jpg" />
+    <Content Include="Content\images\boat_launch_icon-copy.jpg" />
     <Content Include="Content\images\header1.jpg" />
     <Content Include="Content\images\header2.jpg" />
     <Content Include="Content\images\header3.jpg" />
@@ -285,6 +286,7 @@
     <Content Include="Content\images\sailboatImage - Kopia.png" />
     <Content Include="Content\images\sailboatImage.png" />
     <Content Include="Content\images\Sense-55-1-700x400.jpg" />
+    <Content Include="Content\images\tqokmskhdtjoiylgbrkx.png" />
     <Content Include="Content\select2.css" />
     <Content Include="Content\select2.min.css" />
     <Content Include="Content\smart_wizard.css" />
