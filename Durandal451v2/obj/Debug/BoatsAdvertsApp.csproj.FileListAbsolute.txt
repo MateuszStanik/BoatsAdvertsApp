@@ -1,3 +1,6 @@
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.dll.config
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\Antlr3.Runtime.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\DomainModel.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\EntityFramework.dll
@@ -63,8 +66,5 @@ D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\System.Web.Http.Ow
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.csprojResolveAssemblyReference.cache
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.initialMigration.resources
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.csproj.GenerateResource.Cache
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.dll.config
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.dll
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.pdb

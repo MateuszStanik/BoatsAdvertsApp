@@ -253,6 +253,8 @@
     <Content Include="App\views\register.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\welcome.html" />
+    <Content Include="App\widgets\boattemplate\view.html" />
+    <Content Include="App\widgets\boattemplate\viewmodel.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />

@@ -1,32 +1,43 @@
 ﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', 'smartWizard', 'select2'],
     function (router, app, $, ko, advert, logger) {
 
+
+        var model = {
+            AdvertName : ko.observable(),
+            BoatModel : ko.observable(),
+            YachtType : ko.observable(),
+            ProducentName : ko.observable(),
+            BuiltYear : ko.observable(),
+            RudderType : ko.observable(),
+            Length : ko.observable(),
+            Beam : ko.observable(),
+            Weight : ko.observable(),
+            Price : ko.observable(),
+            AdvertDescription : ko.observable(),
+            Name : ko.observable(),
+            SureName : ko.observable(),
+            Email : ko.observable(),
+            City : ko.observable(),
+            AdditionalInformation : ko.observable(),
+        }
         var vm = {
             dicCategories: ko.observable(),
             testValue: ko.observable(),
             selectedCategory: ko.observable(''),
             getDic: getDic,
-            setSelect2Values:setSelect2Values,
+            setSelect2Values: setSelect2Values,
+            model: model,
+            tmp: ko.observable({}),
+          
             attached: function () {
                 vm.getDic();
                 vm.setSelect2Values();
-
-                //$('#value').select2({
-                //    data: vm.dicCategories()
-                //});
                 $('#value').on('select2:select', function (e) {
                     var data = e.params.data;
                     console.log(data.id);
                     vm.selectedCategory(data.id);
                 });
-                //$('#value').change(function () {
-                //    //var theID = $(test).val(); // works
-                //    //var theSelection = $(test).filter(':selected').text(); // doesn't work
-                //    var theID = $('#value').select2('data').id;
-                //    var theSelection = $('#value').select2('data').text;
-                //    vm.selectedCategory(theID);
-                //});
-
+             
                 $('#smartwizard').smartWizard({
                     selected: 0,
                     theme: 'dots',
@@ -41,21 +52,14 @@
                 });               
             },
         };
-        return vm;
-        function setSelect2Values() {
-        
-        }
-        
+
         function getDic() {
             advert.getCategoriesDictionary({
-               
+
             }).done(function (data) {
                 $('#value').select2({
                     data: data,
-                  
                 });
-     
-               
                 vm.testValue(data[0].id);
             }).always(function () {
                 console.log(vm.dicCategories());
@@ -78,5 +82,13 @@
             });
         }
 
+        function setSelect2Values() {
+        
+        }
+
+        return vm;
+       
+
+       
        
     });

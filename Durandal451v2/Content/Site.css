@@ -125,3 +125,8 @@ textarea {
 .white-loader{
     color: #fff;
 }
+
+.form-p{
+    margin-bottom: 0px;
+    margin-top: 10px;
+}

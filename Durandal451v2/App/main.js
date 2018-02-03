@@ -47,7 +47,9 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/com
     app.configurePlugins({
         router: true,
         dialog: true,
-        widget: true
+        widget: {
+            kinds: ['boattemplate']
+        }
     });
 
     composition.addBindingHandler('hasFocus');
