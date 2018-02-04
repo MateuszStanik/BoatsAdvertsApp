@@ -23,14 +23,16 @@
                     <div class="form-group">
 
                         <select id="value" name="state" class="form-control select2-single" data-bind="value: selectedCategory"></select>
-
+                        <pre data-bind="text: ko.toJSON(selectedCategory, null, 2)"></pre>
                     </div>
                 </div>
                 <div class="col-lg-4"></div>
             </div>           
         </div>
         <div id="step-2" class="">
-            <div data-bind="boattemplate: {data: model}"></div>          
+            <div data-bind="visible: selectedCategory() == 1">
+                <div data-bind="sailboat: {data: model}"></div>
+            </div>
         </div>
         <div id="step-3" class="">
             <h3 class="text-center">Dane kontaktowe</h3>
@@ -51,51 +53,12 @@
             <div class="col-lg-3"></div>
         </div>
         <div id="step-4" class="">
-          
-            
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3>Dane ogłoszenia</h3>
-                    <hr />
-                    <p class="form-p">Nazwa ogłoszenia *</p>
-                    <input class="form-control" data-bind="value: model.AdvertName" disabled/>
-                    <p class="form-p">Nazwa modelu *</p>
-                    <input class="form-control" data-bind="value: model.BoatModel" disabled/>
-                    <p class="form-p">Typ jachtu *</p>
-                    <input class="form-control" data-bind="value: model.YachtType" disabled/>
-                    <p class="form-p">Nazwa producenta</p>
-                    <input class="form-control" data-bind="value: model.ProducentName" disabled/>
-                    <p class="form-p">Rocznik</p>
-                    <input class="form-control" data-bind="value: model.BuiltYear" disabled/>
-                    <p class="form-p">Rodzaj steru</p>
-                    <input class="form-control" data-bind="value: model.RudderType" disabled/>
-                    <p class="form-p">Długość</p>
-                    <input class="form-control" data-bind="value: model.Length" disabled/>
-                    <p class="form-p">Szerokość</p>
-                    <input class="form-control" data-bind="value: model.Beam" disabled/>
-                    <p class="form-p">Waga</p>
-                    <input class="form-control" data-bind="value: model.Weight" disabled/>
-                    <p class="form-p">Cena</p>
-                    <input class="form-control" data-bind="value: model.Price" disabled/>
-                    <p class="form-p">Opis ogłoszenia *</p>
-                    <textarea class="form-control" rows="6" data-bind="value: model.AdvertDescription" disabled></textarea>
-                </div>
-                <div class="col-lg-6">
-                    <h3>Dane kontaktowe</h3>
-                    <hr />
-                    <p class="form-p">Imie *</p>
-                    <input class="form-control" data-bind="value: model.Name" disabled/>
-                    <p class="form-p">Nazwisko *</p>
-                    <input class="form-control" data-bind="value: model.SureName" disabled/>
-                    <p class="form-p">Email *</p>
-                    <input class="form-control" data-bind="value: model.Email" disabled/>
-                    <p class="form-p">Miasto odbioru</p>
-                    <input class="form-control" data-bind="value: model.City" disabled/>
-                    <p class="form-p">Dodatkowe informacje</p>
-                    <textarea class="form-control" rows="6" data-bind="value: model.AdditionalInformation" disabled></textarea>
-                </div>
+            <div data-bind="visible: selectedCategory() == 1">
+                <div data-bind="sailboatSummarize: {data: model}"></div>         
             </div>
-            <pre data-bind="text: ko.toJSON(tmp, null, 2)"></pre>
+             
+           
+            <pre data-bind="text: ko.toJSON(model, null, 2)"></pre>
         </div>
     </div>
 </div>

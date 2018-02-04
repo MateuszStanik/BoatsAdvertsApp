@@ -239,6 +239,8 @@
     <Content Include="App\services\logger.js" />
     <Content Include="App\services\security.js" />
     <Content Include="App\viewmodels\advert.js" />
+    <Content Include="App\viewmodels\boat.js" />
+    <Content Include="App\viewmodels\sailboat.js" />
     <Content Include="App\viewmodels\flickr.js" />
     <Content Include="App\viewmodels\login.js" />
     <Content Include="App\viewmodels\manage.js" />
@@ -253,8 +255,10 @@
     <Content Include="App\views\register.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\welcome.html" />
-    <Content Include="App\widgets\boattemplate\view.html" />
-    <Content Include="App\widgets\boattemplate\viewmodel.js" />
+    <Content Include="App\widgets\sailboatSummarize\view.html" />
+    <Content Include="App\widgets\sailboatSummarize\viewmodel.js" />
+    <Content Include="App\widgets\sailboat\view.html" />
+    <Content Include="App\widgets\sailboat\viewmodel.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
