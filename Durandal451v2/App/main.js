@@ -48,7 +48,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/com
         router: true,
         dialog: true,
         widget: {
-            kinds: ['sailboat', 'sailboatSummarize']
+            kinds: ['sailboat', 'sailboatSummarize', 'motorBoat', 'motorBoatSummarize']
         }
     });
 

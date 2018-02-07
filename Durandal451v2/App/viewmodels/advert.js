@@ -1,13 +1,14 @@
-﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', './sailboat', './sailboat', 'smartWizard', 'select2'],
-    function (router, app, $, ko, advert, logger, backend) {
+﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', './AdvertModels/sailboat', './AdvertModels/motorBoat', 'smartWizard', 'select2'],
+    function (router, app, $, ko, advert, logger, sailboat, motorBoat) {
+
         var vm = {
             dicCategories: ko.observable(),
             testValue: ko.observable(),
-            selectedCategory: ko.observable(''),
+            selectedCategory: ko.observable(1),
             getDic: getDic,
             setSelect2Values: setSelect2Values,
 
-            model: new backend(),
+            model: new sailboat(),
 
                     
             attached: function () {

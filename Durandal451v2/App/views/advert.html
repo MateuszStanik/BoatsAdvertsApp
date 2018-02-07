@@ -33,6 +33,9 @@
             <div data-bind="visible: selectedCategory() == 1">
                 <div data-bind="sailboat: {data: model}"></div>
             </div>
+            <div data-bind="visible: selectedCategory() == 2">
+                <div data-bind="motorBoat: {data: model}"></div>
+            </div>
         </div>
         <div id="step-3" class="">
             <h3 class="text-center">Dane kontaktowe</h3>
@@ -56,7 +59,9 @@
             <div data-bind="visible: selectedCategory() == 1">
                 <div data-bind="sailboatSummarize: {data: model}"></div>         
             </div>
-             
+            <div data-bind="visible: selectedCategory() == 2">
+                <div data-bind="motorBoatSummarize: {data: model}"></div>
+            </div>
            
             <pre data-bind="text: ko.toJSON(model, null, 2)"></pre>
         </div>
