@@ -2,3 +2,4 @@ D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\bin\Debug\ApiContract.dl
 D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\bin\Debug\ApiContract.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\obj\Debug\ApiContract.dll
 D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\obj\Debug\ApiContract.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\obj\Debug\ApiContract.csprojResolveAssemblyReference.cache

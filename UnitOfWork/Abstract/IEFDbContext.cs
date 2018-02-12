@@ -1,4 +1,5 @@
 ﻿using DomainModel;
+using DomainModel.Dictionaries;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -23,5 +24,6 @@ namespace UnitOfWork.Abstract
         DbSet<AspNetUsers> AspNetUsers { get; set; }
         //---Dictionaries
         DbSet<DicCategories> dicCategories { get; set; }
+        DbSet<DicYearbooks> dicYearbooks { get; set; }
     }
 }

@@ -3,6 +3,7 @@
         // Routes
         var baseUrl = $.getBasePath(),
         getCategoriesDictionaryUrl = baseUrl + "api/Advert/GetDicCategories",
+        getYearbooksDictionaryUrl = baseUrl + "api/Advert/GetDicYearbooks",
         saveAdvertUrl = baseUrl + "api/Advert/SaveAdvert",
         siteUrl = baseUrl;
 
@@ -19,6 +20,7 @@
       
         var advertService = {
             getCategoriesDictionary: getCategoriesDictionary,
+            getYearbooksDictionary: getYearbooksDictionary,
             saveAdvert: saveAdvert,
             returnUrl: siteUrl,
         };
@@ -44,6 +46,14 @@
 
         function getCategoriesDictionary() {
             return $.ajax(getCategoriesDictionaryUrl, {
+                type: "GET",
+                cache: false,
+                headers: getSecurityHeaders()
+            });
+        }
+
+        function getYearbooksDictionary() {
+            return $.ajax(getYearbooksDictionaryUrl, {
                 type: "GET",
                 cache: false,
                 headers: getSecurityHeaders()

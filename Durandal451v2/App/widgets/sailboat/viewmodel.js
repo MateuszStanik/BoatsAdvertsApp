@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/sailboat', 'knockout.validation'], function (app, $, ko, sailboat) {
+﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/sailboat', '../../services/advert', 'knockout.validation', 'select2'], function (app, $, ko, sailboat, advert) {
 
     return function model() {
 
@@ -13,6 +13,7 @@
         self.isEditable = ko.observable(true);
 
         self.activate = function (options) {
+
             if (options.isEditable == true) {
                 options.crazy(self.model());
             }
@@ -20,6 +21,45 @@
                 self.model(options.crazy());
             }
             self.isEditable(options.isEditable);
+
+            $('#yearbook').on('select2:select', function (e) {
+                var data = e.params.data;
+                console.log(data.id);
+                self.model().BuiltYear(data.id);
+            });
+
+        };
+
+        self.getDicYearBook =function() {
+            advert.getYearbooksDictionary({
+
+            }).done(function (data) {
+                $('#yearbook').select2({
+                    data: data,
+                });
+            }).always(function () {
+            }).failJSON(function (data) {
+                if (data && data.error_description) {
+                    logger.log({
+                        message: data.error_description,
+                        data: data.error_description,
+                        showToast: true,
+                        type: "error"
+                    });
+                } else {
+                    logger.log({
+                        message: "Błąd pobierania słowników.",
+                        data: "",
+                        showToast: true,
+                        type: "error"
+                    });
+                }
+            });
+        };
+        self.attached = function () {
+            self.getDicYearBook();
+          
+           
         };
 
     };

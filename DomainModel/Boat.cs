@@ -15,7 +15,7 @@ namespace DomainModel
         public decimal Length { get; set; }
         public decimal Beam { get; set; }
         public decimal Weight { get; set; }
-        public DateTime BuiltYear { get; set; }
+        public string BuiltYear { get; set; }
         public decimal Draft { get; set; }
         public decimal Displacement { get; set; }
         public virtual SailBoat SailBoat { get; set; }

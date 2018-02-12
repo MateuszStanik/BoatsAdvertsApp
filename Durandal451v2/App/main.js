@@ -53,7 +53,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/com
         router: true,
         dialog: true,
         widget: {
-            kinds: ['contact', 'contactSummarize']
+            kinds: ['contact']
             //kinds: ['sailboat', 'sailboatSummarize', 'motorBoat', 'motorBoatSummarize', 'contact', 'contactSummarize']
         },
         

@@ -1,4 +1,5 @@
 ﻿using DomainModel;
+using DomainModel.Dictionaries;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -28,6 +29,8 @@ namespace UnitOfWork
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         //---Dictionaries
         public DbSet<DicCategories> dicCategories { get; set; }
+        public DbSet<DicYearbooks> dicYearbooks { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Properties<string>().Configure(x => x.IsUnicode(false));

@@ -2170,7 +2170,8 @@ textarea.input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
+  /*color: #737373;*/
+  color: #c43f3f;
 }
 
 @media (min-width: 768px) {

@@ -1,10 +1,10 @@
-﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/motorBoat'], function (app, $, ko, motorBoat) {
+﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/motorBoat', 'knockout.validation'], function (app, $, ko, motorBoat) {
 
     return function model() {
 
         var self = this;
 
-        self.model = ko.observable(new motorBoat());
+        self.model = ko.validatedObservable(new motorBoat());
         
         self.isEditable = ko.observable(true);
 

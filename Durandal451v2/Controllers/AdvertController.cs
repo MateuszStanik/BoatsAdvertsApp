@@ -1,5 +1,6 @@
 ﻿using ApiContract;
 using DomainModel;
+using DomainModel.Dictionaries;
 using Durandal451v2.Models.Dictionaries;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -9,6 +10,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 using UnitOfWork;
@@ -20,46 +22,60 @@ namespace Durandal451v2.Controllers
     {
         private readonly EFDbContext db = new EFDbContext();
 
-        //[HttpGet]
-        //[Route("GetDicCategories")]
-        //public async Task<IHttpActionResult> GetDicCategories()
-        //{
-        //    try
-        //    {
-        //        var dbCategories = db.dicCategories.ToList();
-
-        //        var categories = dbCategories
-        //            .Select(
-        //            x => new DicCategories()
-        //            {
-        //                id = x.CategoryId,
-        //                text = x.Name
-        //            })
-        //            .ToList();
-
-        //        return Ok(categories);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-
-
-        //}
         [HttpGet]
         [Route("GetDicCategories")]
         public IHttpActionResult GetDicCategories()
         {
             try
             {
+            //    int i = 1900;
+            //    for (i = 1910; i <= 2018; i++)
+            //    {
+            //        Thread.Sleep(500);
+            //        DicYearbooks tmp = new DicYearbooks();
+            //        tmp.CategoryId = i;
+            //        tmp.Year = i;
+
+            //        db.dicYearbooks.Add(tmp);
+
+            //    }
+            //    db.SaveChanges();
                 var dbCategories = db.dicCategories.ToList();
 
                 var categories = dbCategories
                     .Select(
-                    x => new Models.Dictionaries.DicCategories()
+                    x => new Models.Dictionaries.Select2()
                     {
                         id = x.Id,
                         text = x.Name
+                    })
+                    .ToList();
+
+                return Json(categories);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
+        }
+
+        [HttpGet]
+        [Route("GetDicYearbooks")]
+        public IHttpActionResult GetDicYearbooks()
+        {
+            try
+            {
+               
+                var dbYearbooks = db.dicYearbooks.ToList();
+
+                var categories = dbYearbooks
+                    .Select(
+                    x => new Models.Dictionaries.Select2_Int()
+                    {
+                        id = x.CategoryId,
+                        text = x.Year
                     })
                     .ToList();
 

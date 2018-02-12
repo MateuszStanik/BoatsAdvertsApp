@@ -1,10 +1,6 @@
 ﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', './Services/advertService', 'smartWizard', 'select2', 'knockout.validation'],
     function (router, app, $, ko, advert, logger, advertService) {
 
-        //ko.validation.init({
-        //    messagesOnModified: true
-        //});
-
         var vm = {
             dicCategories: ko.observable(),
             testValue: ko.observable(),
@@ -13,13 +9,12 @@
             crazyModel: ko.observable(),
             crazyModelContact: ko.observable(),
 
-
             advert: {
                 AdvertName: ko.observable().extend({ required: true }),
                 AdvertDescription: ko.observable().extend({ required: true }),
                 Price: ko.observable().extend({
                     pattern: {
-                        message: 'Proszę wprowadzić wartość',
+                        message: 'Prosze wprowadzic wartość',
                         params: '^[0-9]+(\,[0-9]{1,2})?$',
                     },
                     required: true,
@@ -30,7 +25,7 @@
             {
                 advertService.sendToDb(vm.selectedCategory, vm.advert, vm.crazyModel, vm.crazyModelContact);
             },
-
+           
             attached: function () {
                 advertService.getDic();
                 vm.setSelect2Values();
@@ -57,23 +52,25 @@
                 vm.errorsStep1 = ko.validation.group(vm.crazyModel());
 
                 $("#smartwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection) {
-                    // Enable finish button only on last step
-                    if (stepNumber == 0) {
-                        if (vm.errorsStep0().length > 0) {
-                            vm.errorsStep0.showAllMessages();
-                            return false;
+                    if (stepDirection == 'forward')
+                    {
+                        if (stepNumber == 0) {
+                            if (vm.errorsStep0().length > 0) {
+                                vm.errorsStep0.showAllMessages();
+                                return false;
+                            }
+                        }
+                        if (stepNumber == 1) {
+                            if (vm.errorsStep1().length > 0) {
+                                vm.errorsStep1.showAllMessages();
+                                return false;
+                            }
                         }
                     }
-                    if (stepNumber == 1) {
-                        if (vm.errorsStep1().length > 0) {
-                            vm.errorsStep1.showAllMessages();
-                            return false;
-                        }
-                    }
+                    
                 });
             },
         };
-
         
         function setSelect2Values() { }
 

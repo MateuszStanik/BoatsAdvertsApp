@@ -50,3 +50,7 @@ D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migr
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._9.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._10.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._11.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._12.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._13.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._14.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._15.resources
