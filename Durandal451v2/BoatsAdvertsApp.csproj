@@ -172,14 +172,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\DurandalBundleConfig.cs" />
-    <Compile Include="App_Start\DurandalConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Data\App_Start\BundleConfig.cs" />
+    <Compile Include="App_Data\App_Start\DurandalBundleConfig.cs" />
+    <Compile Include="App_Data\App_Start\DurandalConfig.cs" />
+    <Compile Include="App_Data\App_Start\FilterConfig.cs" />
+    <Compile Include="App_Data\App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Data\App_Start\RouteConfig.cs" />
+    <Compile Include="App_Data\App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Data\App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -220,6 +220,18 @@
     <Compile Include="Migrations\201710221142202_initialMigration.Designer.cs">
       <DependentUpon>201710221142202_initialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802091148492_DicCategories.cs" />
+    <Compile Include="Migrations\201802091148492_DicCategories.Designer.cs">
+      <DependentUpon>201802091148492_DicCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802091153257_Test.cs" />
+    <Compile Include="Migrations\201802091153257_Test.Designer.cs">
+      <DependentUpon>201802091153257_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802111903349_9.cs" />
+    <Compile Include="Migrations\201802111903349_9.Designer.cs">
+      <DependentUpon>201802111903349_9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -239,9 +251,6 @@
     <Content Include="App\services\logger.js" />
     <Content Include="App\services\security.js" />
     <Content Include="App\viewmodels\advert.js" />
-    <Content Include="App\viewmodels\AdvertModels\boat.js" />
-    <Content Include="App\viewmodels\AdvertModels\motorBoat.js" />
-    <Content Include="App\viewmodels\AdvertModels\sailboat.js" />
     <Content Include="App\viewmodels\flickr.js" />
     <Content Include="App\viewmodels\login.js" />
     <Content Include="App\viewmodels\manage.js" />
@@ -256,12 +265,14 @@
     <Content Include="App\views\register.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\welcome.html" />
-    <Content Include="App\widgets\motorBoatSummarize\view.html" />
-    <Content Include="App\widgets\motorBoatSummarize\viewmodel.js" />
-    <Content Include="App\widgets\motorBoat\view.html" />
-    <Content Include="App\widgets\motorBoat\viewmodel.js" />
-    <Content Include="App\widgets\sailboatSummarize\view.html" />
-    <Content Include="App\widgets\sailboatSummarize\viewmodel.js" />
+    <Content Include="App\viewmodels\Services\advertService.js" />
+    <Content Include="App\widgets\contact\AdvertModels\contact.js" />
+    <Content Include="App\widgets\contact\view.html" />
+    <Content Include="App\widgets\contact\viewmodel.js" />
+    <Content Include="App\widgets\motorboat\AdvertModels\motorBoat.js" />
+    <Content Include="App\widgets\motorboat\view.html" />
+    <Content Include="App\widgets\motorboat\viewmodel.js" />
+    <Content Include="App\widgets\sailboat\AdvertModels\sailboat.js" />
     <Content Include="App\widgets\sailboat\view.html" />
     <Content Include="App\widgets\sailboat\viewmodel.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -359,6 +370,44 @@
     <Content Include="Scripts\durandal\transitions\entrance.js" />
     <Content Include="Scripts\durandal\viewEngine.js" />
     <Content Include="Scripts\durandal\viewLocator.js" />
+    <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="Scripts\inputmask\bindings\inputmask.binding.min.js" />
+    <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
+    <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.min.js" />
+    <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.js" />
+    <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.min.js" />
+    <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.js" />
+    <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.min.js" />
+    <Content Include="Scripts\inputmask\global\document.js" />
+    <Content Include="Scripts\inputmask\global\document.min.js" />
+    <Content Include="Scripts\inputmask\global\window.js" />
+    <Content Include="Scripts\inputmask\global\window.min.js" />
+    <Content Include="Scripts\inputmask\inputmask.date.extensions.js" />
+    <Content Include="Scripts\inputmask\inputmask.date.extensions.min.js" />
+    <Content Include="Scripts\inputmask\inputmask.extensions.js" />
+    <Content Include="Scripts\inputmask\inputmask.extensions.min.js" />
+    <Content Include="Scripts\inputmask\inputmask.js" />
+    <Content Include="Scripts\inputmask\inputmask.min.js" />
+    <Content Include="Scripts\inputmask\inputmask.numeric.extensions.js" />
+    <Content Include="Scripts\inputmask\inputmask.numeric.extensions.min.js" />
+    <Content Include="Scripts\inputmask\inputmask.phone.extensions.js" />
+    <Content Include="Scripts\inputmask\inputmask.phone.extensions.min.js" />
+    <Content Include="Scripts\inputmask\inputmask.regex.extensions.js" />
+    <Content Include="Scripts\inputmask\inputmask.regex.extensions.min.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.min.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-be.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-be.min.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-nl.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-nl.min.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-ru.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-ru.min.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-uk.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone-uk.min.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone.js" />
+    <Content Include="Scripts\inputmask\phone-codes\phone.min.js" />
+    <Content Include="Scripts\jquery.inputmask.bundle.js" />
+    <Content Include="Scripts\jquery.inputmask.bundle.min.js" />
     <Content Include="Scripts\jquery.smartWizard.js" />
     <Content Include="Scripts\jquery.utilities.js" />
     <Content Include="Scripts\knockout.validation.debug.js" />
@@ -423,8 +472,21 @@
     <EmbeddedResource Include="Migrations\201710221142202_initialMigration.resx">
       <DependentUpon>201710221142202_initialMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802091148492_DicCategories.resx">
+      <DependentUpon>201802091148492_DicCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802091153257_Test.resx">
+      <DependentUpon>201802091153257_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802111903349_9.resx">
+      <DependentUpon>201802111903349_9.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApiContract\ApiContract.csproj">
+      <Project>{74679032-9BC6-461E-9F8B-569DFC5C7EFD}</Project>
+      <Name>ApiContract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{0b8247bd-0937-4ebc-8765-1d3a4f8aa97c}</Project>
       <Name>DomainModel</Name>
@@ -452,7 +514,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65431</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44306/</IISUrl>
+          <IISUrl>http://localhost:44307/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

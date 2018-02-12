@@ -18,6 +18,9 @@ namespace DomainModel
         public decimal EnginePower { get; set; }
         public byte EngineType { get; set; }
         public string HullType { get; set; }
+        public string YachtType { get; set; }
+        public string RudderType { get; set; }
         public virtual Boat Boat { get; set; }
+
     }
 }

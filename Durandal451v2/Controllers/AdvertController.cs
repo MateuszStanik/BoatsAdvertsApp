@@ -1,4 +1,8 @@
-﻿using Durandal451v2.Models.Dictionaries;
+﻿using ApiContract;
+using DomainModel;
+using Durandal451v2.Models.Dictionaries;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -52,9 +56,9 @@ namespace Durandal451v2.Controllers
 
                 var categories = dbCategories
                     .Select(
-                    x => new DicCategories()
+                    x => new Models.Dictionaries.DicCategories()
                     {
-                        id = x.CategoryId,
+                        id = x.Id,
                         text = x.Name
                     })
                     .ToList();
@@ -67,6 +71,65 @@ namespace Durandal451v2.Controllers
             }
 
 
+        }
+
+        [HttpPost]
+        [Route("SaveAdvert")]
+        public IHttpActionResult SaveAdvert(JObject content)
+        {
+            string subjectId = content["subjectType"].ToString();
+            string jsonSubject = content["subject"].ToString();
+            string jsonAdvert = content["contact"].ToString();
+            string jsonProduct = content["product"].ToString();
+
+            string Id = JsonConvert.DeserializeObject<string>(subjectId);
+            var category = db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
+         
+            Advert advert = new Advert();
+            advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
+            advert.AdditionDate = DateTime.Now;
+
+            Subject subject = new Subject();
+            subject = JsonConvert.DeserializeObject<Subject>(jsonSubject);
+            subject.Advert = advert;
+            
+            try
+            {
+                switch (category.CategoryId)
+                {               
+                    case 1:
+                        Boat sBoat = new Boat();
+                        SailBoat sailboat = new SailBoat();
+                        var boat = JsonConvert.DeserializeObject<Boat>(jsonSubject);
+                        sBoat = JsonConvert.DeserializeObject<Boat>(jsonProduct);
+                        sBoat.AdvertDescription = boat.AdvertDescription;
+                        sBoat.AdvertName = boat.AdvertName;
+                        sBoat.Price = boat.Price;
+                        sBoat.Advert = advert;
+                        sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
+                        sBoat.SailBoat = sailboat;
+                        db.boats.Add(sBoat);
+                        db.SaveChanges();
+                        break;
+                    case 2:
+                        Boat mBoat = new Boat();
+                        MotorBoat motorBoat = new MotorBoat();
+                        break;
+                    case 3:
+                        Engine engine = new Engine();
+                        break;
+               
+                }
+                //db.adverts.Add(advert);
+                
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+            return Ok(advert);
         }
     }
 }

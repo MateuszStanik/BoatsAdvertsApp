@@ -68,3 +68,8 @@ D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.DicCategories.resources
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.Test.resources
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\ApiContract.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\ApiContract.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations._9.resources

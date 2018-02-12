@@ -2,7 +2,8 @@
     function ($) {
         // Routes
         var baseUrl = $.getBasePath(),
-        getCategoriesDictionaryUrl = baseUrl + "api/Advert/GetDicCategories",      
+        getCategoriesDictionaryUrl = baseUrl + "api/Advert/GetDicCategories",
+        saveAdvertUrl = baseUrl + "api/Advert/SaveAdvert",
         siteUrl = baseUrl;
 
         // Other private operations
@@ -18,6 +19,7 @@
       
         var advertService = {
             getCategoriesDictionary: getCategoriesDictionary,
+            saveAdvert: saveAdvert,
             returnUrl: siteUrl,
         };
 
@@ -43,6 +45,15 @@
         function getCategoriesDictionary() {
             return $.ajax(getCategoriesDictionaryUrl, {
                 type: "GET",
+                cache: false,
+                headers: getSecurityHeaders()
+            });
+        }
+
+        function saveAdvert(data) {
+            return $.ajax(saveAdvertUrl, {
+                type: "POST",
+                data: data,
                 cache: false,
                 headers: getSecurityHeaders()
             });

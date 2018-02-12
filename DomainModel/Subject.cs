@@ -13,10 +13,9 @@ namespace DomainModel
         [Key]
         public Int64 SubjectId { get;set;}
         public Int64 AdvertId { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string AdvertName { get; set; }
+        public string AdvertDescription { get; set; }
         public double Price { get; set; }
-        public virtual Advert Advert { get; set; }
-     
+        public virtual Advert Advert { get; set; }     
     }
 }

@@ -10,12 +10,15 @@ namespace DomainModel
     [Table("Boats")]
     public class Boat : Subject
     {
-        public string BrandName { get; set; }
-        public decimal Lenght { get; set; }
+        public string ProducentName { get; set; }
+        public string BoatModel { get; set; }
+        public decimal Length { get; set; }
+        public decimal Beam { get; set; }
+        public decimal Weight { get; set; }
         public DateTime BuiltYear { get; set; }
         public decimal Draft { get; set; }
         public decimal Displacement { get; set; }
         public virtual SailBoat SailBoat { get; set; }
-        public virtual MotorBoat MotorBoat {get;set;} 
+        public virtual MotorBoat MotorBoat {get;set;}
     }
 }

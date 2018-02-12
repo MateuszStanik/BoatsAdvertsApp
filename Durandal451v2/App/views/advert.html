@@ -1,5 +1,5 @@
 ﻿<h3>
-    Wybierz kategorie przedmiotu
+    Dane ogłoszenia 
 </h3>
 
 <div id="smartwizard">
@@ -12,58 +12,77 @@
 
     <div>
         <div id="step-1" class="">
-            <h3 class="text-center">Wybierz kategorie wystawianego przedmiotu </h3>
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6"><hr></div>
-            <div class="col-lg-3"></div>
             <div class="row">
-                <div class="col-lg-4"></div>
-                <div class="col-lg-4">
-                    
-                    <div class="form-group">
-
-                        <select id="value" name="state" class="form-control select2-single" data-bind="value: selectedCategory"></select>
-                        <pre data-bind="text: ko.toJSON(selectedCategory, null, 2)"></pre>
+                <h3 class="text-center">Wybierz kategorie wystawianego przedmiotu </h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <select id="value" name="state" class="form-control select2-single" data-bind="value: selectedCategory"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+              <!--  <button class="btn btn-danger" data-bind="click: test">test</button>-->
+            </div>
+            <div class="row">
+                <h3 class="text-center">Nazwa ogłoszenia *</h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <input class="form-control" data-bind="value: advert.AdvertName" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="text-center">Cena</h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <input class="form-control" data-bind="value: advert.Price"/>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="text-center">Opis ogłoszenia *</h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <textarea class="form-control" rows="6" data-bind="value: advert.AdvertDescription"></textarea>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+                <!--<pre data-bind="text: ko.toJSON(selectedCategory, null, 2)"></pre>-->
+            </div>
+                <div id="step-2" class="">
+                    <div class="col-lg-3"></div>
+                    <div data-bind="widget: {kind: selectedCategory, crazy: crazyModel, isEditable: true}"></div>
+                    <div class="col-lg-3"></div>
+                    <!--<div data-bind="visible: selectedCategory() == 1">
+                    <div data-bind="sailboat: {data: model.model}"></div>
+                </div>
+                <div data-bind="visible: selectedCategory() == 2">
+                    <div data-bind="motorBoat: {data: model.model}"></div>
+                </div>-->
+                </div>
+                <div id="step-3" class="">
+                    <div class="col-lg-3"></div>
+                    <div data-bind="contact: {crazy: crazyModelContact, isEditable: true}"></div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <div id="step-4" class="">
+                    <div class="row">
+                        <div data-bind="widget: {kind: selectedCategory, crazy: crazyModel, isEditable: false}"></div>
+                        <div data-bind="contact: {crazy: crazyModelContact, isEditable: false}"></div>
+                        <button class="btn btn-info btn-block" data-bind="click: sendToDb">Zapisz</button>
                     </div>
                 </div>
-                <div class="col-lg-4"></div>
-            </div>           
+
+            </div>
+            <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
         </div>
-        <div id="step-2" class="">
-            <div data-bind="visible: selectedCategory() == 1">
-                <div data-bind="sailboat: {data: model}"></div>
-            </div>
-            <div data-bind="visible: selectedCategory() == 2">
-                <div data-bind="motorBoat: {data: model}"></div>
-            </div>
-        </div>
-        <div id="step-3" class="">
-            <h3 class="text-center">Dane kontaktowe</h3>
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6 form-group">
-                <hr>
-                <p class="form-p">Imie *</p>
-                <input class="form-control" data-bind="value: model.Name"/>
-                <p class="form-p">Nazwisko *</p>
-                <input class="form-control" data-bind="value: model.SureName"/>
-                <p class="form-p">Email *</p>
-                <input class="form-control" data-bind="value: model.Email"/>
-                <p class="form-p">Miasto odbioru</p>
-                <input class="form-control" data-bind="value: model.City"/>               
-                <p class="form-p">Dodatkowe informacje</p>
-                <textarea class="form-control" rows="6" data-bind="value: model.AdditionalInformation"></textarea>
-            </div>
-            <div class="col-lg-3"></div>
-        </div>
-        <div id="step-4" class="">
-            <div data-bind="visible: selectedCategory() == 1">
-                <div data-bind="sailboatSummarize: {data: model}"></div>         
-            </div>
-            <div data-bind="visible: selectedCategory() == 2">
-                <div data-bind="motorBoatSummarize: {data: model}"></div>
-            </div>
-           
-            <pre data-bind="text: ko.toJSON(model, null, 2)"></pre>
-        </div>
-    </div>
-</div>

@@ -12,6 +12,7 @@
         'toastr': '../Scripts/toastr',
         'smartWizard': '../Scripts/jquery.smartWizard',
         'select2': '../Scripts/select2',
+        'inputMask': '../Scripts/inputmask',
     },
     shim: {
         'jquery.utilities': {
@@ -32,7 +33,10 @@
         },
         "smartWizard": {
             "exports": 'smartWizard'
-        }
+        },
+        //'inputMask': {
+        //    deps: ['jquery'],
+        //}
     }
 });
 
@@ -45,11 +49,14 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/com
     app.title = 'Durandal 451';
 
     app.configurePlugins({
+        
         router: true,
         dialog: true,
         widget: {
-            kinds: ['sailboat', 'sailboatSummarize', 'motorBoat', 'motorBoatSummarize']
-        }
+            kinds: ['contact', 'contactSummarize']
+            //kinds: ['sailboat', 'sailboatSummarize', 'motorBoat', 'motorBoatSummarize', 'contact', 'contactSummarize']
+        },
+        
     });
 
     composition.addBindingHandler('hasFocus');
