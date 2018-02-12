@@ -26,21 +26,10 @@
                 }),
             },
             
-           
-
             sendToDb: function ()
             {
                 advertService.sendToDb(vm.selectedCategory, vm.advert, vm.crazyModel, vm.crazyModelContact);
             },
-
-            //test: function(){
-            //    if (vm.errors().length > 0) {
-            //        vm.errors.showAllMessages();
-            //        console.log(vm.errors().length);
-            //        return;
-            //    }
-            //},
-
 
             attached: function () {
                 advertService.getDic();
