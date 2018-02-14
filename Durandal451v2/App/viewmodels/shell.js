@@ -1,4 +1,4 @@
-﻿define(['plugins/router', 'durandal/app', 'global/session', 'services/security', 'services/logger', 'jquery', 'jquery.utilities'],
+﻿define(['plugins/router', 'durandal/app', 'global/session', 'services/security', 'services/logger', 'jquery', 'jquery.utilities' ],
     function (router, app, session, security, logger, $) {
     
     function verifyStateMatch(fragment) {
@@ -17,7 +17,7 @@
     function setupRouter() {
         router.map([
                 { route: '', title: 'Boats Ad', moduleId: 'viewmodels/welcome', nav: true },
-                { route: 'items', title: 'Przedmioty', moduleId: 'viewmodels/login', nav: true },
+                { route: 'products', title: 'Przedmioty', moduleId: 'viewmodels/products', nav: true },
                 { route: 'services', title: 'Usługi', moduleId: 'viewmodels/advert', nav: true },
                 { route: 'register', moduleId: 'viewmodels/register', nav: false},
                 { route: 'login', moduleId: 'viewmodels/login', nav: false},

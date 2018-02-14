@@ -48,10 +48,13 @@
 
                 });
 
-                vm.errorsStep0 = ko.validation.group(vm.advert);
-                vm.errorsStep1 = ko.validation.group(vm.crazyModel());
+                
 
                 $("#smartwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection) {
+                    vm.errorsStep0 = ko.validation.group(vm.advert);
+                    vm.errorsStep1 = ko.validation.group(vm.crazyModel());
+                    vm.errorsStep2 = ko.validation.group(vm.crazyModelContact());
+
                     if (stepDirection == 'forward')
                     {
                         if (stepNumber == 0) {
@@ -63,6 +66,12 @@
                         if (stepNumber == 1) {
                             if (vm.errorsStep1().length > 0) {
                                 vm.errorsStep1.showAllMessages();
+                                return false;
+                            }
+                        }
+                        if (stepNumber == 2) {
+                            if (vm.errorsStep2().length > 0) {
+                                vm.errorsStep2.showAllMessages();
                                 return false;
                             }
                         }

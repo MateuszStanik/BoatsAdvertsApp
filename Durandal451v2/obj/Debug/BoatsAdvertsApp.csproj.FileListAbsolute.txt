@@ -2,6 +2,7 @@ D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.dl
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\BoatsAdvertsApp.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\Antlr3.Runtime.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\ApiContract.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\DomainModel.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\EntityFramework.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\EntityFramework.SqlServer.dll
@@ -34,6 +35,7 @@ D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\System.Web.WebPage
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\UnitOfWork.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\WebActivator.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\WebGrease.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\ApiContract.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\DomainModel.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\UnitOfWork.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\Newtonsoft.Json.xml
@@ -65,11 +67,9 @@ D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\Microsoft.Owin.Sec
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\System.Web.Http.Owin.xml
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.csprojResolveAssemblyReference.cache
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.initialMigration.resources
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.DicCategories.resources
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.Test.resources
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations._9.resources
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.pdb
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.DicCategories.resources
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations.Test.resources
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\ApiContract.dll
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\ApiContract.pdb
-D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v2.Migrations._9.resources

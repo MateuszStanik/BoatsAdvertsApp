@@ -7,12 +7,13 @@
         'knockout': '../Scripts/knockout-2.3.0',
         'knockout.validation': '../Scripts/knockout.validation',
         'bootstrap': '../Scripts/bootstrap',
-        'jquery': '../Scripts/jquery-1.10.2',
+        'jquery': '../Scripts/jquery-3.3.1',
         'jquery.utilities': '../Scripts/jquery.utilities',
         'toastr': '../Scripts/toastr',
         'smartWizard': '../Scripts/jquery.smartWizard',
         'select2': '../Scripts/select2',
-        'inputMask': '../Scripts/inputmask',
+        'materialize': '../Scripts/materialize/materialize',
+
     },
     shim: {
         'jquery.utilities': {
@@ -34,9 +35,9 @@
         "smartWizard": {
             "exports": 'smartWizard'
         },
-        //'inputMask': {
-        //    deps: ['jquery'],
-        //}
+        'materialize': {
+            deps: ['jquery'],
+        }
     }
 });
 
