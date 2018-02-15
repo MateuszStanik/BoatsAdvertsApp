@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/sailboat', '../../services/advert', 'knockout.validation', 'select2'], function (app, $, ko, sailboat, advert) {
+﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/sailboat', '../../services/advert', 'services/logger', 'knockout.validation', 'select2'], function (app, $, ko, sailboat, advert, logger) {
 
     return function model() {
 

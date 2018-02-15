@@ -21,10 +21,12 @@ namespace Durandal451v2
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/materialize/materialize.css",
+                     
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                       "~/Content/materialize/css/materialize.css"
+                       ));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

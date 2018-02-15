@@ -1,6 +1,47 @@
 ﻿<section>
     <h3 class="text-center">Lista ogłoszeń</h3>
+    <div class="row">
+        <div data-bind="foreach: model()">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="../../Content/images/6034941_20161201023704697_1_XLARGE.jpg">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="activator grey-text text-darken-4" data-bind="text: advertName"></h4>
+                        <!--<i class="material-icons right">Opis</i></p>-->
+                    </div>
+                    <div class="card-action">
+                        <!--<a href="#">Przejdź do szczegółów</a>-->
+                        <a class="btn btn-info center-block" href="#"><span class="fa fa-plus"></span>Szczegóły</a>
+                    </div>
+                    <div class="card-reveal">
+                        <i class="material-icons right card-title">Zwiń</i>
+                        <p><h4 class="grey-text text-darken-4" data-bind="text: advertName"></h4></p>
+                        <p data-bind="text: advertDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-lg-3">
+            <div class="card sticky-action">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="../../Content/images/6034941_20161201023704697_1_XLARGE.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Sprzedam jacht oceanis 48.5<i class="material-icons right">Opis</i></span>
+                </div>
+                <div class="card-action">
+                    <a href="#">Przejdź do szczegółów</a>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Sprzedam jacht oceanis 48.5<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div>
+            </div>
+        </div>-->
+    </div>
 
-
-
+  
+    <!--<pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->
 </section>
