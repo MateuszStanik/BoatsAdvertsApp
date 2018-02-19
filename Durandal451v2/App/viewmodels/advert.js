@@ -32,7 +32,7 @@
                 var baseUrl = $.getBasePath();
                 var myDropzone = new dropzone("#myId", {                   
                     url: baseUrl + "api/Advert/UploadImage",
-                    autoProcessQueue: true,  
+                    autoProcessQueue: false,  
                     maxFileSize: 10,
                     uploadMultiple: true,
                     parallelUploads: 100,

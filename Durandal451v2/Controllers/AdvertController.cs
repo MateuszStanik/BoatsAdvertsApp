@@ -43,24 +43,35 @@ namespace Durandal451v2.Controllers
         {
             if (HttpContext.Current.Request.Files.AllKeys.Any())
             {
-                System.Web.HttpFileCollection hfc = System.Web.HttpContext.Current.Request.Files;
-
-                var httpPostedFile = HttpContext.Current.Request.Files[0];
-                var subject = HttpContext.Current.Request.Form[0];
-                if (httpPostedFile != null)
+                //int count = HttpContext.Current.Request.Files.Count;
+                
+                //for (int i = 0; i < count; i++)
+                //{
+                foreach (string fileName in HttpContext.Current.Request.Files)
                 {
-                    DomainModel.Image uploadedImg = new DomainModel.Image();
-                    int length = httpPostedFile.ContentLength;
-                    uploadedImg.ImageData = new byte[length];
-                    httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
-                    uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
-                    uploadedImg.Identifier = Guid.NewGuid();
-                    db.images.Add(uploadedImg);
-                    db.SaveChanges();
-                    var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
-                    httpPostedFile.SaveAs(fileSavePath);
-                    return Ok();
+                    string subject = HttpContext.Current.Request.Form[0];
+                    //var httpPostedFile = HttpContext.Current.Request.Files["file["+i+"]"];
+                    var httpPostedFile = HttpContext.Current.Request.Files[fileName];
+
+                    if (httpPostedFile != null)
+                    {
+                        DomainModel.Image uploadedImg = new DomainModel.Image();
+                        int length = httpPostedFile.ContentLength;
+                        uploadedImg.ImageData = new byte[length];
+                        httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
+                        uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
+                        uploadedImg.Identifier = Guid.NewGuid();
+                        long sbjID = 0;
+                        long.TryParse(subject, out sbjID);
+                        uploadedImg.SubjectId = sbjID;
+                        db.images.Add(uploadedImg);
+                        db.SaveChanges();
+                        var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
+                        httpPostedFile.SaveAs(fileSavePath);
+                        
+                    }
                 }
+                return Ok();
             }
             return Ok();
         }
