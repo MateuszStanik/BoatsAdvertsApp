@@ -54,3 +54,5 @@ D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migr
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.dll
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._16.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._17.resources

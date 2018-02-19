@@ -1,5 +1,5 @@
-﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', './Services/advertService', 'smartWizard', 'select2', 'knockout.validation'],
-    function (router, app, $, ko, advert, logger, advertService) {
+﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', './Services/advertService', 'dropzone', 'smartWizard', 'select2', 'knockout.validation'],
+    function (router, app, $, ko, advert, logger, advertService, dropzone) {
 
         var vm = {
             dicCategories: ko.observable(),
@@ -29,7 +29,32 @@
             attached: function () {
                 advertService.getDic();
                 vm.setSelect2Values();
-              
+                var baseUrl = $.getBasePath();
+                var myDropzone = new dropzone("#myId", {                   
+                    url: baseUrl + "api/Advert/UploadImage",
+                    autoProcessQueue: true,  
+                    maxFileSize: 10,
+                    uploadMultiple: true,
+                    parallelUploads: 100,
+                    maxFiles: 10,
+                    addRemoveLinks: true,
+                    acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                    dictDefaultMessage: "Przeciągnij tu zdjęcia wystawianego przedmiotu",
+                    dictRemoveFile: "Usuń plik",
+                    dictCancelUpload: "Anuluj"
+                });
+                myDropzone.on('sending', function (file, xhr, formData) {
+                    formData.append('Subject', '1');
+                });
+                $('#saveAllFiles').on('click', function(e){
+                    myDropzone.processQueue();
+                });
+
+                //myDropzone.on('sending', function (file, xhr, formData) {
+                //    formData.append('userName', 'bob');
+                //});
+
+
                 $('#value').on('select2:select', function (e) {
                     var data = e.params.data;
                     console.log(data.id);
@@ -46,9 +71,7 @@
                         previous: 'Wstecz'
                     },
 
-                });
-
-                
+                });                
 
                 $("#smartwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection) {
                     vm.errorsStep0 = ko.validation.group(vm.advert);

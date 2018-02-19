@@ -372,13 +372,13 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Scripts\almond-custom.js" />
-    <Content Include="Scripts\dropzone\basic.css" />
-    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Content\basic.css" />
+    <Content Include="Content\basic.min.css" />
     <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
     <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
-    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Content\dropzone.css" />
     <Content Include="Scripts\dropzone\dropzone.js" />
-    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Content\dropzone.min.css" />
     <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\durandal\activator.js" />
     <Content Include="Scripts\durandal\app.js" />
@@ -536,6 +536,7 @@
     <Content Include="Views\Durandal\_splash.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AdvertImages\" />
     <Folder Include="App\utilities\" />
     <Folder Include="Views\Products\" />
   </ItemGroup>

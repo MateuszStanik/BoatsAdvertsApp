@@ -2,25 +2,68 @@
 using DomainModel;
 using DomainModel.Dictionaries;
 using Durandal451v2.Models.Dictionaries;
+using Microsoft.Owin;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
+using System.Web.Hosting;
 using System.Web.Http;
 using UnitOfWork;
 
 namespace Durandal451v2.Controllers
 {
+    //public class Image
+    //{
+
+    //    public int ImageID { get; set; }
+    //    public string Name { get; set; }
+    //    public byte[] ImageData { get; set; }
+    //}
+
     [RoutePrefix("api/Advert")]
     public class AdvertController : ApiController
     {
         private readonly EFDbContext db = new EFDbContext();
+
+
+        [HttpPost]
+        [Route("UploadImage")]
+        public IHttpActionResult UploadImage()
+        {
+            if (HttpContext.Current.Request.Files.AllKeys.Any())
+            {
+                System.Web.HttpFileCollection hfc = System.Web.HttpContext.Current.Request.Files;
+
+                var httpPostedFile = HttpContext.Current.Request.Files[0];
+                var subject = HttpContext.Current.Request.Form[0];
+                if (httpPostedFile != null)
+                {
+                    DomainModel.Image uploadedImg = new DomainModel.Image();
+                    int length = httpPostedFile.ContentLength;
+                    uploadedImg.ImageData = new byte[length];
+                    httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
+                    uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
+                    uploadedImg.Identifier = Guid.NewGuid();
+                    db.images.Add(uploadedImg);
+                    db.SaveChanges();
+                    var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
+                    httpPostedFile.SaveAs(fileSavePath);
+                    return Ok();
+                }
+            }
+            return Ok();
+        }
 
         [HttpGet]
         [Route("GetDicCategories")]

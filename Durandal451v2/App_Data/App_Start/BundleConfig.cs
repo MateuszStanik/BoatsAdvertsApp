@@ -25,7 +25,9 @@ namespace Durandal451v2
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
                       "~/Content/site.css",
-                       "~/Content/materialize/css/materialize.css"
+                       "~/Content/materialize/css/materialize.css",
+                       "~/Content/basic.css",
+                       "~/Content/dropzone.css"
                        ));
 
             // Set EnableOptimizations to false for debugging. For more information,

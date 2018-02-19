@@ -13,7 +13,7 @@
         'smartWizard': '../Scripts/jquery.smartWizard',
         'select2': '../Scripts/select2',
         'materialize': '../Scripts/materialize/materialize',
-
+        'dropzone': '../Scripts/dropzone/dropzone-amd-module'
     },
     shim: {
         'jquery.utilities': {
@@ -37,6 +37,9 @@
         },
         'materialize': {
             deps: ['jquery'],
+        },
+        'dropzone': {
+            deps: ['jquery']
         }
     }
 });

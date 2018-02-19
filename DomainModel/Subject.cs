@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,6 +17,7 @@ namespace DomainModel
         public string AdvertName { get; set; }
         public string AdvertDescription { get; set; }
         public double Price { get; set; }
-        public virtual Advert Advert { get; set; }     
+        public virtual Advert Advert { get; set; }
+        public virtual Image Images { get; set; }
     }
 }

@@ -20,7 +20,9 @@ namespace Durandal451v2 {
           .Include("~/Content/starterkit.css")
           .Include("~/Content/toastr.min.css")
           .Include("~/Content/site.css")
-         // .Include("~/Content/categoryButton.scss")
+          //.Include("~/Content/basic.css")
+          .Include("~/Content/dropzone.css")
+        // .Include("~/Content/categoryButton.scss")
         );
     }
 

@@ -22,6 +22,7 @@ namespace UnitOfWork
         public DbSet<Engine> engines { get; set; }
         public DbSet<Sail> sails { get; set; }
         public DbSet<Boat> boats { get; set; }
+        public DbSet<Image> images { get; set; }
         //---Login entities
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
