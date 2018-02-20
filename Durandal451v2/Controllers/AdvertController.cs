@@ -44,12 +44,14 @@ namespace Durandal451v2.Controllers
             if (HttpContext.Current.Request.Files.AllKeys.Any())
             {
                 //int count = HttpContext.Current.Request.Files.Count;
-                
+
                 //for (int i = 0; i < count; i++)
                 //{
+                string subject = HttpContext.Current.Request.Form[0];
+                string[] subjectIds = subject.Split(',');
                 foreach (string fileName in HttpContext.Current.Request.Files)
                 {
-                    string subject = HttpContext.Current.Request.Form[0];
+                    
                     //var httpPostedFile = HttpContext.Current.Request.Files["file["+i+"]"];
                     var httpPostedFile = HttpContext.Current.Request.Files[fileName];
 
@@ -62,7 +64,7 @@ namespace Durandal451v2.Controllers
                         uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
                         uploadedImg.Identifier = Guid.NewGuid();
                         long sbjID = 0;
-                        long.TryParse(subject, out sbjID);
+                        long.TryParse(subjectIds[0], out sbjID);
                         uploadedImg.SubjectId = sbjID;
                         db.images.Add(uploadedImg);
                         db.SaveChanges();
