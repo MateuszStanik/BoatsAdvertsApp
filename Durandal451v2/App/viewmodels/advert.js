@@ -31,6 +31,7 @@
                 vm.setSelect2Values();
                 var baseUrl = $.getBasePath();
                 var sucessFlag = true;
+                var errorFlag = true;
                 var myDropzone = new dropzone("#myId", {                   
                     url: baseUrl + "api/Advert/UploadImage",
                     autoProcessQueue: false,  
@@ -42,8 +43,7 @@
                     acceptedFiles: ".jpeg,.jpg,.png,.gif",
                     dictDefaultMessage: "Przeciągnij tu zdjęcia wystawianego przedmiotu",
                     dictRemoveFile: "Usuń plik",
-                    dictCancelUpload: "Anuluj",
-                    
+                    dictCancelUpload: "Anuluj",                    
                     success: function (file, response, action) {                        
                         if (sucessFlag == true) {
                             logger.log({
@@ -57,12 +57,14 @@
                       
                     },
                     error: function (file, response) {
-                        logger.log({
-                            message: "Błąd podczas zapisywania danych!",
-                            data: "",
-                            showToast: true,
-                            type: "error"
-                        });
+                        if (errorFlag == true) {
+                            logger.log({
+                                message: "Błąd podczas zapisywania danych!",
+                                data: "",
+                                showToast: true,
+                                type: "error"
+                            });
+                        }
                     }
                 });
                 myDropzone.on('sending', function (file, xhr, formData) {

@@ -53,17 +53,14 @@ namespace Durandal451v2.Controllers
                 Advert advert = new Advert();
                 advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
                 advert.AdditionDate = DateTime.Now;
-
-                Subject subject = new Subject();
-                subject = JsonConvert.DeserializeObject<Subject>(jsonSubject);
-                subject.Advert = advert;
+                Boat sBoat = new Boat();
 
                 try
                 {
                     switch (category.CategoryId)
                     {
                         case 1:
-                            Boat sBoat = new Boat();
+                            
                             SailBoat sailboat = new SailBoat();
                             var boat = JsonConvert.DeserializeObject<Boat>(jsonSubject);
                             sBoat = JsonConvert.DeserializeObject<Boat>(jsonProduct);
@@ -74,7 +71,7 @@ namespace Durandal451v2.Controllers
                             sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
                             sBoat.SailBoat = sailboat;
                             db.boats.Add(sBoat);
-                            db.SaveChanges();
+                            
                             break;
                         case 2:
                             Boat mBoat = new Boat();
@@ -104,16 +101,13 @@ namespace Durandal451v2.Controllers
                         httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
                         uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
                         uploadedImg.Identifier = Guid.NewGuid();
-                        long sbjID = 0;
-                        //long.TryParse(subjectIds[0], out sbjID);
-                        //uploadedImg.SubjectId = sbjID;
-                        db.images.Add(uploadedImg);
-                        db.SaveChanges();
+                        uploadedImg.Subject = sBoat;                        
+                        db.images.Add(uploadedImg);                      
                         var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
-                        httpPostedFile.SaveAs(fileSavePath);
-                        
+                        httpPostedFile.SaveAs(fileSavePath);                        
                     }
                 }
+                db.SaveChanges();
                 return Ok();
             }
             return Ok();

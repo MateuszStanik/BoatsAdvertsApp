@@ -18,6 +18,7 @@ namespace DomainModel
         public string AdvertDescription { get; set; }
         public double Price { get; set; }
         public virtual Advert Advert { get; set; }
-        public virtual Image Images { get; set; }
+       // public Subject() { }
+        //public virtual Image Images { get; set; }
     }
 }
