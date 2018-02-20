@@ -21,15 +21,16 @@
                 }),
             },
             
-            sendToDb: function ()
-            {
-                advertService.sendToDb(vm.selectedCategory, vm.advert, vm.crazyModel, vm.crazyModelContact);
-            },
+            //sendToDb: function ()
+            //{
+            //    advertService.sendToDb(vm.selectedCategory, vm.advert, vm.crazyModel, vm.crazyModelContact);
+            //},
            
             attached: function () {
                 advertService.getDic();
                 vm.setSelect2Values();
                 var baseUrl = $.getBasePath();
+                var sucessFlag = true;
                 var myDropzone = new dropzone("#myId", {                   
                     url: baseUrl + "api/Advert/UploadImage",
                     autoProcessQueue: false,  
@@ -41,19 +42,41 @@
                     acceptedFiles: ".jpeg,.jpg,.png,.gif",
                     dictDefaultMessage: "Przeciągnij tu zdjęcia wystawianego przedmiotu",
                     dictRemoveFile: "Usuń plik",
-                    dictCancelUpload: "Anuluj"
+                    dictCancelUpload: "Anuluj",
+                    
+                    success: function (file, response, action) {                        
+                        if (sucessFlag == true) {
+                            logger.log({
+                                message: "Ogłoszenie zostało dodane!",
+                                data: "",
+                                showToast: true,
+                                type: "info"
+                            });
+                            sucessFlag = false;
+                        }
+                      
+                    },
+                    error: function (file, response) {
+                        logger.log({
+                            message: "Błąd podczas zapisywania danych!",
+                            data: "",
+                            showToast: true,
+                            type: "error"
+                        });
+                    }
                 });
                 myDropzone.on('sending', function (file, xhr, formData) {
-                    formData.append('Subject', '1');
+                    if (file == myDropzone.files[0]) {
+                        formData.append('subjectType', ko.toJSON(vm.selectedCategory));
+                        formData.append('subject', ko.toJSON(vm.advert));
+                        formData.append('contact', ko.toJSON(vm.crazyModelContact));
+                        formData.append('product', ko.toJSON(vm.crazyModel));
+                    }
                 });
+
                 $('#saveAllFiles').on('click', function(e){
                     myDropzone.processQueue();
                 });
-
-                //myDropzone.on('sending', function (file, xhr, formData) {
-                //    formData.append('userName', 'bob');
-                //});
-
 
                 $('#value').on('select2:select', function (e) {
                     var data = e.params.data;

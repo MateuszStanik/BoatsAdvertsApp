@@ -35,24 +35,65 @@ namespace Durandal451v2.Controllers
     public class AdvertController : ApiController
     {
         private readonly EFDbContext db = new EFDbContext();
-
-
+        
         [HttpPost]
         [Route("UploadImage")]
         public IHttpActionResult UploadImage()
         {
             if (HttpContext.Current.Request.Files.AllKeys.Any())
             {
-                //int count = HttpContext.Current.Request.Files.Count;
+                string subjectId = HttpContext.Current.Request.Form[0];
+                string jsonSubject = HttpContext.Current.Request.Form[1];
+                string jsonAdvert = HttpContext.Current.Request.Form[2];
+                string jsonProduct = HttpContext.Current.Request.Form[3];
 
-                //for (int i = 0; i < count; i++)
-                //{
-                string subject = HttpContext.Current.Request.Form[0];
-                string[] subjectIds = subject.Split(',');
-                foreach (string fileName in HttpContext.Current.Request.Files)
+                string Id = JsonConvert.DeserializeObject<string>(subjectId);
+                var category = db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
+
+                Advert advert = new Advert();
+                advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
+                advert.AdditionDate = DateTime.Now;
+
+                Subject subject = new Subject();
+                subject = JsonConvert.DeserializeObject<Subject>(jsonSubject);
+                subject.Advert = advert;
+
+                try
                 {
-                    
-                    //var httpPostedFile = HttpContext.Current.Request.Files["file["+i+"]"];
+                    switch (category.CategoryId)
+                    {
+                        case 1:
+                            Boat sBoat = new Boat();
+                            SailBoat sailboat = new SailBoat();
+                            var boat = JsonConvert.DeserializeObject<Boat>(jsonSubject);
+                            sBoat = JsonConvert.DeserializeObject<Boat>(jsonProduct);
+                            sBoat.AdvertDescription = boat.AdvertDescription;
+                            sBoat.AdvertName = boat.AdvertName;
+                            sBoat.Price = boat.Price;
+                            sBoat.Advert = advert;
+                            sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
+                            sBoat.SailBoat = sailboat;
+                            db.boats.Add(sBoat);
+                            db.SaveChanges();
+                            break;
+                        case 2:
+                            Boat mBoat = new Boat();
+                            MotorBoat motorBoat = new MotorBoat();
+                            break;
+                        case 3:
+                            Engine engine = new Engine();
+                            break;
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+ 
+                foreach (string fileName in HttpContext.Current.Request.Files)
+                {                   
                     var httpPostedFile = HttpContext.Current.Request.Files[fileName];
 
                     if (httpPostedFile != null)
@@ -64,8 +105,8 @@ namespace Durandal451v2.Controllers
                         uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
                         uploadedImg.Identifier = Guid.NewGuid();
                         long sbjID = 0;
-                        long.TryParse(subjectIds[0], out sbjID);
-                        uploadedImg.SubjectId = sbjID;
+                        //long.TryParse(subjectIds[0], out sbjID);
+                        //uploadedImg.SubjectId = sbjID;
                         db.images.Add(uploadedImg);
                         db.SaveChanges();
                         var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
@@ -156,7 +197,7 @@ namespace Durandal451v2.Controllers
 
             string Id = JsonConvert.DeserializeObject<string>(subjectId);
             var category = db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
-         
+
             Advert advert = new Advert();
             advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
             advert.AdditionDate = DateTime.Now;
@@ -164,11 +205,11 @@ namespace Durandal451v2.Controllers
             Subject subject = new Subject();
             subject = JsonConvert.DeserializeObject<Subject>(jsonSubject);
             subject.Advert = advert;
-            
+
             try
             {
                 switch (category.CategoryId)
-                {               
+                {
                     case 1:
                         Boat sBoat = new Boat();
                         SailBoat sailboat = new SailBoat();
@@ -190,18 +231,18 @@ namespace Durandal451v2.Controllers
                     case 3:
                         Engine engine = new Engine();
                         break;
-               
+
                 }
                 //db.adverts.Add(advert);
-                
+
 
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-            
-            return Ok(advert);
+
+            return Ok(subject);
         }
     }
 }

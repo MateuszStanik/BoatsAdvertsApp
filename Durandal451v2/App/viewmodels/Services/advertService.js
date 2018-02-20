@@ -8,7 +8,7 @@
         var vm = {          
             getDic: getDic,
             sendToDb : sendToDb,
-
+            savingAddvertResult: ko.observable(),
         }
         function sendToDb(subjectType, subject, product, contact) {
             advert.saveAdvert({
@@ -17,6 +17,7 @@
                 contact: ko.toJSON(contact),
                 product: ko.toJSON(product),
             }).done(function (data) {
+                vm.savingAddvertResult(data);
                 console.log('Zapisano dane do DB');                    
                 logger.log({
                     message: "Zapisano dane do bazy.",                        

@@ -2,15 +2,15 @@
     function (router, app, $, ko) {
         return function () {
             var vm = {
-                Name: ko.observable(),
-                SureName: ko.observable(),
-                PhoneNumber: ko.observable(),
-                Email: ko.observable().extend({
+                Name: ko.observable('Mateusz'),
+                SureName: ko.observable('adsf'),
+                PhoneNumber: ko.observable('234'),
+                Email: ko.observable('mat@gmail.com').extend({
                     email: true,
                     required: true
                 }),
-                City: ko.observable(),
-                AdditionalInformation: ko.observable(),
+                City: ko.observable('Kato'),
+                AdditionalInformation: ko.observable('brak'),
             }
 
             return vm;
