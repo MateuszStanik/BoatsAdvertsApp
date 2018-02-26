@@ -12,7 +12,7 @@ namespace BoatsAdvertsApp.Models
         public double Price { get; set; }
         public string AdvertDescription { get; set; }
         public string AdvertName {get;set;}
-
+        public string Image { get; set; }
 
     }
 }

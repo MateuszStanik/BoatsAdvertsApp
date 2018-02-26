@@ -41,12 +41,22 @@ namespace Durandal451v2.Controllers
                     AdvertId = x.AdvertId,
                     SubjectId = x.SubjectId,
                     AdvertName = x.AdvertName,
-                    Price = x.Price
+                    Price = x.Price,
+                    Image = "../../AdvertImages/" + db.images.Where(y=>y.Subject.SubjectId == x.SubjectId).FirstOrDefault().Name 
                 })
                 .ToList();
 
             return Ok(products);
         }
+        [HttpGet]
+        [Route("GatImages")]
+        public IHttpActionResult GetImages(long id)
+        {
+            string name = "";
+            var image = db.images.Where(x => x.Subject.SubjectId == id).ToList();
 
+            name = image[0].Name;
+            return Ok(name);
+        }
     }
 }

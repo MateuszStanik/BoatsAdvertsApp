@@ -3,6 +3,7 @@
         // Routes
         var baseUrl = $.getBasePath(),
         getAllProductsUrl = baseUrl + "api/Products/GetAllProducts",
+        getImagesUrl = baseUrl + "api/Products/GetImages",
         siteUrl = baseUrl;
 
         // Other private operations
@@ -18,6 +19,7 @@
 
         var advertService = {
             getAllProducts: getAllProducts,
+            getImages: getImages,
             returnUrl: siteUrl,
         };
 
@@ -47,5 +49,12 @@
                 headers: getSecurityHeaders()
             });
         }
-
+        function getImages(data) {
+            return $.ajax(getImagesUrl, {
+                type: "POST",
+                data: data,
+                cache: false,
+                headers: getSecurityHeaders()
+            });
+        }
     });

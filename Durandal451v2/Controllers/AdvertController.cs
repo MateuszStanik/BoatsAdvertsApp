@@ -46,10 +46,8 @@ namespace Durandal451v2.Controllers
                 string jsonSubject = HttpContext.Current.Request.Form[1];
                 string jsonAdvert = HttpContext.Current.Request.Form[2];
                 string jsonProduct = HttpContext.Current.Request.Form[3];
-
                 string Id = JsonConvert.DeserializeObject<string>(subjectId);
                 var category = db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
-
                 Advert advert = new Advert();
                 advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
                 advert.AdditionDate = DateTime.Now;

@@ -13,7 +13,9 @@
         'smartWizard': '../Scripts/jquery.smartWizard',
         'select2': '../Scripts/select2',
         'materialize': '../Scripts/materialize/materialize',
-        'dropzone': '../Scripts/dropzone/dropzone-amd-module'
+        'dropzone': '../Scripts/dropzone/dropzone-amd-module',
+        //"jQueryInputmask": "../Scripts/jquery.inputmask/jquery.inputmask",
+        "inputmask": "../Scripts/jquery.inputmask.bundle",
     },
     shim: {
         'jquery.utilities': {
@@ -40,7 +42,11 @@
         },
         'dropzone': {
             deps: ['jquery']
-        }
+        },
+        'inputmask': {
+            deps: ['jquery'],
+            exports: 'Inputmask'
+        },
     }
 });
 

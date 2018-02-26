@@ -1,4 +1,4 @@
-﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', './Services/advertService', 'dropzone', 'smartWizard', 'select2', 'knockout.validation'],
+﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/advert', 'services/logger', './Services/advertService', 'dropzone', 'smartWizard', 'select2', 'knockout.validation', 'inputmask'],
     function (router, app, $, ko, advert, logger, advertService, dropzone) {
 
         var vm = {
@@ -53,6 +53,7 @@
                                 type: "info"
                             });
                             sucessFlag = false;
+                            router.navigate('#/', 'replace');
                         }
                       
                     },
@@ -97,6 +98,14 @@
                     },
 
                 });                
+
+                $("#subjectPrice").inputmask('decimal', {
+                    rightAlign: true,
+                    digits: 2,
+                    groupSeparator: ',',
+                    //'mask': "1-9{1,9}[,99]",
+                    'mask': "[9]{1,9}[.*{1,2}]"
+                });
 
                 $("#smartwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection) {
                     vm.errorsStep0 = ko.validation.group(vm.advert);
