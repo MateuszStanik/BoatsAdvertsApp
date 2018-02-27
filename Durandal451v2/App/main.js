@@ -71,6 +71,61 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/com
 
     composition.addBindingHandler('hasFocus');
 
+    composition.addBindingHandler('inputmask', {
+        //init: function (element, valueAccessor, allBindingsAccessor ) {
+        //    var obj = valueAccessor(),
+        //        allBindings = allBindingsAccessor(),
+        //        format = allBindings.format;
+        //    $(element).inputmask(format , obj);
+
+
+        //    ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+        //        $(element).inputmask('destroy');
+        //    });  
+
+        //},
+        //update: function (element) {
+        //    $(element).trigger('change');
+        //}
+
+
+        init: function (element, valueAccessor, allBindingsAccessor) {
+
+        var mask = valueAccessor();
+
+        var observable = mask.value;
+
+        if (ko.isObservable(observable)) {
+
+            $(element).on('focusout change', function () {
+
+                if ($(element).inputmask('isComplete')) {
+                    observable($(element).val());
+                } else {
+                    observable(null);
+                }
+
+            });
+        }
+
+        $(element).inputmask(mask);
+
+
+        },
+        update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+        var mask = valueAccessor();
+
+        var observable = mask.value;
+
+        if (ko.isObservable(observable)) {
+
+            var valuetoWrite = observable();
+
+            $(element).val(valuetoWrite);
+        }
+    }
+    });
+
     configureKnockout();
     
     app.start().then(function() {

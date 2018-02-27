@@ -99,13 +99,13 @@
 
                 });                
 
-                $("#subjectPrice").inputmask('decimal', {
-                    rightAlign: true,
-                    digits: 2,
-                    groupSeparator: ',',
-                    //'mask': "1-9{1,9}[,99]",
-                    'mask': "[9]{1,9}[.*{1,2}]"
-                });
+                //$("#subjectPrice").inputmask('decimal', {
+                //    rightAlign: true,
+                //    digits: 2,
+                //    groupSeparator: ',',
+                //    //'mask': "1-9{1,9}[,99]",
+                //    'mask': "[9]{1,9}[.*{1,2}]"
+                //});
 
                 $("#smartwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection) {
                     vm.errorsStep0 = ko.validation.group(vm.advert);
