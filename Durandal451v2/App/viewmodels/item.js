@@ -6,7 +6,13 @@
    
         activate: activate,
         deactivate: deactivate,
-        masterVm: masterVm
+        masterVm: masterVm,
+
+         
+        attached: function () {
+            
+
+        }
     };
 
     return vm;
