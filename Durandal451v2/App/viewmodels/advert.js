@@ -12,30 +12,21 @@
             advert: {
                 AdvertName: ko.observable().extend({ required: true }),
                 AdvertDescription: ko.observable().extend({ required: true }),
-                Price: ko.observable().extend({
-                    pattern: {
-                        message: 'Prosze wprowadzic wartość',
-                        params: '^[0-9]+(\,[0-9]{1,2})?$',
-                    },
-                    required: true,
-                }),
+                Price: ko.observable(),
             },
-            
-            //sendToDb: function ()
-            //{
-            //    advertService.sendToDb(vm.selectedCategory, vm.advert, vm.crazyModel, vm.crazyModelContact);
-            //},
            
             attached: function () {
                 advertService.getDic();
+                
+            
                 vm.setSelect2Values();
                 var baseUrl = $.getBasePath();
                 var sucessFlag = true;
                 var errorFlag = true;
-                var myDropzone = new dropzone("#myId", {                   
+                var myDropzone = new dropzone("#myId", {
                     url: baseUrl + "api/Advert/UploadImage",
-                    autoProcessQueue: false,  
-                    maxFileSize: 10,
+                    autoProcessQueue: false,
+                    maxFileSize: 5,
                     uploadMultiple: true,
                     parallelUploads: 100,
                     maxFiles: 10,
@@ -43,8 +34,11 @@
                     acceptedFiles: ".jpeg,.jpg,.png,.gif",
                     dictDefaultMessage: "Przeciągnij tu zdjęcia wystawianego przedmiotu",
                     dictRemoveFile: "Usuń plik",
-                    dictCancelUpload: "Anuluj",                    
-                    success: function (file, response, action) {                        
+                    dictCancelUpload: "Anuluj",
+                    dictFileTooBig: "Rozmiar pliku jest za duży",
+                    dictResponseError: "Wystąpił problem z zapisem plików {{statusCode}}",
+                    dictMaxFilesExceeded: "Załadowano już maksymalną ilość plików",
+                    success: function (file, response, action) {
                         if (sucessFlag == true) {
                             logger.log({
                                 message: "Ogłoszenie zostało dodane!",
@@ -55,18 +49,18 @@
                             sucessFlag = false;
                             router.navigate('#/', 'replace');
                         }
-                      
+
                     },
-                    error: function (file, response) {
-                        if (errorFlag == true) {
-                            logger.log({
-                                message: "Błąd podczas zapisywania danych!",
-                                data: "",
-                                showToast: true,
-                                type: "error"
-                            });
-                        }
-                    }
+                    //error: function (file, response) {
+                    //    if (errorFlag == true) {
+                    //        logger.log({
+                    //            message: "Błąd podczas zapisywania danych!",
+                    //            data: "",
+                    //            showToast: true,
+                    //            type: "error"
+                    //        });
+                    //    }
+                    //}
                 });
                 myDropzone.on('sending', function (file, xhr, formData) {
                     if (file == myDropzone.files[0]) {
@@ -98,14 +92,6 @@
                     },
 
                 });                
-
-                //$("#subjectPrice").inputmask('decimal', {
-                //    rightAlign: true,
-                //    digits: 2,
-                //    groupSeparator: ',',
-                //    //'mask': "1-9{1,9}[,99]",
-                //    'mask': "[9]{1,9}[.*{1,2}]"
-                //});
 
                 $("#smartwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection) {
                     vm.errorsStep0 = ko.validation.group(vm.advert);

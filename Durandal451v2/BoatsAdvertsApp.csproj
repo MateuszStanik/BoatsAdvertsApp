@@ -255,6 +255,7 @@
     <Content Include="App\services\security.js" />
     <Content Include="App\viewmodels\advert.js" />
     <Content Include="App\viewmodels\flickr.js" />
+    <Content Include="App\viewmodels\item.js" />
     <Content Include="App\viewmodels\login.js" />
     <Content Include="App\viewmodels\manage.js" />
     <Content Include="App\viewmodels\products.js" />
@@ -265,6 +266,7 @@
     <Content Include="App\views\advert.html" />
     <Content Include="App\views\detail.html" />
     <Content Include="App\views\flickr.html" />
+    <Content Include="App\views\item.html" />
     <Content Include="App\views\login.html" />
     <Content Include="App\views\manage.html" />
     <Content Include="App\views\products.html" />

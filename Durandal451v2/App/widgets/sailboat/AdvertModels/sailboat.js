@@ -6,7 +6,7 @@
                 BoatModel: ko.observable('sailboat').extend({ max: 99 }),
                 YachtType: ko.observable('kilowy').extend({ max: 99 }),
                 ProducentName: ko.observable('benetau').extend({ max: 99 }),
-                BuiltYear: ko.observable('2010').extend({pattern: {message: 'Proszę wprowadzić wartość (np. 2018)', params: '^[1-2][0-9][0-9][0-9]$'}, required: true}),
+                BuiltYear: ko.observable(2010).extend({pattern: {message: 'Proszę wprowadzić wartość (np. 2018)', params: '^[1-2][0-9][0-9][0-9]$'}, required: true}),
                 RudderType : ko.observable('rumpel'),
                 Length: ko.observable(23).extend({ pattern: { message: 'Proszę wprowadzić wartość (np. 99,99)', params: '^[0-9]+(\,[0-9]{1,2})?$'}, required: true }),
                 Beam: ko.observable(23).extend({ pattern: { message: 'Proszę wprowadzić wartość (np. 99,99)', params: '^[0-9]+(\,[0-9]{1,2})?$'}}),

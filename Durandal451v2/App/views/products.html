@@ -1,24 +1,28 @@
 ﻿<section>
     <h3 class="text-center">Lista ogłoszeń</h3>
-    <div class="row">       
-        <div class="col-lg-3" data-bind="foreach: model()">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" data-bind="attr:{src: image}">
-                </div>
-                <div class="card-content">
-                    <h4 class="activator grey-text text-darken-4" data-bind="text: advertName"></h4>
-                </div>
-                <div class="card-action">
-                    <a class="btn btn-info center-block" href="#"><span class="fa fa-plus"></span>Szczegóły</a>
-                </div>
-                <div class="card-reveal">
-                    <i class="material-icons right card-title">Zwiń</i>
-                    <p><h4 class="grey-text text-darken-4" data-bind="text: advertName"></h4></p>
-                    <p data-bind="text: advertDescription"></p>
+    <a href="#keyed-master-details/1/first">Dodaj ogłoszenie</a>
+        <div class="row">
+            <div data-bind="foreach: model()">
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" data-bind="attr:{src: image}">
+                        </div>
+                        <div class="card-content">
+                            <h4 class="activator grey-text text-darken-4" data-bind="text: advertName"></h4>
+                        </div>
+                        <div class="card-action">
+                            <a class="btn btn-info center-block" data-bind="attr: { href: '#keyed-master-details/' + subjectId }" ><span class="fa fa-plus"></span>Szczegóły</a>
+                        </div>
+                        <div class="card-reveal">
+                            <i class="material-icons right card-title">Zwiń</i>
+                            <p><h4 class="grey-text text-darken-4" data-bind="text: advertName"></h4></p>
+                            <p data-bind="text: advertDescription"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-    </div>
-    <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
+        <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
 </section>

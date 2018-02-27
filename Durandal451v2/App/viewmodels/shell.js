@@ -23,6 +23,7 @@
                 { route: 'login', moduleId: 'viewmodels/login', nav: false},
                 { route: 'advert', moduleId: 'viewmodels/advert', nav: false },
                 { route: 'manage', title: 'Zarządzaj kontem', moduleId: 'viewmodels/manage', nav: true, requiredRoles: ['RegisteredUsers'] },
+                { route: 'keyed-master-details/:id*details', moduleId: 'viewmodels/item', title: 'Keyed Master Detail', hash: '#keyed-master-details/:id' }
         ]).buildNavigationModel();
 
         router.guardRoute = function (routeInfo, params, instance) {

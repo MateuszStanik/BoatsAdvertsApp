@@ -12,8 +12,6 @@
 
     <div>
         <div id="step-1" class="">
-            <input data-bind="inputmask: { value: advert.Price , mask:'99.999-99'}" id="mask" type="text" />
-
             <div class="row">
                 <h3 class="text-center">Wybierz kategorie wystawianego przedmiotu </h3>
                 <div class="row">
@@ -21,6 +19,9 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <select id="value" name="state" class="form-control select2-single" data-bind="value: selectedCategory"></select>
+                            
+                            <!--<select data-bind="value: selectedCategory, select2: { data: dicCategories}" class="select2" style="width: 200px"></select>
+                            Selected: <span data-bind="text: selectedCategory"></span>-->   
                         </div>
                     </div>
                     <div class="col-lg-4"></div>
@@ -44,7 +45,8 @@
                 <div class="row">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-4">
-                        <input id="subjectPrice" class="form-control" data-bind="inputmask: { value:advert.Price, alias:'decimal', digits: 2, mask: '[9]{1,9}[.*{1,2}]'}, radixPoint: ','"/>
+                        <input id="subjectPrice" class="form-control" data-bind="inputmask: { value:advert.Price, alias:'decimal',leftAlign: true, digits: 2, mask: '[9]{1,9}[.*{1,2}]'}"/>
+
                     </div>
                     <div class="col-lg-4"></div>
                 </div>
@@ -61,9 +63,11 @@
             </div>
             </div>
         <div id="step-2" class="">
-            <div class="col-lg-3"></div>
-            <div data-bind="widget: {kind: selectedCategory, crazy: crazyModel, isEditable: true}"></div>
-            <div class="col-lg-3"></div>
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div data-bind="widget: {kind: selectedCategory, crazy: crazyModel, isEditable: true}"></div>
+                <div class="col-lg-3"></div>
+            </div>
         </div>
         <div id="step-3" class="">
             <div class="col-lg-3"></div>
@@ -72,7 +76,10 @@
         </div>
         <div id="step-4" class="">
             <h3 class="text-center">Dodaj zdjęcia przedmiotu</h3>
-            <form id="myId" action="/" method="post" class="dropzone dz-clickable dz-started"></form>           
+            
+            <form id="myId" action="/" method="post" class="dropzone dz-clickable dz-started">
+               
+            </form>           
             <div class="row">
                 <div data-bind="widget: {kind: selectedCategory, crazy: crazyModel, isEditable: false}"></div>
                 <div data-bind="contact: {crazy: crazyModelContact, isEditable: false}"></div>
