@@ -157,6 +157,7 @@ textarea {
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
   border-radius: 2px;
+  height:350px;
 }
 
 .card .card-title {
@@ -267,6 +268,7 @@ textarea {
 
 .card .card-image {
   position: relative;
+  height: 200px;
 }
 
 .card .card-image img {
@@ -502,7 +504,8 @@ nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.b
 }
 
 .waves-block {
-  display: block;
+  /*display: block;*/
+  display: inline-block;
 }
 
 /* Firefox Bug: link not triggered */
@@ -520,4 +523,16 @@ nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.b
 .card .card-title{
 
     font-size: 18px;
+}
+
+.image {
+    margin: auto;
+    width: 50%;
+    /*border: 3px solid green;*/
+    padding: 10px;
+}
+.thumbnail:hover {
+   /*border: 2px solid #0c466d;*/
+   border: 2px solid #1a6a9f;
+   border-radius: 3px;
 }
