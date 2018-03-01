@@ -1,4 +1,4 @@
-﻿define(['plugins/router', 'knockout', 'durandal/system'], function (router, ko, system) {
+﻿define(['plugins/router', 'knockout', 'durandal/system', 'fotorama'], function (router, ko, system) {
     var masterVm = ko.observable();
 
   
@@ -8,10 +8,7 @@
         deactivate: deactivate,
         masterVm: masterVm,
 
-         
         attached: function () {
-            
-
         }
     };
 

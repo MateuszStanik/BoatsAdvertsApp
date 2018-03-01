@@ -16,6 +16,7 @@
         'dropzone': '../Scripts/dropzone/dropzone-amd-module',
         //"jQueryInputmask": "../Scripts/jquery.inputmask/jquery.inputmask",
         "inputmask": "../Scripts/jquery.inputmask.bundle",
+        "fotorama": "../Scripts/fotorama"
     },
     shim: {
         'jquery.utilities': {
@@ -47,6 +48,9 @@
             deps: ['jquery'],
             exports: 'Inputmask'
         },
+        'fotorama': {
+            exports: 'fotorama'
+        }
     }
 });
 
