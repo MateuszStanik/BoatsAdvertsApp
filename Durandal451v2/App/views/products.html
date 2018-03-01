@@ -1,5 +1,5 @@
 ﻿<section>
-    <!--<h3 class="text-center">Lista ogłoszeń</h3>-->
+    
     <div class="page-header">
         <h3><span>Lista ogłoszeń</span></h3>
     </div>
@@ -10,14 +10,20 @@
                     <img class="activator image" data-bind="attr:{src: image}" /> <!--style="display: block; margin: 0 auto;">-->
                 </div>
                 <div class="card-content">
-                    <h4 class="activator grey-text text-darken-4" data-bind="text: advertName"></h4>
-                    <div class="text-right">
-                        <span>Cena: </span>
-                        <span data-bind="text: price"></span>
-                    </div>                   
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h4 class="activator grey-text text-darken-4" data-bind="text: advertName"></h4>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="text-right">
+                                <span>Cena: </span>
+                                <span data-bind="text: price"></span>
+                            </div>
+                        </div>
+                    </div>         
                 </div>
                 <div class="card-action">
-                    <a class="btn btn-info center-block" data-bind="attr: { href: '#keyed-master-details/' + subjectId }"><span class="fa fa-plus"></span>Szczegóły</a>
+                    <a class="btn btn-info center-block" data-bind="attr: { href: '#keyed-master-details/' + subjectId }">Więcej</a>
                 </div>
                 <div class="card-reveal">
                     <i class="material-icons right card-title">Zwiń</i>

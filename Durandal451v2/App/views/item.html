@@ -1,6 +1,41 @@
 ﻿<div>
     <div class="page-header">
-        <h4><span>Nazwa ogłoszenia:</span><small>&nbsp;&nbsp;Id&nbsp;<span data-bind="text: masterVm().id"></span></small></h4>
+        <h4><span>Nazwa ogłoszenia:</span><small>&nbsp;&nbsp;Id&nbsp;<span data-bind="text: model().AdvertName"></span></small></h4>
     </div>
+    <div class="row">
+        <div class="col-lg-7">
+            <ul class="pgwSlideshow">
+                <li><img src="../../Content/images/6034941_20161201023704697_1_XLARGE.jpg"></li>
+                <li><img src="../../Content/images/header2.jpg" alt="Rio de Janeiro, Brazil"></li>
+                <li><img src="../../Content/images/5803826_20160510075930176_1_XLARGE.jpg"></li>
+            </ul>
+        </div>
+        <div class="col-lg-5">
+         <h4>Dane techniczne</h4>
+            <hr>
+            <table class="table table-striped">      
+                <thead></thead>         
+                <tbody>
+                    <tr>
+                        <th>Nazwa</th>
+                        <td data-bind="text: model().AdvertName"></td>
+                    </tr>
+                    <tr>
+                        <th>Długość:</th>
+                        <td data-bind="text: model().Length"></td>
+                    </tr>
+                    <tr>
+                        <th>Szerokość:</th>
+                        <td data-bind="text: model().Beam"></td>
+                    </tr>
+                    <tr>
+                        <th>Rok produkcji</th>
+                        <td data-bind="text: model().BuiltYear"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
 
 </div>

@@ -212,6 +212,7 @@
     <Compile Include="Controllers\AdvertController.cs" />
     <Compile Include="Controllers\DurandalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -250,6 +251,7 @@
     <Content Include="App\main-built.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\advert.js" />
+    <Content Include="App\services\item.js" />
     <Content Include="App\services\logger.js" />
     <Content Include="App\services\products.js" />
     <Content Include="App\services\security.js" />
@@ -281,6 +283,8 @@
     <Content Include="App\widgets\contact\viewmodel.js" />
     <Content Include="App\widgets\engines\AdvertModels\contact.js" />
     <Content Include="App\widgets\engines\viewmodel.js" />
+    <Content Include="App\widgets\modal\modal.html" />
+    <Content Include="App\widgets\modal\modal.js" />
     <Content Include="App\widgets\motorboat\AdvertModels\motorBoat.js" />
     <Content Include="App\widgets\motorboat\view.html" />
     <Content Include="App\widgets\motorboat\viewmodel.js" />
@@ -443,7 +447,6 @@
     <Content Include="Content\materialize\fonts\roboto\Roboto-Bold.ttf" />
     <Content Include="Content\materialize\fonts\roboto\Roboto-Bold.eot" />
     <None Include="Scripts\jquery-3.3.1-vsdoc.js" />
-    <Content Include="Scripts\fotorama.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.min.js" />
     <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
@@ -492,6 +495,7 @@
     <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\materialize\materialize.js" />
     <Content Include="Scripts\materialize\materialize.min.js" />
+    <Content Include="Scripts\pgwslider.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="weyland-config.js" />
@@ -541,6 +545,7 @@
   <ItemGroup>
     <Folder Include="AdvertImages\" />
     <Folder Include="App\utilities\" />
+    <Folder Include="Views\Item\" />
     <Folder Include="Views\Products\" />
   </ItemGroup>
   <ItemGroup>
