@@ -8,9 +8,13 @@
         deactivate: deactivate,
         masterVm: masterVm,
         model: ko.observable({}),
+        images: ko.observable({}),
+        attached: attached 
+    };
 
-        attached: function () {
+    return vm;
 
+    function attached(id) {
            
 
 
@@ -18,10 +22,8 @@
                 maxHeight: 800,
                 transitionEffect: 'fading'
             });
-        }
-    };
-
-    return vm;
+        
+    }
 
     function activate(id) {
         system.log('Master View ' + id + ' Activated');
@@ -66,5 +68,37 @@
                 });
             }
         });
+        item.getItemImages({
+            subjectId: id,
+        }).done(function (data) {
+            vm.images(data);
+            console.log('Zapisano dane z DB');
+            console.log(data);
+            logger.log({
+                message: "Pobrano zdjęcia z bazy.",
+                showToast: true,
+                type: "info"
+            });
+
+        }).always(function () {
+        }).failJSON(function (data) {
+            if (data && data.error_description) {
+                logger.log({
+                    message: data.error_description,
+                    data: data.error_description,
+                    showToast: true,
+                    type: "error"
+                });
+            } else {
+                logger.log({
+                    message: "Błąd podczas pobierania danych!",
+                    data: "",
+                    showToast: true,
+                    type: "error"
+                });
+            }
+        });
+
+        
     }
 });

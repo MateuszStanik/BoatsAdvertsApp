@@ -1,13 +1,14 @@
 ﻿<div>
     <div class="page-header">
-        <h4><span>Nazwa ogłoszenia:</span><small>&nbsp;&nbsp;Id&nbsp;<span data-bind="text: model().AdvertName"></span></small></h4>
+        <h4><span>Nazwa ogłoszenia: </span><small><span data-bind="text: model().AdvertName"></span></small></h4>
     </div>
     <div class="row">
         <div class="col-lg-7">
-            <ul class="pgwSlideshow">
-                <li><img src="../../Content/images/6034941_20161201023704697_1_XLARGE.jpg"></li>
+            <ul class="pgwSlideshow" data-bind="foreach: images()">
+                <li><img data-bind="attr:{src: Name}"/></li>
+                <!--<li><img src="../../Content/images/6034941_20161201023704697_1_XLARGE.jpg"></li>
                 <li><img src="../../Content/images/header2.jpg" alt="Rio de Janeiro, Brazil"></li>
-                <li><img src="../../Content/images/5803826_20160510075930176_1_XLARGE.jpg"></li>
+                <li><img src="../../Content/images/5803826_20160510075930176_1_XLARGE.jpg"></li>-->
             </ul>
         </div>
         <div class="col-lg-5">
@@ -29,6 +30,14 @@
                         <td data-bind="text: model().Beam"></td>
                     </tr>
                     <tr>
+                        <th>Zanurzenie</th>
+                        <td data-bind="text: model().Draft"></td>
+                    </tr>
+                    <tr>
+                        <th>Wyporność</th>
+                        <td data-bind="text: model().Displacement"></td>
+                    </tr>
+                    <tr>
                         <th>Rok produkcji</th>
                         <td data-bind="text: model().BuiltYear"></td>
                     </tr>
@@ -36,6 +45,12 @@
             </table>
         </div>
     </div>
-    
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Opis ogłoszenia</label>
+            <textarea class="form-control" data-bind="text: model().AdvertDescription"></textarea>
+        </div>
+    </div>
+    <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
 
 </div>

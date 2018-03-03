@@ -749,3 +749,7 @@ nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.b
     font-size: 0.8rem;
     padding: 8px;
 }
+
+.ps-current ul{
+    padding-left: 0px;
+}

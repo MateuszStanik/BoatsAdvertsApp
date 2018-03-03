@@ -30,7 +30,7 @@ namespace BoatsAdvertsApp.Controllers
 
         [HttpGet]
         [Route("GetItemDetails")]
-        public IHttpActionResult GetDicCategories(long subjectId)
+        public IHttpActionResult GetItemDetails(long subjectId)
         {
             try
             {

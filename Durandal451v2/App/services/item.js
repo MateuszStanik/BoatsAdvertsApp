@@ -3,6 +3,7 @@
         // Routes
         var baseUrl = $.getBasePath(),
         getItemDetailsUrl = baseUrl + "api/Item/GetItemDetails",
+        getItemImagesUrl = baseUrl + "api/Item/GetItemImages",
         siteUrl = baseUrl;
 
         // Other private operations
@@ -17,7 +18,8 @@
         }
 
         var advertService = {
-            getItemDetails: getItemDetails,          
+            getItemDetails: getItemDetails,
+            getItemImages: getItemImages,
             returnUrl: siteUrl,
         };
 
@@ -49,4 +51,12 @@
             });
         }
 
+        function getItemImages(data) {
+            return $.ajax(getItemImagesUrl, {
+                type: "GET",
+                data: data,
+                cache: false,
+                headers: getSecurityHeaders()
+            });
+        }
     });
