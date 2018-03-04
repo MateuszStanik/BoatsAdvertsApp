@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="BoatsAdApp" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Visual\ studio\ -\ projects\\BoatsAdvertsApp\\Durandal451v2\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Visual\ studio\ -\ projects\\BoatsAdvertsApp\\Durandal451v2\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="BoatsAdApp/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Visual\ studio\ -\ projects\\BoatsAdvertsApp\\Durandal451v2\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="BoatsAdverts-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\BoatsAdverts.dbo;Initial Catalog=BoatsAd;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Visual\ studio\ -\ projects\\BoatsAdvertsApp\\Durandal451v2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BoatsAdverts']/@connectionString" />
+  </parameter>
+  <parameter name="LoginsDb-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\Durandal451v2.mdf;Initial Catalog=Logins;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Visual\ studio\ -\ projects\\BoatsAdvertsApp\\Durandal451v2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LoginsDb']/@connectionString" />
+  </parameter>
+</parameters>

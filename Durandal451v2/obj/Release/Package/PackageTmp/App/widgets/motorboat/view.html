@@ -1,0 +1,23 @@
+﻿
+
+<div class="col-lg-6 form-group">
+    <h3 class="text-center">Ustawienie parametrów przedmiotu</h3>
+    <hr>
+   
+    <p class="form-p">Nazwa modelu </p>
+    <input class="form-control" data-bind="value: model().BoatModel, enable: isEditable"/>
+    <p class="form-p">Nazwa producenta</p>
+    <input class="form-control" data-bind="value: model().ProducentName, enable: isEditable"/>
+    <p class="form-p">Rocznik*</p>
+    <input class="form-control" data-bind="value: model().BuiltYear, enable: isEditable"/>
+    <p class="form-p">Rodzaj silnika</p>
+    <input class="form-control" data-bind="value: model().EngineType, enable: isEditable"/>
+    <p class="form-p">Długość*</p>
+    <input class="form-control" data-bind="value: model().Length, enable: isEditable"/>
+    <p class="form-p">Szerokość</p>
+    <input class="form-control" data-bind="value: model().Beam, enable: isEditable"/>
+    <p class="form-p">Waga</p>
+    <input class="form-control" data-bind="value: model().Weight, enable: isEditable"/>
+
+</div>
+<!--<pre data-bind="text: ko.toJSON(model(), null, 2)"></pre>-->

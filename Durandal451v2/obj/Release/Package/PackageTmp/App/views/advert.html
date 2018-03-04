@@ -1,0 +1,93 @@
+﻿<h3>
+    Dane ogłoszenia 
+</h3>
+
+<div id="smartwizard">
+    <ul>
+        <li><a href="#step-1">Wybór kategorii<br /></a></li>
+        <li><a href="#step-2">Opis przedmiotu<br /></a></li>
+        <li><a href="#step-3">Dane kotaktowe<br /></a></li>
+        <li><a href="#step-4">Podsumowanie<br /></a></li>
+    </ul>
+
+    <div>
+        <div id="step-1" class="">
+            <div class="row">
+                <h3 class="text-center">Wybierz kategorie wystawianego przedmiotu </h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <select id="value" name="state" class="form-control select2-single" data-bind="value: selectedCategory"></select>
+                            
+                            <!--<select data-bind="value: selectedCategory, select2: { data: dicCategories}" class="select2" style="width: 200px"></select>
+                            Selected: <span data-bind="text: selectedCategory"></span>-->   
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div> 
+            </div>
+            
+            <div class="row">
+                <h3 class="text-center">Nazwa ogłoszenia*</h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <div class="form-group">                          
+                            <input class="form-control" data-bind="value: advert.AdvertName" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="text-center">Cena</h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <input id="subjectPrice" class="form-control" data-bind="inputmask: { value:advert.Price, alias:'decimal',leftAlign: true, digits: 2, mask: '[9]{1,9}[.*{1,2}]'}"/>
+
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="text-center">Opis ogłoszenia*</h3>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <textarea class="form-control" rows="6" data-bind="value: advert.AdvertDescription"></textarea>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+            </div>
+        <div id="step-2" class="">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div data-bind="widget: {kind: selectedCategory, crazy: crazyModel, isEditable: true}"></div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+        <div id="step-3" class="">
+            <div class="col-lg-3"></div>
+            <div data-bind="contact: {crazy: crazyModelContact, isEditable: true}"></div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div id="step-4" class="">
+            <h3 class="text-center">Dodaj zdjęcia przedmiotu</h3>
+            
+            <form id="myId" action="/" method="post" class="dropzone dz-clickable dz-started">
+               
+            </form>           
+            <div class="row">
+                <div data-bind="widget: {kind: selectedCategory, crazy: crazyModel, isEditable: false}"></div>
+                <div data-bind="contact: {crazy: crazyModelContact, isEditable: false}"></div>
+                <!--<button class="btn btn-info btn-block" data-bind="click: sendToDb">Zapisz</button>-->
+            </div>
+            <button id="saveAllFiles" class="btn btn-block btn-info">Dodaj ogłoszenie</button>
+        </div>
+
+    </div>
+    <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
+</div>

@@ -57,8 +57,14 @@ namespace BoatsAdvertsApp.Controllers
 
                 var dbImages = db.images.Where(x => x.Subject.SubjectId == subjectId).ToList();
 
+                var response = dbImages.
+                    Select(x => new { image = "../../AdvertImages/" + x.Name }
 
-                return Json(dbImages);
+                    ).ToList();
+
+                
+
+                return Json(response);
             }
             catch (Exception ex)
             {

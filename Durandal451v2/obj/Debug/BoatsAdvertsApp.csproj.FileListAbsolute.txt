@@ -73,3 +73,8 @@ D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\Durandal451v
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\obj\Debug\BoatsAdvertsApp.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\Microsoft.Azure.AppService.ApiApps.Service.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\Swashbuckle.Core.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\WebActivatorEx.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\System.IdentityModel.Tokens.Jwt.xml

@@ -1,0 +1,5 @@
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\bin\Release\DomainModel.dll
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\bin\Release\DomainModel.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Release\DomainModel.csprojResolveAssemblyReference.cache
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Release\DomainModel.dll
+D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Release\DomainModel.pdb

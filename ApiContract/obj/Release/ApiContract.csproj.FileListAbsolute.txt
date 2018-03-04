@@ -1,0 +1,5 @@
+D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\bin\Release\ApiContract.dll
+D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\bin\Release\ApiContract.pdb
+D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\obj\Release\ApiContract.csprojResolveAssemblyReference.cache
+D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\obj\Release\ApiContract.dll
+D:\Visual studio - projects\BoatsAdvertsApp\ApiContract\obj\Release\ApiContract.pdb
