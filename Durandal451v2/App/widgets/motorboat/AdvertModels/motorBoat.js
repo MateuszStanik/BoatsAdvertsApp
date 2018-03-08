@@ -3,8 +3,8 @@
         return function () {
             var vm = {
                                
-                BoatModel : ko.observable().extend({max: 99 }),          
-                ProducentName: ko.observable().extend({max: 99 }),
+                BoatModel : ko.observable(),          
+                ProducentName: ko.observable(),
                 BuiltYear: ko.observable().extend({
                     pattern: {
                         message: 'Proszę wprowadzić wartość (np. 2018)',

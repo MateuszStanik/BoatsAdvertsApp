@@ -42,9 +42,10 @@
 
         return advertService;
 
-        function getAllProducts() {
+        function getAllProducts(data) {
             return $.ajax(getAllProductsUrl, {
                 type: "GET",
+                data: data,
                 cache: false,
                 headers: getSecurityHeaders()
             });

@@ -32,6 +32,7 @@ namespace Durandal451v2.Controllers
         public IHttpActionResult GetAllProducts(int? id)
         {
             List<Subject> productsList = null;
+
             if (id != null){
                 productsList = db.subjects.Where(x=>x.CategoryId == id).ToList();
             }

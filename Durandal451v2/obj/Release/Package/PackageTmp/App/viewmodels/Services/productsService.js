@@ -3,15 +3,17 @@
         var self = this;
         self.Model = ko.observable({});
         self.Images = ko.observable();
+
         var vm = {
             getProducts: getProducts,
             getImages: getImages,
             model: self.Model,
-            images: self.Images
+            images: self.Images,
         }
 
-        function getProducts() {
+        function getProducts(id) {
             products.getAllProducts({
+                id: id,
             }).done(function (data) {
                 console.log('Pobrano dane z DB');
                 self.Model(data);

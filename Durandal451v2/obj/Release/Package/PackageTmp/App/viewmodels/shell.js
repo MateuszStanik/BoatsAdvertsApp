@@ -17,7 +17,7 @@
     function setupRouter() {
         router.map([
                 { route: '', title: 'Boats Ad', moduleId: 'viewmodels/welcome', nav: true },
-                { route: 'products', title: 'Przedmioty', moduleId: 'viewmodels/products', nav: true },
+                { route: 'products/:id*details', title: 'Przedmioty', moduleId: 'viewmodels/products', nav: true, hash: '#products/:id' },
                 //{ route: 'services', title: 'Usługi', moduleId: 'viewmodels/advert', nav: true },
                 { route: 'register', moduleId: 'viewmodels/register', nav: false},
                 { route: 'login', moduleId: 'viewmodels/login', nav: false},

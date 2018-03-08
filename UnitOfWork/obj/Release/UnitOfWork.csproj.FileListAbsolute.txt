@@ -19,17 +19,6 @@ D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Mi
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._5.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._6.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._7.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._8.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._9.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._10.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._11.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._12.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._13.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._14.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._15.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._16.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._17.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.Migrations._18.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.dll
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Release\UnitOfWork.pdb
