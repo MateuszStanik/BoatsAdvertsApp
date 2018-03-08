@@ -12,7 +12,7 @@ namespace DomainModel
     public class DicCategories
     {
         [Key]
-        public int CategoryId { get; set; }
+        public Int64 CategoryId { get; set; }
         public string Id { get; set; }
         public string Name { get; set; }
     }

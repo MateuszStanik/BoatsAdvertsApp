@@ -29,10 +29,17 @@ namespace Durandal451v2.Controllers
 
         [HttpGet]
         [Route("GetAllProducts")]
-        public IHttpActionResult GetAllProducts()
+        public IHttpActionResult GetAllProducts(int? id)
         {
-            List<Subject> productsList = db.subjects.ToList();
-            
+            List<Subject> productsList = null;
+            if (id != null){
+                productsList = db.subjects.Where(x=>x.CategoryId == id).ToList();
+            }
+            else
+            {
+                productsList = db.subjects.ToList();
+            }
+                
             var products = productsList
                 .Select(
                 x => new ProductInfo()

@@ -14,7 +14,9 @@ namespace UnitOfWork
     {
         public EFDbContext() : base("name=BoatsAdverts")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            Database.SetInitializer<EFDbContext>(new CreateDatabaseIfNotExists<EFDbContext>());
+
+            //this.Configuration.LazyLoadingEnabled = true;
         }
         //---Entities
         public DbSet<Advert> adverts { get; set; }

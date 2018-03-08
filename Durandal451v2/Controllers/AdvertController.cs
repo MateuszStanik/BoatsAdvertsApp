@@ -68,6 +68,7 @@ namespace Durandal451v2.Controllers
                             sBoat.Advert = advert;
                             sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
                             sBoat.SailBoat = sailboat;
+                            sBoat.CategoryId = category.CategoryId;
                             db.boats.Add(sBoat);
                             
                             break;
@@ -99,7 +100,8 @@ namespace Durandal451v2.Controllers
                         httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
                         uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
                         uploadedImg.Identifier = Guid.NewGuid();
-                        uploadedImg.Subject = sBoat;                        
+                        uploadedImg.Subject = sBoat;
+                                    
                         db.images.Add(uploadedImg);                      
                         var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
                         httpPostedFile.SaveAs(fileSavePath);                        
