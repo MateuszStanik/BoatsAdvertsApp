@@ -515,6 +515,7 @@
     <Content Include="Scripts\jquery.inputmask.bundle.min.js" />
     <Content Include="Scripts\jquery.smartWizard.js" />
     <Content Include="Scripts\jquery.utilities.js" />
+    <Content Include="Scripts\knockout-paging.js" />
     <Content Include="Scripts\knockout.validation.debug.js" />
     <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\materialize\materialize.js" />

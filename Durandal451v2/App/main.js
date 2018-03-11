@@ -16,7 +16,8 @@
         'dropzone': '../Scripts/dropzone/dropzone-amd-module',
         //"jQueryInputmask": "../Scripts/jquery.inputmask/jquery.inputmask",
         "inputmask": "../Scripts/jquery.inputmask.bundle",
-        "pgwslider": "../Scripts/pgwslider"
+        "pgwslider": "../Scripts/pgwslider",
+        'knockout-paging': "../Scripts/knockout-paging",
     },
     shim: {
         'jquery.utilities': {
@@ -50,7 +51,10 @@
         },
         'pgwslider': {
             exports: 'pgwslider'
-        }
+        },
+        'knockout-paging': {
+            deps: ['knockout']
+        },
     }
 });
 
