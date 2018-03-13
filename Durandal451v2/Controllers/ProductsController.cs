@@ -52,9 +52,9 @@ namespace Durandal451v2.Controllers
                     Price = x.Price,
                     Image = "../../AdvertImages/" + db.images.Where(y=>y.Subject.SubjectId == x.SubjectId).FirstOrDefault().Name 
                 })
-                .ToList();
-
-            return Ok(products);
+                .ToArray();
+            int[] marks = new int[5] { 99, 98, 92, 97, 95 };
+            return Json(marks);
         }
         [HttpGet]
         [Route("GatImages")]

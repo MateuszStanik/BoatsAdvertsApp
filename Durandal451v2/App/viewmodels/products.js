@@ -3,17 +3,13 @@
         var vm = {
             activate: activate,
             selectedCategory: ko.observable('sailboat'),
-            model : ko.observable({}),
+            model: ko.observableArray([]),
             ImageTMP: ko.observable("../../Content/images/6034941_20161201023704697_1_XLARGE.jpg"),
 
             attached: attached,
 
-            //chars : ko.observableArray(['a', 'b', 'c', 'd', 'e']).extend({ paged: { pageSize: 2 } }),
-            //setPage : function(newPage) {
-            //    vm.chars.pageNumber(newPage);
-            //},
             list: ko.observableArray(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'e', 'f', 'g', 'e', 'f', 'g']),
-            pageSize : ko.observable(10),
+            pageSize : ko.observable(2),
             pageIndex : ko.observable(0),
             moveToPage : function (index) {
                vm.pageIndex(index);
@@ -23,13 +19,33 @@
 
         function activate(id) {
             console.log(id);
-            pagedList = ko.dependentObservable(function () {
+            //loadObservables(id);
+            
+           
+        return loadObservables(id);
+        }
+
+        function attached(id) {
+            console.log(id);
+            //productServices.getImages(vm.model.SubjectId);                
+            //vm.images(productServices.images);
+           
+        }
+
+        function loadObservables(id) {
+            productServices.getProducts(id);
+            vm.model(productServices.model);
+            vm.model.valueHasMutated();
+             pagedList = ko.dependentObservable(function () {
                 var size = vm.pageSize();
                 var start = vm.pageIndex() * size;
-                return vm.list.slice(start, start + size);
+
+                //var tmo = vm.model;
+                //var sliced = tmo.prototype.slice(start, start + size);
+                return vm.model;
             });
             maxPageIndex = ko.dependentObservable(function () {
-                return Math.ceil(vm.list().length/vm.pageSize())-1;
+                return Math.ceil(vm.model().length / vm.pageSize()) - 1;
             });
             previousPage = function () {
                 if (vm.pageIndex() > 0) {
@@ -48,22 +64,6 @@
                 }
                 return pages;
             });
-           
-            return loadObservables(id);
-        }
-
-        function attached(id) {
-                
-                //productServices.getImages(vm.model.SubjectId);
-                
-                //vm.images(productServices.images);
-        }
-
-        function loadObservables(id) {
-            productServices.getProducts(id);
-            vm.model(productServices.model);
-
-
         }
         return vm;
 });
