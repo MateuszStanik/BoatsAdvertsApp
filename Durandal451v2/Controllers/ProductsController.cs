@@ -54,7 +54,7 @@ namespace Durandal451v2.Controllers
                 })
                 .ToArray();
             int[] marks = new int[5] { 99, 98, 92, 97, 95 };
-            return Json(marks);
+            return Json(products);
         }
         [HttpGet]
         [Route("GatImages")]

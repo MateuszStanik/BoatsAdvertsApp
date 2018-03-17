@@ -1,14 +1,13 @@
-﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/logger', './Services/productsService', 'materialize', 'knockout-paging'],
-    function (router, app, $, ko, logger, productServices) {
+﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/logger', './Services/productsService', 'services/products', 'materialize', 'knockout-paging'],
+    function (router, app, $, ko, logger, productServices, products) {
         var vm = {
             activate: activate,
             selectedCategory: ko.observable('sailboat'),
-            model: ko.observableArray([]),
+            //model: ko.observableArray(productServices.Model),//.withMergeConstructor(productServices.Model),
+            model : ko.observableArray([]),
             ImageTMP: ko.observable("../../Content/images/6034941_20161201023704697_1_XLARGE.jpg"),
-
             attached: attached,
-
-            list: ko.observableArray(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'e', 'f', 'g', 'e', 'f', 'g']),
+            //list: ko.observableArray(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'e', 'f', 'g', 'e', 'f', 'g']),
             pageSize : ko.observable(2),
             pageIndex : ko.observable(0),
             moveToPage : function (index) {
@@ -21,7 +20,7 @@
             console.log(id);
             //loadObservables(id);
             
-           
+            getProducts(id);
         return loadObservables(id);
         }
 
@@ -31,18 +30,44 @@
             //vm.images(productServices.images);
            
         }
+        function getProducts(id) {
+            products.getAllProducts({
+                id: id,
+            }).done(function (data) {
+                console.log('Pobrano dane z DB');
+                vm.model(data);
+                //router.navigate('#/', 'replace');
+            }).always(function () {
+            }).failJSON(function (data) {
+                if (data && data.error_description) {
+                    logger.log({
+                        message: data.error_description,
+                        data: data.error_description,
+                        showToast: true,
+                        type: "error"
+                    });
+                } else {
+                    logger.log({
+                        message: "Błąd podczas pobierania danych!",
+                        data: "",
+                        showToast: true,
+                        type: "error"
+                    });
+                }
+            });
+        }
 
         function loadObservables(id) {
-            productServices.getProducts(id);
-            vm.model(productServices.model);
-            vm.model.valueHasMutated();
+           // productServices.getProducts(id);
+            //vm.model(productServices.Model);
+           
              pagedList = ko.dependentObservable(function () {
                 var size = vm.pageSize();
                 var start = vm.pageIndex() * size;
 
-                //var tmo = vm.model;
+             
                 //var sliced = tmo.prototype.slice(start, start + size);
-                return vm.model;
+                return vm.model.slice(start, start + size);
             });
             maxPageIndex = ko.dependentObservable(function () {
                 return Math.ceil(vm.model().length / vm.pageSize()) - 1;
