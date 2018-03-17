@@ -5,10 +5,10 @@
             selectedCategory: ko.observable('sailboat'),
             //model: ko.observableArray(productServices.Model),//.withMergeConstructor(productServices.Model),
             model : ko.observableArray([]),
-            ImageTMP: ko.observable("../../Content/images/6034941_20161201023704697_1_XLARGE.jpg"),
+            //ImageTMP: ko.observable("../../Content/images/6034941_20161201023704697_1_XLARGE.jpg"),
             attached: attached,
             //list: ko.observableArray(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'e', 'f', 'g', 'e', 'f', 'g']),
-            pageSize : ko.observable(2),
+            pageSize : ko.observable(9),
             pageIndex : ko.observable(0),
             moveToPage : function (index) {
                vm.pageIndex(index);
@@ -17,26 +17,18 @@
         };
 
         function activate(id) {
-            console.log(id);
-            //loadObservables(id);
-            
             getProducts(id);
-        return loadObservables(id);
+            return loadObservables(id);
         }
 
         function attached(id) {
-            console.log(id);
-            //productServices.getImages(vm.model.SubjectId);                
-            //vm.images(productServices.images);
-           
+
         }
         function getProducts(id) {
             products.getAllProducts({
                 id: id,
-            }).done(function (data) {
-                console.log('Pobrano dane z DB');
+            }).done(function (data) {              
                 vm.model(data);
-                //router.navigate('#/', 'replace');
             }).always(function () {
             }).failJSON(function (data) {
                 if (data && data.error_description) {
@@ -64,9 +56,6 @@
              pagedList = ko.dependentObservable(function () {
                 var size = vm.pageSize();
                 var start = vm.pageIndex() * size;
-
-             
-                //var sliced = tmo.prototype.slice(start, start + size);
                 return vm.model.slice(start, start + size);
             });
             maxPageIndex = ko.dependentObservable(function () {

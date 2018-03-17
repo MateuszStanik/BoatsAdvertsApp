@@ -24,7 +24,6 @@
 
             $('#yearbook').on('select2:select', function (e) {
                 var data = e.params.data;
-                console.log(data.id);
                 self.model().BuiltYear(data.id);
             });
 

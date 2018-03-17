@@ -42,8 +42,6 @@
             subjectId: id,
         }).done(function (data) {
             vm.model(data);
-            console.log('Zapisano dane z DB');
-            console.log(data);
             logger.log({
                 message: "Pobrano dane z bazy.",
                 showToast: true,
@@ -72,8 +70,6 @@
             subjectId: id,
         }).done(function (data) {
             vm.images(data);
-            console.log('Zapisano dane z DB');
-            console.log(data);
             logger.log({
                 message: "Pobrano zdjęcia z bazy.",
                 showToast: true,

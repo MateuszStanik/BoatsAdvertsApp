@@ -33,7 +33,7 @@
 
             if (externalAssociationResult.externalError !== null || externalAssociationResult.externalAccessToken === null) {
                 logger.log({
-                    message: "Error associating external login: " + externalAssociationResult.externalError,
+                    message: "Błąd poczas łączenia zewnętrznego loginu: " + externalAssociationResult.externalError,
                     data: externalAssociationResult.externalError,
                     showToast: true,
                     type: "error"
@@ -49,7 +49,7 @@
                                                
                         if (errors) {
                             logger.log({
-                                message: "One or more errors occurred associating external login:  " + errors,
+                                message: "Jeden lub więcej błędów wystąpiło podczas rejestrowania zewnętrznego loginu:  " + errors,
                                 data: errors,
                                 showToast: true,
                                 type: "error"
@@ -92,7 +92,7 @@
                         providerKey: parent.userName()
                     }, parent));
                     logger.log({
-                        message: "Your password has been set.",                        
+                        message: "Twoje hasło zostało ustawione.",                        
                         showToast: true,
                         type: "info"
                     });                    
@@ -103,7 +103,7 @@
 
                     if (errors) {
                         logger.log({
-                            message: "One or more errors occurred setting the password:  " + errors,
+                            message: "Jeden lub więcej błędów wystąpiło podczas ustawiania hasła:  " + errors,
                             data: errors,
                             showToast: true,
                             type: "error"
@@ -149,7 +149,7 @@
 
                     if (errors) {
                         logger.log({
-                            message: "One or more errors occurred removing the login:  " + errors,
+                            message: "Jeden lub więcej błędów podczas usuwania loginu:  " + errors,
                             data: errors,
                             showToast: true,
                             type: "error"
@@ -211,7 +211,7 @@
 
                     if (errors) {
                         logger.log({
-                            message: "One or more errors occurred setting the password:  " + errors,
+                            message: "Jeden lub więcej błędów podczas zmieniania hasła:  " + errors,
                             data: errors,
                             showToast: true,
                             type: "error"

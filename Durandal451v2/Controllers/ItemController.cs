@@ -44,8 +44,6 @@ namespace BoatsAdvertsApp.Controllers
             {
                 return BadRequest(ex.Message);
             }
-
-
         }
 
         [HttpGet]
@@ -59,10 +57,7 @@ namespace BoatsAdvertsApp.Controllers
 
                 var response = dbImages.
                     Select(x => new { image = "../../AdvertImages/" + x.Name }
-
                     ).ToList();
-
-                
 
                 return Json(response);
             }
