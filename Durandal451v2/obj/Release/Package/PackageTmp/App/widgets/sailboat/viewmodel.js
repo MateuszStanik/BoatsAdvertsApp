@@ -24,7 +24,6 @@
 
             $('#yearbook').on('select2:select', function (e) {
                 var data = e.params.data;
-                console.log(data.id);
                 self.model().BuiltYear(data.id);
             });
 
@@ -67,19 +66,3 @@
 
 });
 
-//define(['durandal/app', 'jquery', 'knockout', './AdvertModels/sailboat'], function (app, $, ko, sailboat) {
-//    var self = this;
-
-//    self.activate = function (options) {
-//        vm.modelS(new sailboat());
-//        options.data(vm.modelS());
-//    };
-
-//    var vm = {
-//        modelS: ko.observable(),
-//        activate: self.activate,
-
-//    }
-
-//    return vm;
-//});

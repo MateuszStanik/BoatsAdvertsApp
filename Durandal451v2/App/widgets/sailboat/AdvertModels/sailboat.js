@@ -1,8 +1,7 @@
 ﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'knockout.validation'],
     function (router, app, $, ko) {
         return function () {
-            var vm = {
-                
+            var vm = {                
                 BoatModel: ko.observable('sailboat'),
                 YachtType: ko.observable('kilowy'),
                 ProducentName: ko.observable('benetau'),
@@ -43,7 +42,6 @@
                     },
                 }),
                 IsEngine : ko.observable('true'),
-
             }
             return vm;
 

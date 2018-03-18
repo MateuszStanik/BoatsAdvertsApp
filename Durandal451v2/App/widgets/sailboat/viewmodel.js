@@ -2,10 +2,6 @@
 
     return function model() {
 
-        //ko.validation.init({
-        //    messagesOnModified: false
-        //});
-
         var self = this;
 
         self.model = ko.validatedObservable(new sailboat());

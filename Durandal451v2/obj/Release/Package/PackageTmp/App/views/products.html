@@ -1,38 +1,54 @@
-﻿<section>
-    
+﻿<section>    
     <div class="page-header">
         <h3><span>Lista ogłoszeń</span></h3>
     </div>
-    <div class="row" data-bind="foreach: model()" style="display: flex; flex-flow: row; flex-flow: wrap-reverse">
+
+    <div class="row" data-bind="foreach: pagedList" style="display: flex; flex-flow: row; flex-flow: wrap-reverse">
         <div class="col-md-4">
             <div class="card thumbnail"> 
-                <div class="card-image waves-effect waves-block waves-light"><!-- style="height: 178px">-->
-                    <img class="activator image" data-bind="attr:{src: image}" /> <!--style="display: block; margin: 0 auto;">-->
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator image" data-bind="attr:{src: $data.Image}" />
                 </div>
                 <div class="card-content">
                     <div class="row">
                         <div class="col-lg-7">
-                            <h4 class="activator grey-text text-darken-4" data-bind="text: advertName"></h4>
+                            <h4 class="activator grey-text text-darken-4" data-bind="text: $data.AdvertName"></h4>
                         </div>
                         <div class="col-lg-5">
                             <div class="text-right">
                                 <span>Cena: </span>
-                                <span data-bind="text: price"></span>
+                                <span data-bind="text: $data.Price"></span>
                             </div>
                         </div>
                     </div>         
                 </div>
                 <div class="card-action">
-                    <a class="btn btn-info center-block" data-bind="attr: { href: '#keyed-master-details/' + subjectId }">Więcej</a>
+                    <a class="btn btn-info center-block" data-bind="attr: { href: '#keyed-master-details/' + $data.SubjectId }">Więcej</a>
                 </div>
                 <div class="card-reveal">
                     <i class="material-icons right card-title">Zwiń</i>
-                    <p><h4 class="grey-text text-darken-4" data-bind="text: advertName"></h4></p>
-                    <p data-bind="text: advertDescription"></p>
+                    <p><h4 class="grey-text text-darken-4" data-bind="text: $data.AdvertName"></h4></p>
+                    <p data-bind="text: $data.AdvertDescription"></p>
                 </div>
             </div>
         </div>
     </div>
-  
-    
+
+
+    <ul class="pagination pull-right">
+        <li data-bind="css: { disabled: pageIndex() === 0 }" class="previous">
+            <a href="#" data-bind="click: previousPage">Previous</a>
+        </li>
+        <!-- ko foreach: allPages -->
+        <li data-bind="css: { active: $data.pageNumber === ($root.pageIndex() + 1) }">
+            <a href="#" data-bind="text: $data.pageNumber, click: function() { $root.moveToPage($data.pageNumber-1); }"></a>
+        </li>
+        <!-- /ko -->
+        <li data-bind="css: { disabled: pageIndex() === maxPageIndex() }" class="next">
+            <a href="#" data-bind="click: nextPage">Next</a>
+        </li>
+    </ul>
+
 </section>
+
+<!--<pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->

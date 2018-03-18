@@ -1,7 +1,14 @@
 ﻿define(['plugins/router', 'durandal/app', 'jquery', 'knockout', 'services/products', 'services/logger'],
     function (router, app, $, ko, products, logger) {
         var self = this;
-        self.Model = ko.observable({});
+        self.Model = ko.observable({
+            AdvertDescription: ko.observable,
+            AdvertId : ko.observable,
+            SubjectId: ko.observable,
+            AdvertName: ko.observable,
+            Price : ko.observable,
+            Image: ko.observable
+        });
         self.Images = ko.observable();
 
         var vm = {

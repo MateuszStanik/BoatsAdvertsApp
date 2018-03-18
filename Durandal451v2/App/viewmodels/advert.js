@@ -17,7 +17,6 @@
            
             attached: function () {
                 advertService.getDic();
-                
             
                 vm.setSelect2Values();
                 var baseUrl = $.getBasePath();

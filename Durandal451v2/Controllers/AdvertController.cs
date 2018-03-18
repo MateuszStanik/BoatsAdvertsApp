@@ -69,15 +69,17 @@ namespace Durandal451v2.Controllers
                             sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
                             sBoat.SailBoat = sailboat;
                             sBoat.CategoryId = category.CategoryId;
-                            db.boats.Add(sBoat);
-                            
+                            db.boats.Add(sBoat);                            
                             break;
                         case 2:
+
                             Boat mBoat = new Boat();
                             MotorBoat motorBoat = new MotorBoat();
                             break;
                         case 3:
                             Engine engine = new Engine();
+                            var enginePar = JsonConvert.DeserializeObject<Engine>(jsonSubject);
+                            //engineTMP = JsonConvert.DeserializeObject<Engine>(jsonProduct);
                             break;
 
                     }

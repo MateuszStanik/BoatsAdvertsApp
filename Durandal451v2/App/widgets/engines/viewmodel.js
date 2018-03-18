@@ -1,9 +1,9 @@
-﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/contact'], function (app, $, ko, contact) {
+﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/engines'], function (app, $, ko, engine) {
 
     return function model() {
         var self = this;
 
-        self.model = ko.observable(new contact());
+        self.model = ko.validatedObservable(new engine());
 
         self.isEditable = ko.observable(true);
 
@@ -15,6 +15,7 @@
                 self.model(options.crazy());
             }
             self.isEditable(options.isEditable);
+
         };
      
     };

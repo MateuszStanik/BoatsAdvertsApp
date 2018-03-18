@@ -300,7 +300,8 @@
     <Content Include="App\widgets\contact\AdvertModels\contact.js" />
     <Content Include="App\widgets\contact\view.html" />
     <Content Include="App\widgets\contact\viewmodel.js" />
-    <Content Include="App\widgets\engines\AdvertModels\contact.js" />
+    <Content Include="App\widgets\engines\AdvertModels\engines.js" />
+    <Content Include="App\widgets\engines\view.html" />
     <Content Include="App\widgets\engines\viewmodel.js" />
     <Content Include="App\widgets\modal\modal.html" />
     <Content Include="App\widgets\modal\modal.js" />
@@ -469,6 +470,7 @@
     <Content Include="Content\materialize\fonts\roboto\Roboto-Bold.eot" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="apiapp.json" />
+    <None Include="Properties\PublishProfiles\BoatsAdApp - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\BoatsAdApp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1-vsdoc.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />

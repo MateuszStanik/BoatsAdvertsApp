@@ -77,7 +77,6 @@
 
                 $('#value').on('select2:select', function (e) {
                     var data = e.params.data;
-                    console.log(data.id);
                     vm.selectedCategory(data.id);
                 });
              
