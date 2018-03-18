@@ -1,16 +1,15 @@
 ﻿<div class="col-lg-6">
     <h3 class="text-center">Parametry przedmiotu</h3>
     <hr>
-
     <p class="form-p">Nazwa modelu</p>
-    <input class="form-control" data-bind="value: model().Brand, enable: : isEditable," />
+    <!--<input class="form-control" data-bind="value: model().Test, enable: : isEditable," />-->
+    <input class="form-control" data-bind="value: model().Brand, enable: isEditable" />
     <p class="form-p">Moc</p>
     <input class="form-control" data-bind="value: model().Power, enable: isEditable" />
-    <p class="form-p">Typ silnika</p>
+    <p class="form-p">Typ silnika*</p>
     <input class="form-control" data-bind="value: model().TypeOfEngine, enable: isEditable" />
-    <p class="form-p">Rodzaj paliwa</p>
+    <p class="form-p">Rodzaj paliwa*</p>
     <input class="form-control" data-bind="value: model().TypeOfFuel, enable: isEditable" />
     <p class="form-p">Rok produkcji</p>
     <input class="form-control" data-bind="value: model().BuiltYear, enable: isEditable" />
-
 </div>

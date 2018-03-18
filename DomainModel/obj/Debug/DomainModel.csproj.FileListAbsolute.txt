@@ -6,4 +6,3 @@ D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\bin\Debug\DomainModel.dl
 D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\bin\Debug\DomainModel.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Debug\DomainModel.dll
 D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Debug\DomainModel.pdb
-D:\Visual studio - projects\BoatsAdvertsApp\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
