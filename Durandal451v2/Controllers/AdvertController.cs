@@ -100,10 +100,11 @@ namespace Durandal451v2.Controllers
                         case 3:
                             subject = new Engine();
                             var enginePar = JsonConvert.DeserializeObject<Engine>(jsonSubject);
+                            subject = JsonConvert.DeserializeObject<Engine>(jsonProduct);
                             subject.Advert = advert;
                             subject = enginePar;
                             subject.Brand = enginePar.Brand;
-                            subject.Advert.AdditionalInformation = advert.AdditionalInformation;
+                            
                             
                             break;
 
@@ -114,28 +115,34 @@ namespace Durandal451v2.Controllers
                 {
                     return BadRequest(ex.Message);
                 }
- 
-                foreach (string fileName in HttpContext.Current.Request.Files)
-                {                   
-                    var httpPostedFile = HttpContext.Current.Request.Files[fileName];
-
-                    if (httpPostedFile != null)
+                try
+                {
+                    foreach (string fileName in HttpContext.Current.Request.Files)
                     {
-                        DomainModel.Image uploadedImg = new DomainModel.Image();
-                        int length = httpPostedFile.ContentLength;
-                        uploadedImg.ImageData = new byte[length];
-                        httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
-                        uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
-                        uploadedImg.Identifier = Guid.NewGuid();
-                        uploadedImg.Subject = subject;
+                        var httpPostedFile = HttpContext.Current.Request.Files[fileName];
 
-                        _db.images.Add(uploadedImg);                      
-                        var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
-                        httpPostedFile.SaveAs(fileSavePath);                        
+                        if (httpPostedFile != null)
+                        {
+                            DomainModel.Image uploadedImg = new DomainModel.Image();
+                            int length = httpPostedFile.ContentLength;
+                            uploadedImg.ImageData = new byte[length];
+                            httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
+                            uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);
+                            uploadedImg.Identifier = Guid.NewGuid();
+                            //uploadedImg.Subject = subject;
+
+                            _db.images.Add(uploadedImg);
+                            var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
+                            httpPostedFile.SaveAs(fileSavePath);
+                        }
                     }
+                    _db.SaveChanges();
+                    return Ok();
                 }
-                _db.SaveChanges();
-                return Ok();
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
             }
             return Ok();
         }

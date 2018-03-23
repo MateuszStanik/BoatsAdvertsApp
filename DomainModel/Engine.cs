@@ -16,6 +16,6 @@ namespace DomainModel
         public double Power { get; set; }
         public EngineType TypeOfEngine { get; set; }
         public FuelType TypeOfFuel { get; set; }
-        public DateTime BuiltYear { get; set; }
+        public string BuiltYear { get; set; }
     }
 }
