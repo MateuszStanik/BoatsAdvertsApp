@@ -1,4 +1,5 @@
 ﻿using ApiContract;
+using AutoMapper;
 using DomainModel;
 using DomainModel.Dictionaries;
 using Durandal451v2.Models.Dictionaries;
@@ -20,6 +21,7 @@ using System.Web;
 using System.Web.Hosting;
 using System.Web.Http;
 using UnitOfWork;
+using UnitOfWork.Abstract;
 
 namespace Durandal451v2.Controllers
 {
@@ -34,11 +36,19 @@ namespace Durandal451v2.Controllers
     [RoutePrefix("api/Advert")]
     public class AdvertController : ApiController
     {
-        private readonly EFDbContext db = new EFDbContext();
+        IMapper _mapper;
+       // IEFDbContext _db;
+        private readonly EFDbContext _db = new EFDbContext();
         
+        //public AdvertController(IMapper mapper)
+        //{
+        //    _mapper = mapper;
+        //    //_db = db;
+        //}
+
         [HttpPost]
         [Route("UploadImage")]
-        public IHttpActionResult UploadImage()
+        public async Task<IHttpActionResult> UploadImage()
         {
             if (HttpContext.Current.Request.Files.AllKeys.Any())
             {
@@ -47,48 +57,54 @@ namespace Durandal451v2.Controllers
                 string jsonAdvert = HttpContext.Current.Request.Form[2];
                 string jsonProduct = HttpContext.Current.Request.Form[3];
                 string Id = JsonConvert.DeserializeObject<string>(subjectId);
-                var category = db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
+                var category = _db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
                 Advert advert = new Advert();
                 advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
                 advert.AdditionDate = DateTime.Now;
-                Boat sBoat = new Boat();
-
+                
+                //var subject =new Boat();
+                dynamic subject = null;
                 try
                 {
                     switch (category.CategoryId)
                     {
                         case 1:
-                            
+                            subject = new Boat();
                             SailBoat sailboat = new SailBoat();
                             var boat = JsonConvert.DeserializeObject<Boat>(jsonSubject);
-                            sBoat = JsonConvert.DeserializeObject<Boat>(jsonProduct);
-                            sBoat.AdvertDescription = boat.AdvertDescription;
-                            sBoat.AdvertName = boat.AdvertName;
-                            sBoat.Price = boat.Price;
-                            sBoat.Advert = advert;
+                            subject = JsonConvert.DeserializeObject<Boat>(jsonProduct);
+                            subject.AdvertDescription = boat.AdvertDescription;
+                            subject.AdvertName = boat.AdvertName;
+                            subject.Price = boat.Price;
+                            subject.Advert = advert;
                             sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
-                            sBoat.SailBoat = sailboat;
-                            sBoat.CategoryId = category.CategoryId;
-                            db.boats.Add(sBoat);                            
+                            subject.SailBoat = sailboat;
+                            subject.CategoryId = category.CategoryId;
+                            _db.boats.Add(subject);                            
                             break;
                         case 2:
-
+                            subject = new Boat();
                             MotorBoat motorBoat = new MotorBoat();
                             var mBoat = JsonConvert.DeserializeObject<Boat>(jsonSubject);
-                            sBoat = JsonConvert.DeserializeObject<Boat>(jsonProduct);
-                            sBoat.AdvertDescription = mBoat.AdvertDescription;
-                            sBoat.AdvertName = mBoat.AdvertName;
-                            sBoat.Price = mBoat.Price;
-                            sBoat.Advert = advert;
+                            subject = JsonConvert.DeserializeObject<Boat>(jsonProduct);
+                            subject.AdvertDescription = mBoat.AdvertDescription;                           
+                            subject.AdvertName = mBoat.AdvertName;
+                            subject.Price = mBoat.Price;
+                            subject.Advert = advert;
                             motorBoat = JsonConvert.DeserializeObject<MotorBoat>(jsonProduct);
-                            sBoat.MotorBoat = motorBoat;
-                            sBoat.CategoryId = category.CategoryId;
+                            subject.MotorBoat = motorBoat;
+                            subject.CategoryId = category.CategoryId;
+                            
+
                             break;
                         case 3:
-                            Engine engine = new Engine();
+                            subject = new Engine();
                             var enginePar = JsonConvert.DeserializeObject<Engine>(jsonSubject);
-                         
-                            //engineTMP = JsonConvert.DeserializeObject<Engine>(jsonProduct);
+                            subject.Advert = advert;
+                            subject = enginePar;
+                            subject.Brand = enginePar.Brand;
+                            subject.Advert.AdditionalInformation = advert.AdditionalInformation;
+                            
                             break;
 
                     }
@@ -111,14 +127,14 @@ namespace Durandal451v2.Controllers
                         httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
                         uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);                   
                         uploadedImg.Identifier = Guid.NewGuid();
-                        uploadedImg.Subject = sBoat;
-                                    
-                        db.images.Add(uploadedImg);                      
+                        uploadedImg.Subject = subject;
+
+                        _db.images.Add(uploadedImg);                      
                         var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
                         httpPostedFile.SaveAs(fileSavePath);                        
                     }
                 }
-                db.SaveChanges();
+                _db.SaveChanges();
                 return Ok();
             }
             return Ok();
@@ -142,7 +158,7 @@ namespace Durandal451v2.Controllers
 
             //    }
             //    db.SaveChanges();
-                var dbCategories = db.dicCategories.ToList();
+                var dbCategories = _db.dicCategories.ToList();
 
                 var categories = dbCategories
                     .Select(
@@ -170,7 +186,7 @@ namespace Durandal451v2.Controllers
             try
             {
                
-                var dbYearbooks = db.dicYearbooks.ToList();
+                var dbYearbooks = _db.dicYearbooks.ToList();
 
                 var categories = dbYearbooks
                     .Select(
@@ -191,63 +207,63 @@ namespace Durandal451v2.Controllers
 
         }
 
-        [HttpPost]
-        [Route("SaveAdvert")]
-        public IHttpActionResult SaveAdvert(JObject content)
-        {
-            string subjectId = content["subjectType"].ToString();
-            string jsonSubject = content["subject"].ToString();
-            string jsonAdvert = content["contact"].ToString();
-            string jsonProduct = content["product"].ToString();
+        //[HttpPost]
+        //[Route("SaveAdvert")]
+        //public IHttpActionResult SaveAdvert(JObject content)
+        //{
+        //    string subjectId = content["subjectType"].ToString();
+        //    string jsonSubject = content["subject"].ToString();
+        //    string jsonAdvert = content["contact"].ToString();
+        //    string jsonProduct = content["product"].ToString();
 
-            string Id = JsonConvert.DeserializeObject<string>(subjectId);
-            var category = db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
+        //    string Id = JsonConvert.DeserializeObject<string>(subjectId);
+        //    var category = _db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
 
-            Advert advert = new Advert();
-            advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
-            advert.AdditionDate = DateTime.Now;
+        //    Advert advert = new Advert();
+        //    advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
+        //    advert.AdditionDate = DateTime.Now;
 
-            Subject subject = new Subject();
-            subject = JsonConvert.DeserializeObject<Subject>(jsonSubject);
-            subject.Advert = advert;
+        //    Subject subject = new Subject();
+        //    subject = JsonConvert.DeserializeObject<Subject>(jsonSubject);
+        //    subject.Advert = advert;
 
-            try
-            {
-                switch (category.CategoryId)
-                {
-                    case 1:
-                        Boat sBoat = new Boat();
-                        SailBoat sailboat = new SailBoat();
-                        var boat = JsonConvert.DeserializeObject<Boat>(jsonSubject);
-                        sBoat = JsonConvert.DeserializeObject<Boat>(jsonProduct);
-                        sBoat.AdvertDescription = boat.AdvertDescription;
-                        sBoat.AdvertName = boat.AdvertName;
-                        sBoat.Price = boat.Price;
-                        sBoat.Advert = advert;
-                        sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
-                        sBoat.SailBoat = sailboat;
-                        db.boats.Add(sBoat);
-                        db.SaveChanges();
-                        break;
-                    case 2:
-                        Boat mBoat = new Boat();
-                        MotorBoat motorBoat = new MotorBoat();
-                        break;
-                    case 3:
-                        Engine engine = new Engine();
-                        break;
+        //    try
+        //    {
+        //        switch (category.CategoryId)
+        //        {
+        //            case 1:
+        //                Boat sBoat = new Boat();
+        //                SailBoat sailboat = new SailBoat();
+        //                var boat = JsonConvert.DeserializeObject<Boat>(jsonSubject);
+        //                sBoat = JsonConvert.DeserializeObject<Boat>(jsonProduct);
+        //                sBoat.AdvertDescription = boat.AdvertDescription;
+        //                sBoat.AdvertName = boat.AdvertName;
+        //                sBoat.Price = boat.Price;
+        //                sBoat.Advert = advert;
+        //                sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
+        //                sBoat.SailBoat = sailboat;
+        //                db.boats.Add(sBoat);
+        //                db.SaveChanges();
+        //                break;
+        //            case 2:
+        //                Boat mBoat = new Boat();
+        //                MotorBoat motorBoat = new MotorBoat();
+        //                break;
+        //            case 3:
+        //                Engine engine = new Engine();
+        //                break;
 
-                }
-                //db.adverts.Add(advert);
+        //        }
+        //        //db.adverts.Add(advert);
 
 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
 
-            return Ok(subject);
-        }
+        //    return Ok(subject);
+        //}
     }
 }

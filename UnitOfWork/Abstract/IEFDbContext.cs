@@ -26,5 +26,7 @@ namespace UnitOfWork.Abstract
         //---Dictionaries
         DbSet<DicCategories> dicCategories { get; set; }
         DbSet<DicYearbooks> dicYearbooks { get; set; }
+
+        //Task<int> SaveChangesAsync();
     }
 }

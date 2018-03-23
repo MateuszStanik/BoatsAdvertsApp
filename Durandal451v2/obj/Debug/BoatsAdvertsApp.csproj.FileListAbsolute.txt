@@ -78,3 +78,5 @@ D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\Swashbuckle.Core.d
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\System.IdentityModel.Tokens.Jwt.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\WebActivatorEx.dll
 D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\AutoMapper.dll
+D:\Visual studio - projects\BoatsAdvertsApp\Durandal451v2\bin\AutoMapper.xml
