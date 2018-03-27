@@ -39,11 +39,7 @@ D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migr
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._1.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._2.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._3.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._4.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._5.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.dll
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.pdb
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._6.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._7.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._8.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._4.resources

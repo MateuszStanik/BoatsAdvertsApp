@@ -13,6 +13,7 @@ namespace DomainModel
     {
         [Key]
         public int ImageID { get; set; }
+        public Int64 SubjectId { get; set; }
         //public Int64 SubjectId { get; set; }
         public string Name { get; set; }
         public Guid Identifier { get; set; }

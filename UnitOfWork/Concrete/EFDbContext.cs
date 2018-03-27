@@ -17,7 +17,7 @@ namespace UnitOfWork
         {
             Database.SetInitializer<EFDbContext>(null);
 
-            //this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.LazyLoadingEnabled = true;
         }
         //---Entities
         public DbSet<Advert> adverts { get; set; }

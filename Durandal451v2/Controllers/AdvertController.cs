@@ -94,8 +94,6 @@ namespace Durandal451v2.Controllers
                             motorBoat = JsonConvert.DeserializeObject<MotorBoat>(jsonProduct);
                             subject.MotorBoat = motorBoat;
                             subject.CategoryId = category.CategoryId;
-                            
-
                             break;
                         case 3:
                             subject = new Engine();
@@ -103,11 +101,14 @@ namespace Durandal451v2.Controllers
                             subject = JsonConvert.DeserializeObject<Engine>(jsonProduct);
                             subject.Advert = advert;
                             subject = enginePar;
-                            subject.Brand = enginePar.Brand;
-                            
-                            
+                            subject.Brand = enginePar.Brand;                            
                             break;
-
+                        case 4:
+                            subject = new Trailor();
+                            var trailorParams = JsonConvert.DeserializeObject<Trailor>(jsonSubject);
+                            subject = JsonConvert.DeserializeObject<Trailor>(jsonProduct);
+                            
+                            break;                      
                     }
 
                 }
