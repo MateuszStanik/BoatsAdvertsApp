@@ -40,7 +40,7 @@ namespace Durandal451v2.Controllers
             {
                 productsList = db.subjects.ToList();
             }
-                
+            
             var products = productsList
                 .Select(
                 x => new ProductInfo()
@@ -50,7 +50,7 @@ namespace Durandal451v2.Controllers
                     SubjectId = x.SubjectId,
                     AdvertName = x.AdvertName,
                     Price = x.Price,
-                    Image = "../../AdvertImages/" + db.images.Where(y=>y.Subject.SubjectId == x.SubjectId).FirstOrDefault().Name 
+                    Image = "../../AdvertImages/" + db.images.Where(y => y.Subject.SubjectId == x.SubjectId).FirstOrDefault().Name
                 })
                 .ToArray();
             int[] marks = new int[5] { 99, 98, 92, 97, 95 };

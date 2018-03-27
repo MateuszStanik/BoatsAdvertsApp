@@ -129,8 +129,8 @@ namespace Durandal451v2.Controllers
                             httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
                             uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);
                             uploadedImg.Identifier = Guid.NewGuid();
-                            //uploadedImg.Subject = subject;
-
+                            uploadedImg.Subject = subject;
+                            
                             _db.images.Add(uploadedImg);
                             var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
                             httpPostedFile.SaveAs(fileSavePath);
