@@ -18,6 +18,7 @@ namespace UnitOfWork.Abstract
         DbSet<Sail> sails { get; set; }
         DbSet<Boat> boats { get; set; }
         DbSet<Image> images { get; set; }
+        DbSet<Trailor> trailors { get; set; }
         //---Login entities
         DbSet<AspNetRoles> AspNetRoles { get; set; }
         DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }

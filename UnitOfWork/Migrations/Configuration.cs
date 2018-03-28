@@ -10,6 +10,7 @@ namespace UnitOfWork.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "UnitOfWork.EFDbContext";
         }
 
         protected override void Seed(UnitOfWork.EFDbContext context)

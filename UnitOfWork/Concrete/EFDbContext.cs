@@ -15,9 +15,9 @@ namespace UnitOfWork
     {
         public EFDbContext() : base("name=BoatsAdverts")
         {
-            Database.SetInitializer<EFDbContext>(null);
-
-            this.Configuration.LazyLoadingEnabled = true;
+            //Database.SetInitializer<EFDbContext>(null);
+            //Database.SetInitializer<EFDbContext>(new DropCreateDatabaseAlways<EFDbContext>());
+            //            this.Configuration.LazyLoadingEnabled = true;
         }
         //---Entities
         public DbSet<Advert> adverts { get; set; }
@@ -26,6 +26,7 @@ namespace UnitOfWork
         public DbSet<Sail> sails { get; set; }
         public DbSet<Boat> boats { get; set; }
         public DbSet<Image> images { get; set; }
+        public DbSet<Trailor> trailors {get;set;}
         //---Login entities
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }

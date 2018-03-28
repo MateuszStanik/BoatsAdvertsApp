@@ -35,11 +35,8 @@ D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\bin\Debug\EntityFramework
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\bin\Debug\EntityFramework.SqlServer.xml
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\bin\Debug\Microsoft.Owin.xml
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.csprojResolveAssemblyReference.cache
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations.init.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._1.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._2.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._3.resources
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.dll
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.pdb
-D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._4.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations.InitialCreate.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.csproj.GenerateResource.Cache
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._1.resources

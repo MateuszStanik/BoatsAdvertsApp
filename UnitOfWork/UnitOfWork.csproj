@@ -59,25 +59,13 @@
   <ItemGroup>
     <Compile Include="Abstract\IEFDbContext.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
-    <Compile Include="Migrations\201711161226099_init.cs" />
-    <Compile Include="Migrations\201711161226099_init.Designer.cs">
-      <DependentUpon>201711161226099_init.cs</DependentUpon>
+    <Compile Include="Migrations\201803281017364_InitialCreate.cs" />
+    <Compile Include="Migrations\201803281017364_InitialCreate.Designer.cs">
+      <DependentUpon>201803281017364_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711161232394_1.cs" />
-    <Compile Include="Migrations\201711161232394_1.Designer.cs">
-      <DependentUpon>201711161232394_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711161234359_2.cs" />
-    <Compile Include="Migrations\201711161234359_2.Designer.cs">
-      <DependentUpon>201711161234359_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711161240143_3.cs" />
-    <Compile Include="Migrations\201711161240143_3.Designer.cs">
-      <DependentUpon>201711161240143_3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803271857274_4.cs" />
-    <Compile Include="Migrations\201803271857274_4.Designer.cs">
-      <DependentUpon>201803271857274_4.cs</DependentUpon>
+    <Compile Include="Migrations\201803281020534_1.cs" />
+    <Compile Include="Migrations\201803281020534_1.Designer.cs">
+      <DependentUpon>201803281020534_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,24 +81,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711161226099_init.resx">
-      <DependentUpon>201711161226099_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711161232394_1.resx">
-      <DependentUpon>201711161232394_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711161234359_2.resx">
-      <DependentUpon>201711161234359_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711161240143_3.resx">
-      <DependentUpon>201711161240143_3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803271857274_4.resx">
-      <DependentUpon>201803271857274_4.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <EmbeddedResource Include="Migrations\201803281017364_InitialCreate.resx">
+      <DependentUpon>201803281017364_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281020534_1.resx">
+      <DependentUpon>201803281020534_1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
