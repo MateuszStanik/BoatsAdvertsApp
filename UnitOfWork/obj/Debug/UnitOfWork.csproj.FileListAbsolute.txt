@@ -40,3 +40,4 @@ D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.pdb
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations.InitialCreate.resources
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.csproj.GenerateResource.Cache
 D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._1.resources
+D:\Visual studio - projects\BoatsAdvertsApp\UnitOfWork\obj\Debug\UnitOfWork.Migrations._2.resources
