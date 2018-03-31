@@ -61,8 +61,7 @@ namespace Durandal451v2.Controllers
                 Advert advert = new Advert();
                 advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
                 advert.AdditionDate = DateTime.Now;
-                
-                //var subject =new Boat();
+        
                 dynamic subject = null;
                 try
                 {
@@ -107,8 +106,12 @@ namespace Durandal451v2.Controllers
                             subject = new Trailor();
                             var trailorParams = JsonConvert.DeserializeObject<Trailor>(jsonSubject);
                             subject = JsonConvert.DeserializeObject<Trailor>(jsonProduct);
-                            
-                            break;                      
+                            break;
+                        case 5:
+                            subject = new Accesory();
+                            var sccessoryParams = JsonConvert.DeserializeObject<Accesory>(jsonSubject);
+                            subject = JsonConvert.DeserializeObject<Accesory>(jsonProduct);
+                            break;
                     }
 
                 }
@@ -130,8 +133,7 @@ namespace Durandal451v2.Controllers
                             httpPostedFile.InputStream.Read(uploadedImg.ImageData, 0, length);
                             uploadedImg.Name = Path.GetFileName(httpPostedFile.FileName);
                             uploadedImg.Identifier = Guid.NewGuid();
-                            uploadedImg.Subject = subject;
-                            
+                            uploadedImg.Subject = subject;                            
                             _db.images.Add(uploadedImg);
                             var fileSavePath = Path.Combine(HttpContext.Current.Server.MapPath("~/AdvertImages"), httpPostedFile.FileName);
                             httpPostedFile.SaveAs(fileSavePath);

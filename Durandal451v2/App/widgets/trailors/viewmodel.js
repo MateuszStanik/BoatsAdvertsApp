@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/contact'], function (app, $, ko, contact) {
+﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/trailor'], function (app, $, ko, contact) {
 
     return function model() {
         var self = this;
