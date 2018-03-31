@@ -14,5 +14,6 @@ namespace DomainModel
         public double FootLenght { get; set; }
         public double LuffLenght { get; set; }
         public string Brand { get; set; }
+        public double SailArea { get; set; }
     }
 }

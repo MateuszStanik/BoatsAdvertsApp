@@ -283,7 +283,8 @@
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\welcome.html" />
     <Content Include="App\viewmodels\Services\advertService.js" />
-    <Content Include="App\widgets\accesorier\AdvertModels\contact.js" />
+    <Content Include="App\widgets\accesorier\AdvertModels\accessory.js" />
+    <Content Include="App\widgets\accesorier\view.html" />
     <Content Include="App\widgets\accesorier\viewmodel.js" />
     <Content Include="App\widgets\contact\AdvertModels\contact.js" />
     <Content Include="App\widgets\contact\view.html" />
@@ -299,9 +300,11 @@
     <Content Include="App\widgets\sailboat\AdvertModels\sailboat.js" />
     <Content Include="App\widgets\sailboat\view.html" />
     <Content Include="App\widgets\sailboat\viewmodel.js" />
-    <Content Include="App\widgets\sails\AdvertModels\contact.js" />
+    <Content Include="App\widgets\sails\AdvertModels\sail.js" />
+    <Content Include="App\widgets\sails\view.html" />
     <Content Include="App\widgets\sails\viewmodel.js" />
-    <Content Include="App\widgets\trailors\AdvertModels\contact.js" />
+    <Content Include="App\widgets\trailors\AdvertModels\trailor.js" />
+    <Content Include="App\widgets\trailors\view.html" />
     <Content Include="App\widgets\trailors\viewmodel.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />

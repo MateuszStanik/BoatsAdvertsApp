@@ -7,6 +7,7 @@
                 FootLenght: ko.observable(),
                 LuffLenght: ko.observable(),
                 Brand: ko.observable(),
+                SailArea: ko.observable()
             }
 
             return vm;
