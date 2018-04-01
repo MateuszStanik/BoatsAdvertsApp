@@ -1,4 +1,4 @@
-﻿<div class="col-lg-6">
+﻿<div class="col-lg-6"  data-bind="visible: isEditable">
     <h3 class="text-center">Parametry przedmiotu</h3>
     <hr>
 
@@ -14,4 +14,36 @@
     <input class="form-control" data-bind="value: model.Brand, enable: isEditable" />
     <p class="form-p">Rok budowy </p>
     <input class="form-control" data-bind="value: model.BuiltYear, enable: isEditable" />
+</div>
+<div class="col-lg-12" data-bind="visible: !isEditable()">
+    <h3>Parametry przedmiotu</h3>
+    <hr>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="form-p">DMC </p>
+            <input class="form-control" data-bind="value: model.Weight, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Dopuszczalna długość</p>
+            <input class="form-control" data-bind="value: model.Length, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Dopuszczalna szerokość</p>
+            <input class="form-control" data-bind="value: model.Width, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Udźwig</p>
+            <input class="form-control" data-bind="value: model.Capcity, enable: isEditable" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <p class="form-p">Marka </p>
+            <input class="form-control" data-bind="value: model.Brand, enable: isEditable" />
+        </div>
+        <div class="col-lg-4">
+            <p class="form-p">Rok budowy </p>
+            <input class="form-control" data-bind="value: model.BuiltYear, enable: isEditable" />
+        </div>
+    </div>
 </div>

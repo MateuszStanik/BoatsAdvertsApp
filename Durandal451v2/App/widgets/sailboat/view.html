@@ -1,22 +1,22 @@
-﻿<div class="col-lg-6">
+﻿<div class="col-lg-6" data-bind="visible: isEditable">
     <h3 class="text-center">Parametry przedmiotu</h3>
     <hr>
-   
+
     <p class="form-p">Nazwa modelu</p>
-    <input class="form-control" data-bind="value: model.BoatModel, enable: isEditable"/>
+    <input class="form-control" data-bind="value: model.BoatModel, enable: isEditable" />
     <p class="form-p">Typ jachtu</p>
-    <input class="form-control" data-bind="value: model().YachtType, enable: isEditable"/>
+    <input class="form-control" data-bind="value: model().YachtType, enable: isEditable" />
     <p class="form-p">Nazwa producenta</p>
-    <input class="form-control" data-bind="value: model().ProducentName, enable: isEditable"/>
+    <input class="form-control" data-bind="value: model().ProducentName, enable: isEditable" />
     <p class="form-p">Rocznik*</p>
     <!-- ko if: isEditable -->
     <div class="form-group">
         <select id="yearbook" name="state" class="form-control select2-single" data-bind="value: model().BuiltYear, enable: isEditable"></select>
-    </div>    
-    <!-- /ko --> 
+    </div>
+    <!-- /ko -->
     <!-- ko if: !isEditable() -->
-    <input class="form-control" data-bind="value: model().BuiltYear, enable: isEditable" />        
-    <!-- /ko --> 
+    <input class="form-control" data-bind="value: model().BuiltYear, enable: isEditable" />
+    <!-- /ko -->
     <p class="form-p">Rodzaj steru</p>
     <input class="form-control" data-bind="value: model().RudderType, enable: isEditable" />
     <p class="form-p">Długość*</p>
@@ -39,5 +39,79 @@
     <input class="form-control" data-bind="value: model().HullType, enable: isEditable" />
     <p class="form-p">Czy jest silnik</p>
     <input class="form-control" data-bind="value: model().IsEngine, enable: isEditable" />
+</div>
+
+
+<div class="col-lg-12 form-group" data-bind="visible: !isEditable()">
+    <h3>Ustawienie parametrów przedmiotu</h3>
+    <hr>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="form-p">Nazwa modelu</p>
+            <input class="form-control" data-bind="value: model.BoatModel, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Typ jachtu</p>
+            <input class="form-control" data-bind="value: model().YachtType, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Nazwa producenta</p>
+            <input class="form-control" data-bind="value: model().ProducentName, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Rocznik*</p>
+            <input class="form-control" data-bind="value: model().BuiltYear, enable: isEditable" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="form-p">Rodzaj steru</p>
+            <input class="form-control" data-bind="value: model().RudderType, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Długość*</p>
+            <input class="form-control" data-bind="value: model().Length, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Szerokość</p>
+            <input class="form-control" data-bind="value: model().Beam, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Waga</p>
+            <input class="form-control" data-bind="value: model().Weight, enable: isEditable" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="form-p">Wyporność</p>
+            <input class="form-control" data-bind="value: model().Displacement, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Zanurzenie</p>
+            <input class="form-control" data-bind="value: model().Draft, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Powierzchnia żagli</p>
+            <input class="form-control" data-bind="value: model().SailsArea, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Typ silnika</p>
+            <input class="form-control" data-bind="value: model().EngineType, enable: isEditable" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <p class="form-p">Moc silnika</p>
+            <input class="form-control" data-bind="value: model().EnginePower, enable: isEditable" />
+        </div>
+        <div class="col-lg-4">
+            <p class="form-p">Rodzaj kadłuba</p>
+            <input class="form-control" data-bind="value: model().HullType, enable: isEditable" />
+        </div>
+        <div class="col-lg-4">
+            <p class="form-p">Czy jest silnik</p>
+            <input class="form-control" data-bind="value: model().IsEngine, enable: isEditable" />
+        </div>
+    </div>  
 </div>
 

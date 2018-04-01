@@ -25,13 +25,6 @@ using UnitOfWork.Abstract;
 
 namespace Durandal451v2.Controllers
 {
-    //public class Image
-    //{
-
-    //    public int ImageID { get; set; }
-    //    public string Name { get; set; }
-    //    public byte[] ImageData { get; set; }
-    //}
 
     [RoutePrefix("api/Advert")]
     public class AdvertController : ApiController
@@ -75,7 +68,7 @@ namespace Durandal451v2.Controllers
                             subject.AdvertDescription = boat.AdvertDescription;
                             subject.AdvertName = boat.AdvertName;
                             subject.Price = boat.Price;
-                            subject.Advert = advert;
+                            subject.Advert = advert;                                                       
                             sailboat = JsonConvert.DeserializeObject<SailBoat>(jsonProduct);
                             subject.SailBoat = sailboat;
                             subject.CategoryId = category.CategoryId;
@@ -98,19 +91,25 @@ namespace Durandal451v2.Controllers
                             subject = new Engine();
                             var enginePar = JsonConvert.DeserializeObject<Engine>(jsonSubject);
                             subject = JsonConvert.DeserializeObject<Engine>(jsonProduct);
-                            subject.Advert = advert;
                             subject = enginePar;
-                            subject.Brand = enginePar.Brand;                            
+                            subject.Brand = enginePar.Brand;
+                            subject.Advert = advert;
+                            subject.CategoryId = category.CategoryId;
+
                             break;
                         case 4:
                             subject = new Trailor();
                             var trailorParams = JsonConvert.DeserializeObject<Trailor>(jsonSubject);
                             subject = JsonConvert.DeserializeObject<Trailor>(jsonProduct);
+                            subject.CategoryId = category.CategoryId;
+                            subject.Advert = advert;
                             break;
                         case 5:
                             subject = new Accesory();
                             var sccessoryParams = JsonConvert.DeserializeObject<Accesory>(jsonSubject);
                             subject = JsonConvert.DeserializeObject<Accesory>(jsonProduct);
+                            subject.CategoryId = category.CategoryId;
+                            subject.Advert = advert;
                             break;
                     }
 

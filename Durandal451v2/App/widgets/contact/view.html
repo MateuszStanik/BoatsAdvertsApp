@@ -1,5 +1,5 @@
 ﻿
-<div class="col-lg-6 form-group">
+<div class="col-lg-6 form-group" data-bind="visible: isEditable">
     <h3 class="text-center">Dane kontaktowe</h3>
     <hr>
     <p class="form-p">Imie</p>
@@ -14,4 +14,38 @@
     <input class="form-control" data-bind="value: model().City, enable: isEditable" />
     <p class="form-p">Dodatkowe informacje</p>
     <textarea class="form-control" rows="6" data-bind="value: model().AdditionalInformation, enable: isEditable"></textarea>
+</div>
+
+
+<div class="col-lg-12 form-group" data-bind="visible: !isEditable()">
+    <h3>Dane kontaktowe</h3>
+    <hr>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="form-p">Imie</p>
+            <input class="form-control" data-bind="value: model().Name, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Nazwisko</p>
+            <input class="form-control" data-bind="value: model().SureName, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Telefon kontaktowy</p>
+            <input class="form-control" data-bind="value: model().PhoneNumber, enable: isEditable" />
+        </div>
+        <div class="col-lg-3">
+            <p class="form-p">Email *</p>
+            <input class="form-control" data-bind="value: model().Email, enable: isEditable" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <p class="form-p">Miasto odbioru</p>
+            <input class="form-control" data-bind="value: model().City, enable: isEditable" />
+        </div>
+        <div class="col-lg-8">
+            <p class="form-p">Dodatkowe informacje</p>
+            <textarea class="form-control" rows="6" data-bind="value: model().AdditionalInformation, enable: isEditable"></textarea>
+        </div>
+    </div>
 </div>

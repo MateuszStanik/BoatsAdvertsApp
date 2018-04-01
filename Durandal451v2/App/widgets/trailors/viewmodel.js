@@ -1,9 +1,9 @@
-﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/trailor'], function (app, $, ko, contact) {
+﻿define(['durandal/app', 'jquery', 'knockout', './AdvertModels/trailor'], function (app, $, ko, trailor) {
 
     return function model() {
         var self = this;
 
-        self.model = ko.observable(new contact());
+        self.model = ko.observable(new trailor());
 
         self.isEditable = ko.observable(true);
 

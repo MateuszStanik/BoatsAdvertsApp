@@ -289,9 +289,9 @@
     <Content Include="App\widgets\contact\AdvertModels\contact.js" />
     <Content Include="App\widgets\contact\view.html" />
     <Content Include="App\widgets\contact\viewmodel.js" />
-    <Content Include="App\widgets\engines\AdvertModels\engines.js" />
-    <Content Include="App\widgets\engines\view.html" />
-    <Content Include="App\widgets\engines\viewmodel.js" />
+    <Content Include="App\widgets\engine\AdvertModels\engine.js" />
+    <Content Include="App\widgets\engine\view.html" />
+    <Content Include="App\widgets\engine\viewmodel.js" />
     <Content Include="App\widgets\modal\modal.html" />
     <Content Include="App\widgets\modal\modal.js" />
     <Content Include="App\widgets\motorboat\AdvertModels\motorBoat.js" />
