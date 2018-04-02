@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace BoatsAdvertsApp.AutoMapperProfile
     {
         public AdvertProfile()
         {
-            
+            CreateMap<Advert, Advert>();
         }
     }
 }

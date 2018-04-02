@@ -28,6 +28,6 @@ namespace UnitOfWork.Abstract
         DbSet<DicCategories> dicCategories { get; set; }
         DbSet<DicYearbooks> dicYearbooks { get; set; }
 
-        //Task<int> SaveChangesAsync();
+        int SaveChanges();
     }
 }

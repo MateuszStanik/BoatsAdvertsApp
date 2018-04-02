@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace Durandal451v2.Areas.HelpPage
+namespace BoatsAdvertsApp.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

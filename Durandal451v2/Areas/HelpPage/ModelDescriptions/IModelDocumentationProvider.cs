@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace Durandal451v2.Areas.HelpPage.ModelDescriptions
+namespace BoatsAdvertsApp.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

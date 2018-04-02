@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoatsAdvertsApp.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,8 @@ namespace Durandal451v2
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);  
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            AutofacConfig.ConfigureBuilder();
         }
     }
 }

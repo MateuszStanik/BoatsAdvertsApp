@@ -30,14 +30,14 @@ namespace Durandal451v2.Controllers
     public class AdvertController : ApiController
     {
         IMapper _mapper;
-       // IEFDbContext _db;
-        private readonly EFDbContext _db = new EFDbContext();
-        
-        //public AdvertController(IMapper mapper)
-        //{
-        //    _mapper = mapper;
-        //    //_db = db;
-        //}
+        IEFDbContext _db;
+        //private readonly EFDbContext _db = new EFDbContext();
+
+        public AdvertController(IMapper mapper, IEFDbContext db)
+        {
+            _mapper = mapper;
+            _db = db;
+        }
 
         [HttpPost]
         [Route("UploadImage")]
@@ -138,7 +138,8 @@ namespace Durandal451v2.Controllers
                             httpPostedFile.SaveAs(fileSavePath);
                         }
                     }
-                    _db.SaveChanges();
+                   // _db.SaveChanges();
+                  
                     return Ok();
                 }
                 catch (Exception ex)

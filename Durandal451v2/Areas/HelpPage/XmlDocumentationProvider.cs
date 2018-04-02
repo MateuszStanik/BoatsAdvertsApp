@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using Durandal451v2.Areas.HelpPage.ModelDescriptions;
+using BoatsAdvertsApp.Areas.HelpPage.ModelDescriptions;
 
-namespace Durandal451v2.Areas.HelpPage
+namespace BoatsAdvertsApp.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

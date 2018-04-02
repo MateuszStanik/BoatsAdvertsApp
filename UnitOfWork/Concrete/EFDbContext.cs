@@ -35,6 +35,20 @@ namespace UnitOfWork
         //---Dictionaries
         public DbSet<DicCategories> dicCategories { get; set; }
         public DbSet<DicYearbooks> dicYearbooks { get; set; }
+        public override int SaveChanges()
+        {
+           
+            try
+            {
+                return base.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                var exMessage = ex.EntityValidationErrors.SelectMany(x => x.ValidationErrors).Aggregate(String.Empty, (current, error) => current + String.Format("{0}: {1}\n", error.PropertyName, error.ErrorMessage));
+                throw new DbEntityValidationException(exMessage, ex.EntityValidationErrors);
+            }
+
+        }
         //public override Task<int> SaveChangesAsync()
         //{
         //    try
@@ -71,5 +85,6 @@ namespace UnitOfWork
                 .HasForeignKey(e => e.UserId);
         }
 
+      
     }
 }

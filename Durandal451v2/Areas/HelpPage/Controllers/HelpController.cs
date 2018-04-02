@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Durandal451v2.Areas.HelpPage.ModelDescriptions;
-using Durandal451v2.Areas.HelpPage.Models;
+using BoatsAdvertsApp.Areas.HelpPage.ModelDescriptions;
+using BoatsAdvertsApp.Areas.HelpPage.Models;
 
-namespace Durandal451v2.Areas.HelpPage.Controllers
+namespace BoatsAdvertsApp.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

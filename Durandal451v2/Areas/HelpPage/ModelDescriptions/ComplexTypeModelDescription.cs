@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace Durandal451v2.Areas.HelpPage.ModelDescriptions
+namespace BoatsAdvertsApp.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Durandal451v2.Areas.HelpPage.ModelDescriptions
+namespace BoatsAdvertsApp.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

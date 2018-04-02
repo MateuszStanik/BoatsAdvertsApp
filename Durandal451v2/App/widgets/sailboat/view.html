@@ -49,47 +49,49 @@
         <div class="col-lg-3">
             <p class="form-p">Nazwa modelu</p>
             <input class="form-control" data-bind="value: model.BoatModel, enable: isEditable" />
+        </div>        
+        <div class="col-lg-3">
+            <p class="form-p">Nazwa producenta</p>
+            <input class="form-control" data-bind="value: model().ProducentName, enable: isEditable" />
         </div>
+        <div class="col-lg-2">
+            <p class="form-p">Rocznik*</p>
+            <input class="form-control" data-bind="value: model().BuiltYear, enable: isEditable" />
+        </div>
+
+        <div class="col-lg-2">
+            <p class="form-p">Długość*</p>
+            <input class="form-control" data-bind="value: model().Length, enable: isEditable" />
+        </div>
+        <div class="col-lg-2">
+            <p class="form-p">Szerokość</p>
+            <input class="form-control" data-bind="value: model().Beam, enable: isEditable" />
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-3">
             <p class="form-p">Typ jachtu</p>
             <input class="form-control" data-bind="value: model().YachtType, enable: isEditable" />
         </div>
         <div class="col-lg-3">
-            <p class="form-p">Nazwa producenta</p>
-            <input class="form-control" data-bind="value: model().ProducentName, enable: isEditable" />
-        </div>
-        <div class="col-lg-3">
-            <p class="form-p">Rocznik*</p>
-            <input class="form-control" data-bind="value: model().BuiltYear, enable: isEditable" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-3">
             <p class="form-p">Rodzaj steru</p>
             <input class="form-control" data-bind="value: model().RudderType, enable: isEditable" />
         </div>
-        <div class="col-lg-3">
-            <p class="form-p">Długość*</p>
-            <input class="form-control" data-bind="value: model().Length, enable: isEditable" />
-        </div>
-        <div class="col-lg-3">
-            <p class="form-p">Szerokość</p>
-            <input class="form-control" data-bind="value: model().Beam, enable: isEditable" />
-        </div>
-        <div class="col-lg-3">
+       
+        <div class="col-lg-2">
             <p class="form-p">Waga</p>
             <input class="form-control" data-bind="value: model().Weight, enable: isEditable" />
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <p class="form-p">Wyporność</p>
             <input class="form-control" data-bind="value: model().Displacement, enable: isEditable" />
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <p class="form-p">Zanurzenie</p>
             <input class="form-control" data-bind="value: model().Draft, enable: isEditable" />
         </div>
+    </div>
+    <div class="row">         
         <div class="col-lg-3">
             <p class="form-p">Powierzchnia żagli</p>
             <input class="form-control" data-bind="value: model().SailsArea, enable: isEditable" />
@@ -98,17 +100,16 @@
             <p class="form-p">Typ silnika</p>
             <input class="form-control" data-bind="value: model().EngineType, enable: isEditable" />
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
-            <p class="form-p">Moc silnika</p>
-            <input class="form-control" data-bind="value: model().EnginePower, enable: isEditable" />
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-2">
             <p class="form-p">Rodzaj kadłuba</p>
             <input class="form-control" data-bind="value: model().HullType, enable: isEditable" />
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-2">
+            <p class="form-p">Moc silnika</p>
+            <input class="form-control" data-bind="value: model().EnginePower, enable: isEditable" />
+        </div>
+   
+        <div class="col-lg-2">
             <p class="form-p">Czy jest silnik</p>
             <input class="form-control" data-bind="value: model().IsEngine, enable: isEditable" />
         </div>

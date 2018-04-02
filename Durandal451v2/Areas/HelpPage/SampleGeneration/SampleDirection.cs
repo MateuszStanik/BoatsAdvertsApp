@@ -1,4 +1,4 @@
-namespace Durandal451v2.Areas.HelpPage
+namespace BoatsAdvertsApp.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response
