@@ -23,20 +23,3 @@
 
 
 });
-
-//define(['durandal/app', 'jquery', 'knockout', './AdvertModels/motorBoat'], function (app, $, ko, motorBoat) {
-//    var self = this;
-
-//    self.activate = function (options) {
-//        vm.modelS(new motorBoat());
-//        options.data(vm.modelS());
-//    };
-
-//    var vm = {
-//        modelS: ko.observable(),
-//        activate: self.activate,
-
-//    }
-
-//    return vm;
-//});

@@ -105,9 +105,9 @@ namespace Durandal451v2.Controllers
                             subject.Advert = advert;
                             break;
                         case 5:
-                            subject = new Accesory();
-                            var sccessoryParams = JsonConvert.DeserializeObject<Accesory>(jsonSubject);
-                            subject = JsonConvert.DeserializeObject<Accesory>(jsonProduct);
+                            subject = new Sail();
+                            var sccessoryParams = JsonConvert.DeserializeObject<Sail>(jsonSubject);
+                            subject = JsonConvert.DeserializeObject<Sail>(jsonProduct);
                             subject.CategoryId = category.CategoryId;
                             subject.Advert = advert;
                             break;
@@ -138,7 +138,7 @@ namespace Durandal451v2.Controllers
                             httpPostedFile.SaveAs(fileSavePath);
                         }
                     }
-                   // _db.SaveChanges();
+                    _db.SaveChanges();
                   
                     return Ok();
                 }

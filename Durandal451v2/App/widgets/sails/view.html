@@ -3,15 +3,15 @@
     <hr>
 
     <p class="form-p">Marka </p>
-    <input class="form-control" data-bind="value: model.Brand, enable: isEditable" />
+    <input class="form-control" data-bind="value: model().Brand, enable: isEditable" />
     <p class="form-p">Lik przedni</p>
-    <input class="form-control" data-bind="value: model.LeechLenght, enable: isEditable" />
+    <input class="form-control" data-bind="value: model().LeechLenght, enable: isEditable" />
     <p class="form-p">Lik dolny</p>
-    <input class="form-control" data-bind="value: model.FootLenght, enable: isEditable" />
+    <input class="form-control" data-bind="value: model().FootLenght, enable: isEditable" />
     <p class="form-p">Lik wolny</p>
-    <input class="form-control" data-bind="value: model.LuffLenght, enable: isEditable" />
+    <input class="form-control" data-bind="value: model().LuffLenght, enable: isEditable" />
     <p class="form-p">Powierzchnia żagla </p>
-    <input class="form-control" data-bind="value: model.LeechLenght, enable: isEditable" />
+    <input class="form-control" data-bind="value: model().LeechLenght, enable: isEditable" />
   
 </div>
 
@@ -21,25 +21,23 @@
     <div class="row">
         <div class="col-lg-3">
             <p class="form-p">Marka </p>
-            <input class="form-control" data-bind="value: model.Brand, enable: isEditable" />
+            <input class="form-control" data-bind="value: model().Brand, enable: isEditable" />
         </div>
         <div class="col-lg-3">
-            <p class="form-p">Lik przedni</p>
-            <input class="form-control" data-bind="value: model.LeechLenght, enable: isEditable" />
-        </div>
-        <div class="col-lg-3">
-            <p class="form-p">Lik dolny</p>
-            <input class="form-control" data-bind="value: model.FootLenght, enable: isEditable" />
-        </div>
-        <div class="col-lg-3">
-            <p class="form-p">Lik wolny</p>
-            <input class="form-control" data-bind="value: model.LuffLenght, enable: isEditable" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
             <p class="form-p">Powierzchnia żagla </p>
-            <input class="form-control" data-bind="value: model.LeechLenght, enable: isEditable" />
+            <input class="form-control" data-bind="value: model().LeechLenght, enable: isEditable" />
         </div>
-    </div>
+        <div class="col-lg-2">
+            <p class="form-p">Lik przedni</p>
+            <input class="form-control" data-bind="value: model().LeechLenght, enable: isEditable" />
+        </div>
+        <div class="col-lg-2">
+            <p class="form-p">Lik dolny</p>
+            <input class="form-control" data-bind="value: model().FootLenght, enable: isEditable" />
+        </div>
+        <div class="col-lg-2">
+            <p class="form-p">Lik wolny</p>
+            <input class="form-control" data-bind="value: model().LuffLenght, enable: isEditable" />
+        </div>       
+    </div>    
 </div>
