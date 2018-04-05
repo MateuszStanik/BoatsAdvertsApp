@@ -91,10 +91,16 @@ namespace Durandal451v2.Controllers
                             subject = new Engine();
                             var enginePar = JsonConvert.DeserializeObject<Engine>(jsonSubject);
                             subject = JsonConvert.DeserializeObject<Engine>(jsonProduct);
-                            subject = enginePar;
-                            subject.Brand = enginePar.Brand;
-                            subject.Advert = advert;
+                            //subject.Price = subjectJsonPar.Price;
+                            //subject.BuiltYear = subjectJsonPar.BuiltYear;
+                            //subject.Brand = subjectJsonPar.Brand;
+                            //subject.Power = subjectJsonPar.Power;
+                            //subject.TypeOfEngine = subjectJsonPar.TypeOfEngine;
+                            //subject.TypeOfFuel = subjectJsonPar.TypeOfFuel;
+                            //subject = enginePar;
+                            //subject.Brand = enginePar.Brand;
                             subject.CategoryId = category.CategoryId;
+                            subject.Advert = advert;                           
 
                             break;
                         case 4:
@@ -106,8 +112,15 @@ namespace Durandal451v2.Controllers
                             break;
                         case 5:
                             subject = new Sail();
-                            var sccessoryParams = JsonConvert.DeserializeObject<Sail>(jsonSubject);
+                            var sailParams = JsonConvert.DeserializeObject<Sail>(jsonSubject);
                             subject = JsonConvert.DeserializeObject<Sail>(jsonProduct);
+                            subject.CategoryId = category.CategoryId;
+                            subject.Advert = advert;
+                            break;
+                        case 6:
+                            subject = new Accesory();
+                            var accessoryParams = JsonConvert.DeserializeObject<Accesory>(jsonSubject);
+                            subject = JsonConvert.DeserializeObject<Accesory>(jsonProduct);
                             subject.CategoryId = category.CategoryId;
                             subject.Advert = advert;
                             break;
