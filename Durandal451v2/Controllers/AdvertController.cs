@@ -51,8 +51,8 @@ namespace Durandal451v2.Controllers
                 string jsonProduct = HttpContext.Current.Request.Form[3];
                 string Id = JsonConvert.DeserializeObject<string>(subjectId);
                 var category = _db.dicCategories.Where(x => x.Id == Id).FirstOrDefault();
-                Advert advert = new Advert();
-                advert = JsonConvert.DeserializeObject<Advert>(jsonAdvert);
+                DomainModel.Advert advert = new DomainModel.Advert();
+                advert = JsonConvert.DeserializeObject<DomainModel.Advert>(jsonAdvert);
                 advert.AdditionDate = DateTime.Now;
         
                 dynamic subject = null;
@@ -88,9 +88,12 @@ namespace Durandal451v2.Controllers
                             subject.CategoryId = category.CategoryId;
                             break;
                         case 3:
-                            subject = new Engine();
-                            var enginePar = JsonConvert.DeserializeObject<Engine>(jsonSubject);
-                            subject = JsonConvert.DeserializeObject<Engine>(jsonProduct);
+                            subject = new DomainModel.Engine();
+                            ApiContract.Subject enginePar = JsonConvert.DeserializeObject<ApiContract.Subject>(jsonSubject);
+                            ApiContract.Engine subjectApiContract = JsonConvert.DeserializeObject<ApiContract.Engine>(jsonProduct);
+                            _mapper.Map<ApiContract.Subject, DomainModel.Engine>(enginePar, subject);
+                            _mapper.Map<ApiContract.Engine, DomainModel.Engine>(subjectApiContract, subject);
+                           
                             //subject.Price = subjectJsonPar.Price;
                             //subject.BuiltYear = subjectJsonPar.BuiltYear;
                             //subject.Brand = subjectJsonPar.Brand;

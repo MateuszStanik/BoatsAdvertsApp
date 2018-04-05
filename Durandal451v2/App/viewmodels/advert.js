@@ -38,7 +38,7 @@
                     dictResponseError: "Wystąpił problem z zapisem plików {{statusCode}}",
                     dictMaxFilesExceeded: "Załadowano już maksymalną ilość plików",
                     success: function (file, response, action) {
-                        if (sucessFlag == true) {
+                        if (sucessFlag === true) {
                             logger.log({
                                 message: "Ogłoszenie zostało dodane!",
                                 data: "",
@@ -62,7 +62,7 @@
                     //}
                 });
                 myDropzone.on('sending', function (file, xhr, formData) {
-                    if (file == myDropzone.files[0]) {
+                    if (file === myDropzone.files[0]) {
                         formData.append('subjectType', ko.toJSON(vm.selectedCategory));
                         formData.append('subject', ko.toJSON(vm.advert));
                         formData.append('contact', ko.toJSON(vm.crazyModelContact));
@@ -96,21 +96,21 @@
                     vm.errorsStep1 = ko.validation.group(vm.crazyModel());
                     vm.errorsStep2 = ko.validation.group(vm.crazyModelContact());
 
-                    if (stepDirection == 'forward')
+                    if (stepDirection === 'forward')
                     {
-                        if (stepNumber == 0) {
+                        if (stepNumber === 0) {
                             if (vm.errorsStep0().length > 0) {
                                 vm.errorsStep0.showAllMessages();
                                 return false;
                             }
                         }
-                        if (stepNumber == 1) {
+                        if (stepNumber === 1) {
                             if (vm.errorsStep1().length > 0) {
                                 vm.errorsStep1.showAllMessages();
                                 return false;
                             }
                         }
-                        if (stepNumber == 2) {
+                        if (stepNumber === 2) {
                             if (vm.errorsStep2().length > 0) {
                                 vm.errorsStep2.showAllMessages();
                                 return false;

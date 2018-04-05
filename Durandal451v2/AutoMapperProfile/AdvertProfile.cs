@@ -11,7 +11,8 @@ namespace BoatsAdvertsApp.AutoMapperProfile
     {
         public AdvertProfile()
         {
-            CreateMap<Advert, Advert>();
+            CreateMap<ApiContract.Engine, Engine>();
+            CreateMap<ApiContract.Subject, Engine>();
         }
     }
 }
