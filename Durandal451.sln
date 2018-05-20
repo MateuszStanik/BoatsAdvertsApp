@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork", "UnitOfWork\Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiContract", "ApiContract\ApiContract.csproj", "{74679032-9BC6-461E-9F8B-569DFC5C7EFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{E880EEC7-6846-4E2E-8F4A-612290EAA3A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{74679032-9BC6-461E-9F8B-569DFC5C7EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74679032-9BC6-461E-9F8B-569DFC5C7EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74679032-9BC6-461E-9F8B-569DFC5C7EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E880EEC7-6846-4E2E-8F4A-612290EAA3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E880EEC7-6846-4E2E-8F4A-612290EAA3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E880EEC7-6846-4E2E-8F4A-612290EAA3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E880EEC7-6846-4E2E-8F4A-612290EAA3A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

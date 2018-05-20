@@ -51,7 +51,7 @@ namespace Durandal451v2.Controllers
             string[] Phones = { "129483958", "837495837", "098273475", "283950392", "898127847", "988372982", "783917284" };
             try
             {
-                for (int i = 0; i < 10000; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     int rand = new Random().Next(1, 6);
                     DomainModel.Advert advert = new DomainModel.Advert();

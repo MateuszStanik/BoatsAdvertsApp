@@ -18,6 +18,7 @@ namespace UnitOfWork
             //Database.SetInitializer<EFDbContext>(null);
             //Database.SetInitializer<EFDbContext>(new DropCreateDatabaseAlways<EFDbContext>());
             //            this.Configuration.LazyLoadingEnabled = true;
+            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
         //---Entities
         public DbSet<Advert> adverts { get; set; }
