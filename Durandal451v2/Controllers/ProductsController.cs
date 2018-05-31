@@ -36,16 +36,14 @@ namespace Durandal451v2.Controllers
         [HttpGet]
         [Route("TestORM")]
         public IHttpActionResult TestORM()
-        {
+        {                       
             Stopwatch stopWatch = Stopwatch.StartNew();
-
-            var newQuery = _db.adverts.Where(x => x.AdditionDate > new DateTime(2018, 5, 24, 20, 21, 00) && x.AdditionDate < new DateTime(2018, 5, 24, 20, 25, 00)).ToList();
-            //var test = db.Database.SqlQuery<List<Advert>>("SELECT * from [BoatsAd].[dbo].Adverts").ToList(); 
+          
+            var newQuery = _db.subjects.Where(x=>x.Advert.AdditionDate > new DateTime(2018, 5, 31, 12, 09, 50) && x.Advert.AdditionDate < new DateTime(2018, 5, 31, 12, 11, 30)).Select(y=>new { y.AdvertDescription, y.AdvertName, y.Price}).ToList();
             
-            //.SqlQuery("SELECT * from [BoatsAd].[dbo].Adverts where AdditionDate > '2018-05-24 20:21:00' and AdditionDate > '2018-05-24 20:25:00'").ToList();
             stopWatch.Stop();
-            System.Diagnostics.Debug.WriteLine("Czas wykonania: " + stopWatch.ElapsedMilliseconds);
-            return Ok();
+            System.Diagnostics.Debug.WriteLine("Czas wykonania1: " + stopWatch.ElapsedMilliseconds);
+            return Ok();   
         }
 
         [HttpGet]
@@ -55,39 +53,21 @@ namespace Durandal451v2.Controllers
             SqlConnection sqlConnection1 = new SqlConnection(ConfigurationManager.ConnectionStrings["BoatsAdverts"].ConnectionString);
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
-            cmd.CommandText = "SELECT * FROM Adverts";
-            cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection1;
-
             sqlConnection1.Open();
-            
+
+            Stopwatch stopWatch = Stopwatch.StartNew();           
+            cmd.CommandText = "select  AdvertName, AdvertDescription, Price  from Subjects  INNER JOIN Adverts on Adverts.AdvertId = Subjects.AdvertId where (Adverts.AdditionDate > '2018-05-31 12:09:50' and Adverts.AdditionDate < '2018-05-31 12:11:30')";
+            cmd.CommandType = CommandType.Text;
             reader = cmd.ExecuteReader();
-            // Data is accessible through the DataReader object here.
-            //var test = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(reader);
+           
             sqlConnection1.Close();
 
-            //SqlConnection sqlConnection1 = new SqlConnection();
-            //sqlConnection1.ConnectionString = ConfigurationManager.ConnectionStrings["BoatsAdverts"].ConnectionString;
-
-            //SqlCommand cmd = new SqlCommand();
-            //SqlDataReader reader;
-            //Stopwatch stopWatch = Stopwatch.StartNew();
-            //cmd.CommandText = "SELECT * from [BoatsAd].[dbo].Adverts where AdvertId = 4545";
-            //cmd.CommandType = CommandType.Text;
-            //cmd.Connection = sqlConnection1;
-            //sqlConnection1.Open();
-
-            ////var newQuery = _db.adverts.Where(x => x.AdditionDate > new DateTime(2018, 5, 24, 20, 21, 00) && x.AdditionDate < new DateTime(2018, 5, 24, 20, 25, 00)).ToList();
-            //reader = cmd.ExecuteReader();
-            //while (reader.Read())
-            //{
-            //    ReadSingleRow((IDataRecord)reader);
-            //}
-            ////.SqlQuery("").ToList();
-            //stopWatch.Stop();
-            //System.Diagnostics.Debug.WriteLine("Czas wykonania: " + stopWatch.ElapsedMilliseconds);
+      
+            stopWatch.Stop();
+            System.Diagnostics.Debug.WriteLine("Czas wykonania: " + stopWatch.ElapsedMilliseconds);
             return Ok();
         }
         private static void ReadSingleRow(IDataRecord record)

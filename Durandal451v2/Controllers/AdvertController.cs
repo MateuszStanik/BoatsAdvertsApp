@@ -41,7 +41,7 @@ namespace Durandal451v2.Controllers
 
         [HttpPost]
         [Route("MockData")]
-        public async Task<IHttpActionResult> mockData()
+        public async Task<IHttpActionResult> mockData(int counter)
         {
 
             string[] Names = { "Maggie", "Penny", "Magdalena", "Joanna", "Zuzanna", "Tomasz", "Marcin", "Jacek", "Mateusz", "Aleksander", "Jurek", "Abby", "Laila", "Sadie", "Olivia", "Ola", "Starlight", "Talla", "Zbigniew", "Jola" };
@@ -51,7 +51,7 @@ namespace Durandal451v2.Controllers
             string[] Phones = { "129483958", "837495837", "098273475", "283950392", "898127847", "988372982", "783917284" };
             try
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < counter; i++)
                 {
                     int rand = new Random().Next(1, 6);
                     DomainModel.Advert advert = new DomainModel.Advert();
