@@ -38,8 +38,13 @@ namespace Durandal451v2.Controllers
         public IHttpActionResult TestORM()
         {                       
             Stopwatch stopWatch = Stopwatch.StartNew();
-          
-            var newQuery = _db.subjects.Where(x=>x.Advert.AdditionDate > new DateTime(2018, 5, 31, 12, 09, 50) && x.Advert.AdditionDate < new DateTime(2018, 5, 31, 12, 11, 30)).Select(y=>new { y.AdvertDescription, y.AdvertName, y.Price}).ToList();
+
+            List<Boat> boat = _db.boats.Where(x=>x.SailBoat.EnginePower> 500).ToList();
+            foreach(Boat singleBoat in boat)
+            {
+                singleBoat.Price = 10101;
+            }
+            _db.SaveChanges();
             
             stopWatch.Stop();
             System.Diagnostics.Debug.WriteLine("Czas wykonania1: " + stopWatch.ElapsedMilliseconds);
@@ -57,7 +62,7 @@ namespace Durandal451v2.Controllers
             sqlConnection1.Open();
 
             Stopwatch stopWatch = Stopwatch.StartNew();           
-            cmd.CommandText = "select  AdvertName, AdvertDescription, Price  from Subjects  INNER JOIN Adverts on Adverts.AdvertId = Subjects.AdvertId where (Adverts.AdditionDate > '2018-05-31 12:09:50' and Adverts.AdditionDate < '2018-05-31 12:11:30')";
+            cmd.CommandText = "Update Subjects Set Price = 51234 from Subjects INNER JOIN SailBoat on Subjects.SubjectId = SailBoat.SubjectId where SailBoat.EnginePower > 500";
             cmd.CommandType = CommandType.Text;
             reader = cmd.ExecuteReader();
             DataTable dt = new DataTable();
