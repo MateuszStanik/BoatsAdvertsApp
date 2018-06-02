@@ -38,12 +38,13 @@ namespace Durandal451v2.Controllers
         public IHttpActionResult TestORM()
         {                       
             Stopwatch stopWatch = Stopwatch.StartNew();
-
-            List<Boat> boat = _db.boats.Where(x=>x.SailBoat.EnginePower> 500).ToList();
-            foreach(Boat singleBoat in boat)
-            {
-                singleBoat.Price = 10101;
-            }
+            //   List<Boat> boat = _db.boats.Where(x=>x.SailBoat.EnginePower> 500).ToList();
+            //foreach (Boat singleBoat in boat)
+            //{
+            //    singleBoat.Price = 10101;
+            //}
+            Boat boat = _db.boats.Where(x=>x.Advert.Name == "Abby" && x.Advert.SureName == "Halama" && x.Advert.Email == "testUpdate@gmail.com").FirstOrDefault();
+            boat.SailBoat.EnginePower = 11;
             _db.SaveChanges();
             
             stopWatch.Stop();
@@ -61,8 +62,9 @@ namespace Durandal451v2.Controllers
             cmd.Connection = sqlConnection1;
             sqlConnection1.Open();
 
-            Stopwatch stopWatch = Stopwatch.StartNew();           
-            cmd.CommandText = "Update Subjects Set Price = 51234 from Subjects INNER JOIN SailBoat on Subjects.SubjectId = SailBoat.SubjectId where SailBoat.EnginePower > 500";
+            Stopwatch stopWatch = Stopwatch.StartNew();
+            //cmd.CommandText = "Update Subjects Set Price = 51234 from Subjects INNER JOIN SailBoat on Subjects.SubjectId = SailBoat.SubjectId where SailBoat.EnginePower > 500";
+            cmd.CommandText = "Update SailBoat Set EnginePower = 22 from SailBoat INNER JOIN Subjects on SailBoat.SubjectId = Subjects.SubjectId Inner JOIN Adverts on Subjects.AdvertId = Adverts.AdvertId where Adverts.Name = 'Abby' and Adverts.SureName = 'Halama' and Email = 'testUpdate@gmail.com'";
             cmd.CommandType = CommandType.Text;
             reader = cmd.ExecuteReader();
             DataTable dt = new DataTable();
