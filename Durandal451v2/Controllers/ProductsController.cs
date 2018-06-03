@@ -36,17 +36,50 @@ namespace Durandal451v2.Controllers
         [HttpGet]
         [Route("TestORM")]
         public IHttpActionResult TestORM()
-        {                       
+        {
             Stopwatch stopWatch = Stopwatch.StartNew();
             //   List<Boat> boat = _db.boats.Where(x=>x.SailBoat.EnginePower> 500).ToList();
             //foreach (Boat singleBoat in boat)
             //{
             //    singleBoat.Price = 10101;
             //}
-            Boat boat = _db.boats.Where(x=>x.Advert.Name == "Abby" && x.Advert.SureName == "Halama" && x.Advert.Email == "testUpdate@gmail.com").FirstOrDefault();
-            boat.SailBoat.EnginePower = 11;
+            //Boat boat = _db.boats.Where(x=>x.Advert.Name == "Abby" && x.Advert.SureName == "Halama" && x.Advert.Email == "testUpdate@gmail.com").FirstOrDefault();
+            //boat.SailBoat.EnginePower = 11;
+            //_db.SaveChanges();
+            //_db.adverts.Add(new Advert { AdditionalInformation = "brak", AdditionDate = DateTime.Now, City = "Katowice", Email = "test@gmail.col", FinishDate = DateTime.Now.AddDays(5), Name = "Mateusz", SureName = "Stanik", PhoneNumber = "234234323" });
+            Boat boat = new Boat {
+                Advert = new Advert{
+                    AdditionalInformation = "brak",
+                    AdditionDate = DateTime.Now,
+                    City = "Katowice",
+                    Email = "test@gmail.col",
+                    FinishDate = DateTime.Now.AddDays(5),
+                    Name = "Mateusz",
+                    SureName = "Stanik",
+                    PhoneNumber = "234234323"
+                },
+                AdvertDescription = "Brak informacji na temat przedmiotu",
+                SailBoat = new SailBoat {
+                    EnginePower = 324,
+                    EngineType = 1,
+                    HullType = "MONOHULL",
+                    IsEngine = true,
+                    RudderType = "Zaburtowy",
+                    SailsArea = 23,
+                    YachtType = "Brak",
+                },
+                AdvertName = "sorzedam żaglówke",
+                BuiltYear = "1999",
+                Price = 8090,
+                Weight = 23,
+                Beam = 32,
+                CategoryId = 1,
+                ProducentName = "test"
+            };
+                
+           
+            _db.boats.Add(boat);
             _db.SaveChanges();
-            
             stopWatch.Stop();
             System.Diagnostics.Debug.WriteLine("Czas wykonania1: " + stopWatch.ElapsedMilliseconds);
             return Ok();   
@@ -64,7 +97,8 @@ namespace Durandal451v2.Controllers
 
             Stopwatch stopWatch = Stopwatch.StartNew();
             //cmd.CommandText = "Update Subjects Set Price = 51234 from Subjects INNER JOIN SailBoat on Subjects.SubjectId = SailBoat.SubjectId where SailBoat.EnginePower > 500";
-            cmd.CommandText = "Update SailBoat Set EnginePower = 22 from SailBoat INNER JOIN Subjects on SailBoat.SubjectId = Subjects.SubjectId Inner JOIN Adverts on Subjects.AdvertId = Adverts.AdvertId where Adverts.Name = 'Abby' and Adverts.SureName = 'Halama' and Email = 'testUpdate@gmail.com'";
+            //cmd.CommandText = "Update SailBoat Set EnginePower = 22 from SailBoat INNER JOIN Subjects on SailBoat.SubjectId = Subjects.SubjectId Inner JOIN Adverts on Subjects.AdvertId = Adverts.AdvertId where Adverts.Name = 'Abby' and Adverts.SureName = 'Halama' and Email = 'testUpdate@gmail.com'";
+            cmd.CommandText = "insert into Adverts  values ('2018-06-03 16:54:27','2018-06-08 16:54:27' ,'Mateusz','Stanik','234234323','test@gmail.col','Katowice','brak'); insert into Subjects values (26408, 1, 'sorzedam żaglówke', 'Brak informacji na temat przedmiotu', 33);insert into Boats values (14091, 'test', '0', 32, 23, 44, '1999', 0, 0); insert into SailBoat values (14091, 23, 'True', 3, 1, 'MONOHULL', 'Brak', 'Zaburtowy'); ";
             cmd.CommandType = CommandType.Text;
             reader = cmd.ExecuteReader();
             DataTable dt = new DataTable();
